@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/wfyj9oszt0er4tfinbhr",
     "numericName": "",
     "shortName": "Rotary Encoder",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>Rotary encoders can be used similarly to potentiometers. The difference being that an encoder has full rotation without limits.<br><strong>Returned values</strong>: absolute position (integer).</p>\n",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RotaryEncoderEN11_1",
           "part": "RotaryEncoderEN11"
         }
       ],
@@ -63,8 +59,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -75,7 +73,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -93,8 +92,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SW",
@@ -111,8 +112,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND2",
@@ -123,11 +126,34 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "RotaryEncoderEN11_1.A",
+          "to": "A"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.B",
+          "to": "B"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.SW",
+          "to": "SW"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.GND2",
+          "to": "GND2"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "Digital",
@@ -151,7 +177,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RotaryEncoderEN11_1",
           "part": "RotaryEncoderEN11"
         }
       ],
@@ -171,8 +197,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -183,7 +211,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -211,8 +240,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SW",
@@ -229,8 +260,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND2",
@@ -241,11 +274,34 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 100
+      "wires": [
+        {
+          "from": "RotaryEncoderEN11_1.A",
+          "to": "A"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.B",
+          "to": "B"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.SW",
+          "to": "SW"
+        },
+        {
+          "from": "RotaryEncoderEN11_1.GND2",
+          "to": "GND2"
+        }
+      ],
+      "cost": 100
     }
   ]
 }

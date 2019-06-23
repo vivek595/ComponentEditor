@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/gksc0v9ujss5cf5pkkvc",
     "numericName": "HX711",
     "shortName": "Load Cell Amplifier",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>The load cell breakout of the HX711 enables reading load cell values and measuring weight.</p>",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LoadCellHX711SF_1",
           "part": "LoadCellHX711SF"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -65,7 +62,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,8 +76,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "CLK",
@@ -91,8 +91,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -103,11 +105,34 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "LoadCellHX711SF_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LoadCellHX711SF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LoadCellHX711SF_1.DAT",
+          "to": "DAT"
+        },
+        {
+          "from": "LoadCellHX711SF_1.CLK",
+          "to": "CLK"
+        },
+        {
+          "from": "LoadCellHX711SF_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -125,7 +150,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LoadCellHX711SF_1",
           "part": "LoadCellHX711SF"
         }
       ],
@@ -139,7 +164,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -151,7 +177,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -164,8 +191,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "CLK",
@@ -177,8 +206,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -189,11 +220,34 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "LoadCellHX711SF_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LoadCellHX711SF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LoadCellHX711SF_1.DAT",
+          "to": "DAT"
+        },
+        {
+          "from": "LoadCellHX711SF_1.CLK",
+          "to": "CLK"
+        },
+        {
+          "from": "LoadCellHX711SF_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/j7kpxdfxhxwfaupre72c",
     "numericName": "",
     "shortName": "Piezo Vibration Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>Piezo Vibration Sensor is suitable for measurements of flexibility, vibration, impact and touch. When the sensor moves back and forth, a certain voltage will be created by the voltage comparator inside of it. <br><strong>Returned values</strong>: from 0 (no strain) to 1023 (maximal strain).<br><strong></p>",
@@ -44,26 +40,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PiezoVibration_1",
           "part": "PiezoVibration"
         },
         {
-          "name": "r1",
+          "name": "Res1MO_1",
           "part": "Res1MO"
         }
       ],
       "wires": [
         {
-          "from": "this.+",
-          "to": "r1.con0"
+          "from": "PiezoVibration_1.+",
+          "to": "Res1MO_1.con0"
         },
         {
-          "from": "this.-",
-          "to": "r1.con1"
+          "from": "PiezoVibration_1.-",
+          "to": "Res1MO_1.con1"
         },
         {
-          "from": "r1.con0",
+          "from": "Res1MO_1.con0",
           "to": "neg"
+        },
+        {
+          "from": "PiezoVibration_1.-",
+          "to": "-"
         }
       ],
       "ports": [
@@ -77,8 +77,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "-",
@@ -89,10 +91,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

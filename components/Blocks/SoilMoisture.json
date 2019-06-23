@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ni7dsiyc64uguaw3f2me",
     "numericName": "",
     "shortName": "Soil Moisture Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A cool moisture breakout from Sparkfun. It measures moisture in soil, water, air.<br><strong>Returned Values</strong>: from 0 (completely dry) to 1023 (completely moist). (air/soil humidity - ambient conditions).<br><strong>Requires</strong>: Soldering of jumper/regular wires to the sensor board, to fit onto a breadboard.<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Thirsty-Flamingo/\">Thirsty Flamingo</a></p>\n",
@@ -40,7 +36,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "SoilMoisture_1",
           "part": "SoilMoisture"
         }
       ],
@@ -54,7 +50,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -67,8 +64,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -79,11 +78,26 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "SoilMoisture_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SoilMoisture_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "SoilMoisture_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "SoilMoisture_1",
           "part": "SoilMoisture"
         }
       ],
@@ -114,7 +128,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -127,8 +142,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "SoilMoisture_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SoilMoisture_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "SoilMoisture_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

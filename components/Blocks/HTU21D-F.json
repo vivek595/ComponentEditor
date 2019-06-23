@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/wmdl1tgav0eghdpwsebd",
     "numericName": "HTU21D-F",
     "shortName": "Temperature & Humidity Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This is a digital humidity & temp sensor. An accurate and intelligent alternative to much simpler sensors. It is connected vua I2C bus & has a typical accuracy of \u00b12%@5%-95% RH while able to measure -30-90\u00b0C with \u00b11\u00b0C accuracy</p>",
@@ -38,7 +34,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HTU21D-F_1",
           "part": "HTU21D-F"
         }
       ],
@@ -52,7 +48,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -64,7 +61,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +74,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,11 +87,30 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "HTU21D-F_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "HTU21D-F_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "HTU21D-F_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "HTU21D-F_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -108,7 +126,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HTU21D-F_1",
           "part": "HTU21D-F"
         }
       ],
@@ -122,7 +140,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -134,7 +153,8 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -146,7 +166,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -158,11 +179,30 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "HTU21D-F_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "HTU21D-F_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "HTU21D-F_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "HTU21D-F_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

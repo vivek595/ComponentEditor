@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/rfpkzhawgvwlcy3kaull",
     "numericName": "",
     "shortName": "Speed Wheel Encoder",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>Use the wheel encoder to measure shaft speed or location. Popular in wheeled robotics. Connect the wheel to the motor shaft and the sensor to your Arduino.</p>",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "WheelEncoder_1",
           "part": "WheelEncoder"
         }
       ],
@@ -57,7 +53,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -75,8 +72,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "CH_B",
@@ -93,8 +92,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -110,11 +111,30 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 3
+      "wires": [
+        {
+          "from": "WheelEncoder_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "WheelEncoder_1.CH_A",
+          "to": "CH_A"
+        },
+        {
+          "from": "WheelEncoder_1.CH_B",
+          "to": "CH_B"
+        },
+        {
+          "from": "WheelEncoder_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 3
     },
     {
       "name": "Digital",
@@ -139,7 +159,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "WheelEncoder_1",
           "part": "WheelEncoder"
         }
       ],
@@ -153,7 +173,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -171,8 +192,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "CH_B",
@@ -199,8 +222,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -216,11 +241,30 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 5
+      "wires": [
+        {
+          "from": "WheelEncoder_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "WheelEncoder_1.CH_A",
+          "to": "CH_A"
+        },
+        {
+          "from": "WheelEncoder_1.CH_B",
+          "to": "CH_B"
+        },
+        {
+          "from": "WheelEncoder_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 5
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/v9l1jbpibwd4ptff0og8",
     "numericName": "NEO-6M",
     "shortName": "GPS Module",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>This device connects to GPS satellites to retrive its location. Also provides the current time and date.</p>\n<p><strong>Returned Value</strong>: Location - Lat and Long, time and date via serial communication.</p>\n",
@@ -40,18 +36,26 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "GPSNeo6M_1",
           "part": "GPSNeo6M"
         }
       ],
       "wires": [
         {
-          "from": "this.TX",
+          "from": "GPSNeo6M_1.TX",
           "to": "Rx"
         },
         {
-          "from": "this.RX",
+          "from": "GPSNeo6M_1.RX",
           "to": "Tx"
+        },
+        {
+          "from": "GPSNeo6M_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "GPSNeo6M_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -64,7 +68,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -81,7 +86,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -99,7 +105,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -112,7 +119,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 570
+            "requiresLoad": 570,
+            "portType": "requires"
           }
         },
         {
@@ -130,11 +138,12 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "HardwareSerial2",
@@ -155,18 +164,26 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "GPSNeo6M_1",
           "part": "GPSNeo6M"
         }
       ],
       "wires": [
         {
-          "from": "this.TX",
+          "from": "GPSNeo6M_1.TX",
           "to": "Rx"
         },
         {
-          "from": "this.RX",
+          "from": "GPSNeo6M_1.RX",
           "to": "Tx"
+        },
+        {
+          "from": "GPSNeo6M_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "GPSNeo6M_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -179,7 +196,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -196,7 +214,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -209,7 +228,8 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -222,7 +242,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 570
+            "requiresLoad": 570,
+            "portType": "requires"
           }
         },
         {
@@ -235,11 +256,12 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     },
     {
       "name": "SoftwareSerial",
@@ -260,18 +282,26 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "GPSNeo6M_1",
           "part": "GPSNeo6M"
         }
       ],
       "wires": [
         {
-          "from": "this.TX",
+          "from": "GPSNeo6M_1.TX",
           "to": "Rx"
         },
         {
-          "from": "this.RX",
+          "from": "GPSNeo6M_1.RX",
           "to": "Tx"
+        },
+        {
+          "from": "GPSNeo6M_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "GPSNeo6M_1.GND",
+          "to": "GND"
         }
       ],
       "ports": [
@@ -289,7 +319,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -317,8 +348,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Rx",
@@ -345,8 +378,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SerialType",
@@ -357,7 +392,8 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -369,7 +405,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -382,11 +419,12 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 570
+            "requiresLoad": 570,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 100
+      "cost": 100
     }
   ]
 }

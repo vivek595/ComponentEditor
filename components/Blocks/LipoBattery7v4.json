@@ -9,21 +9,17 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/bpaxgam0z62jjbjlv9xx",
     "numericName": "",
     "shortName": "LiPo Battery 7.4V",
-    "tags": [
-      "power"
-    ],
     "indicators": {
       "verified": true,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A great way to power any R/C, robotic, or portable project. This is an excellent choice for anything that requires a small battery with a lot of punch.<br>The battery has two cells and outputs 7.4V.<br>Because this is a dual cell battery pack, a special charger is needed. It is not compatible with single cell chargers.</p>\n",
     "visible": true
   },
-  "altComp": [
-    100,
-    "Battery8xAA"
-  ],
+  "altComp": {
+    "cost": 100,
+    "block": "Battery8xAA"
+  },
   "circuits": [
     {
       "name": "default",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LipoBattery7v4_1",
           "part": "LipoBattery7v4"
         }
       ],
@@ -58,7 +54,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -70,7 +67,8 @@
                 "voltage": "7.4v"
               }
             ],
-            "providesLoad": 5000
+            "providesLoad": 5000,
+            "portType": "provides"
           }
         },
         {
@@ -81,10 +79,22 @@
                 "spec": "Battery",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "LipoBattery7v4_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LipoBattery7v4_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

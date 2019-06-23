@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/l0dssxs1lqhhzrvozenv",
     "numericName": "A1302",
     "shortName": "Hall Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Analog linear hall effect sensor. It outputs voltage that is proportional to an applied magnetic field.</p>\n<p><strong>Returned Value</strong>: Analog values. After calibration, 0 - for no magnetic field. Value decreases with negative field and increases with positive filed present.</p>\n",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HallA1302_1",
           "part": "HallA1302"
         }
       ],
@@ -54,8 +50,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vcc",
@@ -66,7 +64,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,11 +77,26 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "HallA1302_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallA1302_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallA1302_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HallA1302_1",
           "part": "HallA1302"
         }
       ],
@@ -115,8 +129,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vcc",
@@ -127,7 +143,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "HallA1302_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallA1302_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallA1302_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

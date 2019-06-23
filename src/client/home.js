@@ -1,7 +1,6 @@
 import React from "react";
-import { Grid, Row, Col, Well, Image } from "react-bootstrap";
+import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import { BlocksList } from "./blocks-list";
-import { NewComponent } from "./newcomponent";
 
 export class Home extends React.Component {
   constructor(props) {
@@ -9,32 +8,31 @@ export class Home extends React.Component {
 
     this.onBlockSelected = this.onBlockSelected.bind(this);
   }
-  
+
   onBlockSelected(block) {
-    this.props.history.push('/'+block);
-    console.log(block);
+    this.props.history.push("/" + block);
   }
 
   render() {
     return (
-      <Grid>
-          <Row>
-            <Col sm={6}>
-              <Well>
-                <h2>Edit</h2>
-                <br/>
-                <BlocksList cachedData={this.props.cachedData} onBlockSelected = {this.onBlockSelected}/>
-              </Well>
-            </Col>
-            <Col sm={6}>
-              <Well>
-                <h2>Create</h2>
-                <br/>
-                <NewComponent/>
-              </Well>
-            </Col>
-          </Row>
-        </Grid>
+      <Container style={{ maxWidth: "unset" }}>
+        <Row>
+          <Col>
+            <Card>
+              <Card.Header>
+                <h3>Edit or Create a Block</h3>
+              </Card.Header>
+              <Card.Body style={{ padding: "2rem 0.5rem" }}>
+                <BlocksList
+                  cachedData={this.props.cachedData}
+                  onBlockSelected={this.onBlockSelected}
+                  refreshData={this.props.refreshData}
+                />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

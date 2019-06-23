@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ofyrxkqg2cofagzpwpy8",
     "numericName": "WS2812B",
     "shortName": "RGB LED",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This LED breakout has a WS2812B IC (\u201cNeoPixel\u201d) on it. It is an addressable RGB LED, you can chain many of these and control all of them with only 1 pin.</p>",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LedWS2812Breakout_1",
           "part": "LedWS2812Breakout"
         }
       ],
@@ -64,7 +60,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -83,8 +80,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND_I",
@@ -96,28 +95,62 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "GND_O",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         },
         {
           "name": "5v_O",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         },
         {
           "name": "DO",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "LedWS2812Breakout_1.5v_I",
+          "to": "5v_I"
+        },
+        {
+          "from": "LedWS2812Breakout_1.DI",
+          "to": "DI"
+        },
+        {
+          "from": "LedWS2812Breakout_1.GND_I",
+          "to": "GND_I"
+        },
+        {
+          "from": "LedWS2812Breakout_1.GND_O",
+          "to": "GND_O"
+        },
+        {
+          "from": "LedWS2812Breakout_1.5v_O",
+          "to": "5v_O"
+        },
+        {
+          "from": "LedWS2812Breakout_1.DO",
+          "to": "DO"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

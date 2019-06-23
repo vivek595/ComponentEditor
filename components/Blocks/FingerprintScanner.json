@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/kfry7we7nu7wp3odybkh",
     "numericName": "GT511C3",
     "shortName": "Fingerprint Scanner",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>This is a Fingerprint Scanner over TTL communication.<br>The module reads and identifies the fingerprints using an on-board optical sensor and CPU.</p>",
@@ -39,34 +35,46 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "FingerprintScanner_1",
           "part": "FingerprintScanner"
         },
         {
-          "name": "r1",
+          "name": "Res470O_1",
           "part": "Res470O"
         },
         {
-          "name": "r2",
+          "name": "Res1KO_1",
           "part": "Res1KO"
         }
       ],
       "wires": [
         {
-          "from": "this.RX",
-          "to": "r1.con0"
+          "from": "FingerprintScanner_1.RX",
+          "to": "Res470O_1.con0"
         },
         {
-          "from": "r1.con0",
-          "to": "r2.con0"
+          "from": "Res470O_1.con0",
+          "to": "Res1KO_1.con0"
         },
         {
-          "from": "r2.con1",
-          "to": "this.GND"
+          "from": "Res1KO_1.con1",
+          "to": "FingerprintScanner_1.GND"
         },
         {
-          "from": "r1.con1",
+          "from": "Res470O_1.con1",
           "to": "Rx"
+        },
+        {
+          "from": "FingerprintScanner_1.Tx",
+          "to": "Tx"
+        },
+        {
+          "from": "FingerprintScanner_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "FingerprintScanner_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -95,8 +103,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Tx",
@@ -123,8 +133,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -135,7 +147,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -152,11 +165,12 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -173,14 +187,26 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "FingerprintScanner_1",
           "part": "FingerprintScanner"
         }
       ],
       "wires": [
         {
-          "from": "this.RX",
+          "from": "FingerprintScanner_1.RX",
           "to": "Rx"
+        },
+        {
+          "from": "FingerprintScanner_1.Tx",
+          "to": "Tx"
+        },
+        {
+          "from": "FingerprintScanner_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "FingerprintScanner_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -209,8 +235,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Tx",
@@ -237,8 +265,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -249,7 +279,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -266,11 +297,12 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

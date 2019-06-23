@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/buubzdfet1iei6jxhdi4",
     "numericName": "",
     "shortName": "Relay Module 4-Ch",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>4 channel Relay module with breakout board. It is used to isolate components and create a sub-circuit in your circuit, with a different voltage.</p>",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RelayModule4ch_1",
           "part": "RelayModule4ch"
         }
       ],
@@ -57,7 +53,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -69,7 +66,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -87,8 +85,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "IN2",
@@ -105,8 +105,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "IN4",
@@ -123,8 +125,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "IN3",
@@ -141,10 +145,39 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RelayModule4ch_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "RelayModule4ch_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RelayModule4ch_1.IN1",
+          "to": "IN1"
+        },
+        {
+          "from": "RelayModule4ch_1.IN2",
+          "to": "IN2"
+        },
+        {
+          "from": "RelayModule4ch_1.IN4",
+          "to": "IN4"
+        },
+        {
+          "from": "RelayModule4ch_1.IN3",
+          "to": "IN3"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/vmeqg6zar09pxp6xs4ps",
     "numericName": "ISD1820",
     "shortName": "Voice Recorder",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>An easy voice recorder - push the \"REC\" button to record your voice (10 seconds max), then push the \"PLAY\" button to play it. You can use the microcontroller to play the record instead of pushing the button.</p>",
@@ -43,22 +39,34 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "VoiceRecorder_1",
           "part": "VoiceRecorder"
         },
         {
-          "name": "SpeakerStereo3W",
+          "name": "SpeakerStereo3W_1",
           "part": "SpeakerStereo3W"
         }
       ],
       "wires": [
         {
-          "from": "this.SPK_0",
-          "to": "SpeakerStereo3W.NEG"
+          "from": "VoiceRecorder_1.SPK_0",
+          "to": "SpeakerStereo3W_1.NEG"
         },
         {
-          "from": "this.SPK_1",
-          "to": "SpeakerStereo3W.POS"
+          "from": "VoiceRecorder_1.SPK_1",
+          "to": "SpeakerStereo3W_1.POS"
+        },
+        {
+          "from": "VoiceRecorder_1.Vin",
+          "to": "Vin"
+        },
+        {
+          "from": "VoiceRecorder_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "VoiceRecorder_1.Sig",
+          "to": "Sig"
         }
       ],
       "ports": [
@@ -71,7 +79,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -83,7 +92,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -96,10 +106,13 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

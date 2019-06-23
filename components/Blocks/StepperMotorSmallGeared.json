@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/c8i9tlvjttlhfynta2w0",
     "numericName": "28BYJ-48",
     "shortName": "Small 5V Stepper Motor",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>5V stepper motor with gear 1/16 and 32 steps per revolution. It is good for small projects and experimenting with steppers.</p>",
@@ -44,49 +40,49 @@
       ],
       "parts": [
         {
-          "name": "driver",
+          "name": "EasyDriver_1",
           "part": "EasyDriver"
         },
         {
-          "name": "this",
+          "name": "StepperMotorSmallGeared_1",
           "part": "StepperMotorSmallGeared"
         }
       ],
       "wires": [
         {
-          "from": "driver.OUT2A",
-          "to": "this.PINK"
+          "from": "EasyDriver_1.OUT2A",
+          "to": "StepperMotorSmallGeared_1.PINK"
         },
         {
-          "from": "driver.OUT2B",
-          "to": "this.YELLOW"
+          "from": "EasyDriver_1.OUT2B",
+          "to": "StepperMotorSmallGeared_1.YELLOW"
         },
         {
-          "from": "driver.OUT1A",
-          "to": "this.ORANGE"
+          "from": "EasyDriver_1.OUT1A",
+          "to": "StepperMotorSmallGeared_1.ORANGE"
         },
         {
-          "from": "driver.OUT1B",
-          "to": "this.BLUE"
+          "from": "EasyDriver_1.OUT1B",
+          "to": "StepperMotorSmallGeared_1.BLUE"
         },
         {
-          "from": "this.RED",
+          "from": "StepperMotorSmallGeared_1.RED",
           "to": "red"
         },
         {
-          "from": "driver.GND",
+          "from": "EasyDriver_1.GND",
           "to": "gnd"
         },
         {
-          "from": "driver.Dir",
+          "from": "EasyDriver_1.Dir",
           "to": "dir"
         },
         {
-          "from": "driver.Step",
+          "from": "EasyDriver_1.Step",
           "to": "step"
         },
         {
-          "from": "driver.V+",
+          "from": "EasyDriver_1.V+",
           "to": "v+"
         }
       ],
@@ -100,7 +96,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -118,8 +115,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "gnd",
@@ -130,7 +129,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -148,8 +148,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "v+",
@@ -161,7 +163,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 330
+            "requiresLoad": 330,
+            "portType": "requires"
           }
         },
         {
@@ -174,10 +177,12 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 200
+            "requiresLoad": 200,
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

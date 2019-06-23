@@ -9,12 +9,8 @@
     "image": "",
     "numericName": "",
     "shortName": "PC Fan 12V",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>12V PC Fan 8cm square,operating speed of 2000 RPM.</p>\n",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PCFan12v_1",
           "part": "PCFan12v"
         }
       ],
@@ -58,8 +54,10 @@
               }
             ],
             "requiresLoad": 80,
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Coil2",
@@ -71,7 +69,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 80
+            "requiresLoad": 80,
+            "portType": "requires"
           }
         }
       ],
@@ -82,7 +81,18 @@
             "GndHighLoadPWMSwitching"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "PCFan12v_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "PCFan12v_1.Coil2",
+          "to": "Coil2"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

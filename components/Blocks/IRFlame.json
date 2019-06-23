@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/fegddzasnww2fal8ywmo",
     "numericName": "",
     "shortName": "Flame Detection Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>The sensor can detect flames of wavelength at 760 nm to 1100 nm. It can detect a lighter flame from 80cm, the larger the flame the farther the sensing distance.</p>",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRFlame_1",
           "part": "IRFlame"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -66,8 +63,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "5V",
@@ -78,11 +77,26 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "IRFlame_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRFlame_1.AOUT",
+          "to": "AOUT"
+        },
+        {
+          "from": "IRFlame_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRFlame_1",
           "part": "IRFlame"
         }
       ],
@@ -114,7 +128,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -127,8 +142,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "5V",
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "IRFlame_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRFlame_1.AOUT",
+          "to": "AOUT"
+        },
+        {
+          "from": "IRFlame_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

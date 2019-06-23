@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/rj9o9spmbsyli5v3mqyx",
     "numericName": "BMP180",
     "shortName": "Barometric Pressure Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>High precision, low power digital barometer.<br><strong>Returned Values</strong>: Can measure air pressure from 300-110 hPa with 0.02 hPa accuracy.</p>\n<p><strong>Requires</strong>: Soldering 4 pin male header.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BMP180_1",
           "part": "BMP180"
         }
       ],
@@ -64,7 +60,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +73,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,7 +86,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -101,7 +100,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 500
+            "requiresLoad": 500,
+            "portType": "requires"
           }
         },
         {
@@ -119,10 +119,30 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "BMP180_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "BMP180_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BMP180_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "BMP180_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

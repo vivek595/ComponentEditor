@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/zsxdrunkomhaomuwb0ii",
     "numericName": "",
     "shortName": "LED RGB Strip",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>One meter non-addressable RGB LED strips with 60 LED's per meter.</p>",
@@ -43,59 +39,62 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LedStripRGB",
-          "rotation": 90
+          "name": "LedStripRGB_1",
+          "part": "LedStripRGB"
         },
         {
-          "name": "tG",
+          "name": "TNMOSFETFQP_1",
           "part": "TNMOSFETFQP"
         },
         {
-          "name": "tR",
+          "name": "TNMOSFETFQP_2",
           "part": "TNMOSFETFQP"
         },
         {
-          "name": "tB",
+          "name": "TNMOSFETFQP_3",
           "part": "TNMOSFETFQP"
         }
       ],
       "wires": [
         {
-          "from": "this.B",
-          "to": "tB.D"
+          "from": "LedStripRGB_1.B",
+          "to": "TNMOSFETFQP_3.D"
         },
         {
-          "from": "this.R",
-          "to": "tR.D"
+          "from": "LedStripRGB_1.R",
+          "to": "TNMOSFETFQP_2.D"
         },
         {
-          "from": "this.G",
-          "to": "tG.D"
+          "from": "LedStripRGB_1.G",
+          "to": "TNMOSFETFQP_1.D"
         },
         {
-          "from": "tR.S",
-          "to": "tB.S"
+          "from": "TNMOSFETFQP_2.S",
+          "to": "TNMOSFETFQP_3.S"
         },
         {
-          "from": "tB.S",
-          "to": "tG.S"
+          "from": "TNMOSFETFQP_3.S",
+          "to": "TNMOSFETFQP_1.S"
         },
         {
-          "from": "tR.S",
+          "from": "TNMOSFETFQP_2.S",
           "to": "Gnd"
         },
         {
-          "from": "tR.G",
+          "from": "TNMOSFETFQP_2.G",
           "to": "SigR"
         },
         {
-          "from": "tB.G",
+          "from": "TNMOSFETFQP_3.G",
           "to": "SigB"
         },
         {
-          "from": "tG.G",
+          "from": "TNMOSFETFQP_1.G",
           "to": "SigG"
+        },
+        {
+          "from": "LedStripRGB_1.VDD",
+          "to": "VDD"
         }
       ],
       "ports": [
@@ -109,7 +108,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 1400
+            "requiresLoad": 1400,
+            "portType": "requires"
           }
         },
         {
@@ -121,7 +121,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -139,8 +140,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SigR",
@@ -157,8 +160,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SigG",
@@ -175,10 +180,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

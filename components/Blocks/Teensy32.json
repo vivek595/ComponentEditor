@@ -9,21 +9,17 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/gnm7n2cprfly8vk1cxch",
     "numericName": "",
     "shortName": "PJRC Teensy 3.2",
-    "tags": [
-      "controller"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": false
     },
-    "desc": "<p>The PJRC Teensy 3.2 is a small, complete, and breadboard-friendly board based on the Freescale MK20DX256 32 bit ARM Cortex-M4.<br> developed in conjunction with Arduino, </p>\n<p>It has 24 5V tolerance digital input/output pins for breadboard use (of which 10 can be used as PWM outputs and 10 as analog inputs), a 72 MHz crystal oscillator (Can be overclocked to 96MHz).</p>\n<p>It sports 256K Flash Memory, 64K RAM, 2K EEPROM.</p>\n<p>In order to program the teensy through the Arduino IDE, all you have to do is to download & install the <a target=\"_blank\" href=\"https://www.pjrc.com/teensy/td_download.html\">Teensyduino add-on</a>.",
+    "desc": "<p>The PJRC Teensy 3.2 is a small, complete, and breadboard-friendly board based on the Freescale MK20DX256 32 bit ARM Cortex-M4.<br> developed in conjunction with the Arduino Company. </p>\n<p>It has 24 5V tolerance digital input/output pins for breadboard use (of which 10 can be used as PWM outputs and 10 as analog inputs), a 72 MHz crystal oscillator (can be overclocked to 96MHz). It has a 256K Flash Memory, 64K RAM, 2K EEPROM.</p>\n<p>In order to program the teensy through the Arduino IDE, all you have to do is to download & install the <a target=\"_blank\" href=\"https://www.pjrc.com/teensy/td_download.html\">Teensyduino add-on.</a>.",
     "visible": true
   },
-  "altComp": [
-    1000,
-    "ArduinoUno"
-  ],
+  "altComp": {
+    "cost": 1000,
+    "block": "ArduinoUno"
+  },
   "circuits": [
     {
       "name": "USB",
@@ -32,7 +28,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Teensy32_1",
           "part": "Teensy32"
         }
       ],
@@ -40,7 +36,6 @@
         {
           "name": "0",
           "interface": {
-            "codename": "0",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -67,13 +62,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "1",
           "interface": {
-            "codename": 1,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -100,13 +95,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -129,13 +124,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -162,13 +157,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -195,13 +190,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -228,13 +223,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -261,13 +256,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -294,13 +289,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -327,13 +322,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -364,13 +359,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -405,13 +400,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -438,13 +433,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -471,13 +466,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -504,13 +499,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "14",
           "interface": {
-            "codename": 14,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -537,13 +532,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "15",
           "interface": {
-            "codename": 15,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -574,13 +569,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "16",
           "interface": {
-            "codename": 16,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -611,13 +606,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "17",
           "interface": {
-            "codename": 17,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -648,13 +643,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "18",
           "interface": {
-            "codename": 18,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -689,13 +684,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "19",
           "interface": {
-            "codename": 19,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -730,13 +725,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "20",
           "interface": {
-            "codename": 20,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -767,13 +762,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "21",
           "interface": {
-            "codename": 21,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -804,13 +799,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "22",
           "interface": {
-            "codename": 22,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -845,13 +840,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "23",
           "interface": {
-            "codename": 23,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -886,37 +881,37 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "A10",
           "interface": {
-            "codename": "A10",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A11",
           "interface": {
-            "codename": "A11",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A14",
           "interface": {
-            "codename": "A14",
             "provides": [
               {
                 "spec": "ADC",
@@ -926,7 +921,8 @@
                 "spec": "DAC",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -937,7 +933,8 @@
                 "spec": "IORef",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -948,7 +945,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -959,7 +957,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -970,7 +969,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -982,7 +982,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 250
+            "providesLoad": 250,
+            "portType": "provides"
           }
         },
         {
@@ -994,7 +995,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -1006,7 +1008,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 65536
+            "providesLoad": 65536,
+            "portType": "provides"
           }
         },
         {
@@ -1017,7 +1020,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1030,7 +1034,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 50
+            "requiresLoad": 50,
+            "portType": "requires"
           }
         },
         {
@@ -1042,7 +1047,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -1053,11 +1059,150 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "Teensy32_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Teensy32_1.1",
+          "to": "1"
+        },
+        {
+          "from": "Teensy32_1.2",
+          "to": "2"
+        },
+        {
+          "from": "Teensy32_1.3",
+          "to": "3"
+        },
+        {
+          "from": "Teensy32_1.4",
+          "to": "4"
+        },
+        {
+          "from": "Teensy32_1.5",
+          "to": "5"
+        },
+        {
+          "from": "Teensy32_1.6",
+          "to": "6"
+        },
+        {
+          "from": "Teensy32_1.7",
+          "to": "7"
+        },
+        {
+          "from": "Teensy32_1.8",
+          "to": "8"
+        },
+        {
+          "from": "Teensy32_1.9",
+          "to": "9"
+        },
+        {
+          "from": "Teensy32_1.10",
+          "to": "10"
+        },
+        {
+          "from": "Teensy32_1.11",
+          "to": "11"
+        },
+        {
+          "from": "Teensy32_1.12",
+          "to": "12"
+        },
+        {
+          "from": "Teensy32_1.13",
+          "to": "13"
+        },
+        {
+          "from": "Teensy32_1.14",
+          "to": "14"
+        },
+        {
+          "from": "Teensy32_1.15",
+          "to": "15"
+        },
+        {
+          "from": "Teensy32_1.16",
+          "to": "16"
+        },
+        {
+          "from": "Teensy32_1.17",
+          "to": "17"
+        },
+        {
+          "from": "Teensy32_1.18",
+          "to": "18"
+        },
+        {
+          "from": "Teensy32_1.19",
+          "to": "19"
+        },
+        {
+          "from": "Teensy32_1.20",
+          "to": "20"
+        },
+        {
+          "from": "Teensy32_1.21",
+          "to": "21"
+        },
+        {
+          "from": "Teensy32_1.22",
+          "to": "22"
+        },
+        {
+          "from": "Teensy32_1.23",
+          "to": "23"
+        },
+        {
+          "from": "Teensy32_1.A10",
+          "to": "A10"
+        },
+        {
+          "from": "Teensy32_1.A11",
+          "to": "A11"
+        },
+        {
+          "from": "Teensy32_1.A14",
+          "to": "A14"
+        },
+        {
+          "from": "Teensy32_1.AREF",
+          "to": "AREF"
+        },
+        {
+          "from": "Teensy32_1.AGND",
+          "to": "AGND"
+        },
+        {
+          "from": "Teensy32_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "Teensy32_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "Teensy32_1.3.3v",
+          "to": "3.3v"
+        },
+        {
+          "from": "Teensy32_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "Teensy32_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 1
     },
     {
       "name": "EXT",
@@ -1066,7 +1211,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Teensy32_1",
           "part": "Teensy32"
         }
       ],
@@ -1074,7 +1219,6 @@
         {
           "name": "0",
           "interface": {
-            "codename": "0",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1105,13 +1249,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "1",
           "interface": {
-            "codename": 1,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1142,13 +1286,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1171,13 +1315,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1204,13 +1348,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1237,13 +1381,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1270,13 +1414,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1303,13 +1447,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1336,13 +1480,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1369,13 +1513,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1406,13 +1550,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1447,13 +1591,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1480,13 +1624,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1513,13 +1657,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1546,13 +1690,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "14",
           "interface": {
-            "codename": 14,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1579,13 +1723,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "15",
           "interface": {
-            "codename": 15,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1616,13 +1760,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "16",
           "interface": {
-            "codename": 16,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1653,13 +1797,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "17",
           "interface": {
-            "codename": 17,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1690,13 +1834,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "18",
           "interface": {
-            "codename": 18,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1731,13 +1875,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "19",
           "interface": {
-            "codename": 19,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1772,13 +1916,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "20",
           "interface": {
-            "codename": 20,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1809,13 +1953,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "21",
           "interface": {
-            "codename": 21,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1846,13 +1990,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "22",
           "interface": {
-            "codename": 22,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1887,13 +2031,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "23",
           "interface": {
-            "codename": 23,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1928,37 +2072,37 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "A10",
           "interface": {
-            "codename": "A10",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A11",
           "interface": {
-            "codename": "A11",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A14",
           "interface": {
-            "codename": "A14",
             "provides": [
               {
                 "spec": "ADC",
@@ -1968,7 +2112,8 @@
                 "spec": "DAC",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1979,7 +2124,8 @@
                 "spec": "IORef",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1990,7 +2136,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -2001,7 +2148,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -2012,7 +2160,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -2025,7 +2174,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 40
+            "requiresLoad": 40,
+            "portType": "requires"
           }
         },
         {
@@ -2037,7 +2187,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 250
+            "providesLoad": 250,
+            "portType": "provides"
           }
         },
         {
@@ -2049,7 +2200,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 65536
+            "providesLoad": 65536,
+            "portType": "provides"
           }
         },
         {
@@ -2060,7 +2212,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -2071,11 +2224,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 2,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -2100,7 +2253,7 @@
         {
           "cost": 40,
           "blocks": [
-            "Reg3.3v",
+            "Reg3v3",
             "USBPowerMicro"
           ]
         },
@@ -2108,11 +2261,150 @@
           "cost": 50,
           "blocks": [
             "Reg5v",
-            "Reg3.3v",
+            "Reg3v3",
             "USBPowerMicro"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Teensy32_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Teensy32_1.1",
+          "to": "1"
+        },
+        {
+          "from": "Teensy32_1.2",
+          "to": "2"
+        },
+        {
+          "from": "Teensy32_1.3",
+          "to": "3"
+        },
+        {
+          "from": "Teensy32_1.4",
+          "to": "4"
+        },
+        {
+          "from": "Teensy32_1.5",
+          "to": "5"
+        },
+        {
+          "from": "Teensy32_1.6",
+          "to": "6"
+        },
+        {
+          "from": "Teensy32_1.7",
+          "to": "7"
+        },
+        {
+          "from": "Teensy32_1.8",
+          "to": "8"
+        },
+        {
+          "from": "Teensy32_1.9",
+          "to": "9"
+        },
+        {
+          "from": "Teensy32_1.10",
+          "to": "10"
+        },
+        {
+          "from": "Teensy32_1.11",
+          "to": "11"
+        },
+        {
+          "from": "Teensy32_1.12",
+          "to": "12"
+        },
+        {
+          "from": "Teensy32_1.13",
+          "to": "13"
+        },
+        {
+          "from": "Teensy32_1.14",
+          "to": "14"
+        },
+        {
+          "from": "Teensy32_1.15",
+          "to": "15"
+        },
+        {
+          "from": "Teensy32_1.16",
+          "to": "16"
+        },
+        {
+          "from": "Teensy32_1.17",
+          "to": "17"
+        },
+        {
+          "from": "Teensy32_1.18",
+          "to": "18"
+        },
+        {
+          "from": "Teensy32_1.19",
+          "to": "19"
+        },
+        {
+          "from": "Teensy32_1.20",
+          "to": "20"
+        },
+        {
+          "from": "Teensy32_1.21",
+          "to": "21"
+        },
+        {
+          "from": "Teensy32_1.22",
+          "to": "22"
+        },
+        {
+          "from": "Teensy32_1.23",
+          "to": "23"
+        },
+        {
+          "from": "Teensy32_1.A10",
+          "to": "A10"
+        },
+        {
+          "from": "Teensy32_1.A11",
+          "to": "A11"
+        },
+        {
+          "from": "Teensy32_1.A14",
+          "to": "A14"
+        },
+        {
+          "from": "Teensy32_1.AREF",
+          "to": "AREF"
+        },
+        {
+          "from": "Teensy32_1.AGND",
+          "to": "AGND"
+        },
+        {
+          "from": "Teensy32_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "Teensy32_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "Teensy32_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "Teensy32_1.3.3v",
+          "to": "3.3v"
+        },
+        {
+          "from": "Teensy32_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 2
     },
     {
       "name": "Lipo3v7",
@@ -2121,7 +2413,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Teensy32_1",
           "part": "Teensy32"
         }
       ],
@@ -2129,7 +2421,6 @@
         {
           "name": "0",
           "interface": {
-            "codename": "0",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2160,13 +2451,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "1",
           "interface": {
-            "codename": 1,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2197,13 +2488,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2226,13 +2517,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2259,13 +2550,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2292,13 +2583,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2325,13 +2616,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2358,13 +2649,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2391,13 +2682,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2424,13 +2715,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2461,13 +2752,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2502,13 +2793,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2535,13 +2826,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2568,13 +2859,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2601,13 +2892,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "14",
           "interface": {
-            "codename": 14,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2638,13 +2929,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "15",
           "interface": {
-            "codename": 15,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2675,13 +2966,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "16",
           "interface": {
-            "codename": 16,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2712,13 +3003,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "17",
           "interface": {
-            "codename": 17,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2749,13 +3040,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "18",
           "interface": {
-            "codename": 18,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2790,13 +3081,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "19",
           "interface": {
-            "codename": 19,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2831,13 +3122,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "20",
           "interface": {
-            "codename": 20,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2868,13 +3159,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "21",
           "interface": {
-            "codename": 21,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2905,13 +3196,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "22",
           "interface": {
-            "codename": 22,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2946,13 +3237,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "23",
           "interface": {
-            "codename": 23,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -2987,37 +3278,37 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 10
+            "providesLoad": 10,
+            "portType": "provides"
           }
         },
         {
           "name": "A10",
           "interface": {
-            "codename": "A10",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A11",
           "interface": {
-            "codename": "A11",
             "provides": [
               {
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A14",
           "interface": {
-            "codename": "A14",
             "provides": [
               {
                 "spec": "ADC",
@@ -3027,7 +3318,8 @@
                 "spec": "DAC",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -3038,7 +3330,8 @@
                 "spec": "IORef",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -3049,7 +3342,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -3071,7 +3365,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -3082,7 +3377,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -3094,7 +3390,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 250
+            "providesLoad": 250,
+            "portType": "provides"
           }
         },
         {
@@ -3112,7 +3409,8 @@
                 "voltage": "3.7v"
               }
             ],
-            "requiresLoad": 40
+            "requiresLoad": 40,
+            "portType": "requires"
           }
         },
         {
@@ -3124,7 +3422,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 65536
+            "providesLoad": 65536,
+            "portType": "provides"
           }
         },
         {
@@ -3135,7 +3434,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -3146,11 +3446,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 3,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -3158,7 +3458,146 @@
             "USBPowerMicro"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Teensy32_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Teensy32_1.1",
+          "to": "1"
+        },
+        {
+          "from": "Teensy32_1.2",
+          "to": "2"
+        },
+        {
+          "from": "Teensy32_1.3",
+          "to": "3"
+        },
+        {
+          "from": "Teensy32_1.4",
+          "to": "4"
+        },
+        {
+          "from": "Teensy32_1.5",
+          "to": "5"
+        },
+        {
+          "from": "Teensy32_1.6",
+          "to": "6"
+        },
+        {
+          "from": "Teensy32_1.7",
+          "to": "7"
+        },
+        {
+          "from": "Teensy32_1.8",
+          "to": "8"
+        },
+        {
+          "from": "Teensy32_1.9",
+          "to": "9"
+        },
+        {
+          "from": "Teensy32_1.10",
+          "to": "10"
+        },
+        {
+          "from": "Teensy32_1.11",
+          "to": "11"
+        },
+        {
+          "from": "Teensy32_1.12",
+          "to": "12"
+        },
+        {
+          "from": "Teensy32_1.13",
+          "to": "13"
+        },
+        {
+          "from": "Teensy32_1.14",
+          "to": "14"
+        },
+        {
+          "from": "Teensy32_1.15",
+          "to": "15"
+        },
+        {
+          "from": "Teensy32_1.16",
+          "to": "16"
+        },
+        {
+          "from": "Teensy32_1.17",
+          "to": "17"
+        },
+        {
+          "from": "Teensy32_1.18",
+          "to": "18"
+        },
+        {
+          "from": "Teensy32_1.19",
+          "to": "19"
+        },
+        {
+          "from": "Teensy32_1.20",
+          "to": "20"
+        },
+        {
+          "from": "Teensy32_1.21",
+          "to": "21"
+        },
+        {
+          "from": "Teensy32_1.22",
+          "to": "22"
+        },
+        {
+          "from": "Teensy32_1.23",
+          "to": "23"
+        },
+        {
+          "from": "Teensy32_1.A10",
+          "to": "A10"
+        },
+        {
+          "from": "Teensy32_1.A11",
+          "to": "A11"
+        },
+        {
+          "from": "Teensy32_1.A14",
+          "to": "A14"
+        },
+        {
+          "from": "Teensy32_1.AREF",
+          "to": "AREF"
+        },
+        {
+          "from": "Teensy32_1.AGND",
+          "to": "AGND"
+        },
+        {
+          "from": "Teensy32_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "Teensy32_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "Teensy32_1.3.3v",
+          "to": "3.3v"
+        },
+        {
+          "from": "Teensy32_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "Teensy32_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 3
     }
   ]
 }

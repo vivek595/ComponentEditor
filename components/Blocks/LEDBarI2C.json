@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ixdt6v6pf39ygvwohqwj",
     "numericName": "",
     "shortName": "LED Bar I2C",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This is a Bi-Color 24-Bar Bargraph that allows you to control the color of each one of the 24 LEDs over I2C. It is called 'Bi-Color' but actually can display three different colors Red, Green and Yellow.</p>",
@@ -38,9 +34,8 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LEDBarI2C",
-          "rotation": 180
+          "name": "LEDBarI2C_1",
+          "part": "LEDBarI2C"
         }
       ],
       "ports": [
@@ -53,7 +48,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -65,7 +61,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -77,7 +74,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -89,11 +87,30 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "LEDBarI2C_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LEDBarI2C_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LEDBarI2C_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "LEDBarI2C_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -109,9 +126,8 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LEDBarI2C",
-          "rotation": 180
+          "name": "LEDBarI2C_1",
+          "part": "LEDBarI2C"
         }
       ],
       "ports": [
@@ -124,7 +140,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -136,7 +153,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -148,7 +166,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -160,11 +179,30 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "LEDBarI2C_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LEDBarI2C_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LEDBarI2C_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "LEDBarI2C_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

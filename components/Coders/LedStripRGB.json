@@ -23,11 +23,6 @@
   "license": "circuito",
   "instantiate": {
     "classname": "RGBLed",
-    "ports": [
-      "SigR",
-      "SigG",
-      "SigB"
-    ],
     "varname": "LedStripRGB"
   },
   "files": [
@@ -35,5 +30,7 @@
     "RGBLed.h",
     "RGBLed_license.txt"
   ],
-  "includeHeaders": []
+  "includeHeaders": [
+    "RGBLed.h"
+  ]
 }

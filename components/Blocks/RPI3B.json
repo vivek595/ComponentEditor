@@ -1,7 +1,7 @@
 {
   "name": "RPI3B",
   "category": [
-    "controller"
+    "controller", "connectivity"
   ],
   "blockId": "200000",
   "app": {
@@ -9,28 +9,13 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/qocb8ymquqhzrtm7hjoe",
     "numericName": "",
     "shortName": "Raspberry Pi 3",
-    "tags": [
-      "connectivity",
-      "controller"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>Raspberry Pi 3 model B</p>",
     "visible": true
   },
-  "requiresExpansion": [
-    [
-      0,
-      "NONE"
-    ],
-    [
-      10,
-      "MCP3008"
-    ]
-  ],
   "circuits": [
     {
       "name": "USB",
@@ -42,7 +27,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RPI3B_1",
           "part": "RPI3B"
         }
       ],
@@ -56,7 +41,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 500
+            "providesLoad": 500,
+            "portType": "provides"
           }
         },
         {
@@ -68,19 +54,20 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 1500
+            "providesLoad": 1500,
+            "portType": "provides"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": "2",
             "provides": [
               {
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -92,19 +79,20 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 1500
+            "providesLoad": 1500,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": "3",
             "provides": [
               {
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -115,13 +103,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": "4",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -135,19 +123,20 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "14",
           "interface": {
-            "codename": "14",
             "provides": [
               {
                 "spec": "TX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -158,25 +147,25 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "15",
           "interface": {
-            "codename": "15",
             "provides": [
               {
                 "spec": "RX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "17",
           "interface": {
-            "codename": "17",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -190,13 +179,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "18",
           "interface": {
-            "codename": "18",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -214,13 +203,13 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "27",
           "interface": {
-            "codename": "27",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -234,7 +223,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -245,13 +235,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "22",
           "interface": {
-            "codename": "22",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -265,13 +255,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "23",
           "interface": {
-            "codename": "23",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -285,7 +275,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -297,13 +288,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 500
+            "providesLoad": 500,
+            "portType": "provides"
           }
         },
         {
           "name": "24",
           "interface": {
-            "codename": "24",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -317,13 +308,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": "10",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -341,7 +332,8 @@
                 "spec": "MOSI",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -352,13 +344,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": "9",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -376,13 +368,13 @@
                 "spec": "MISO",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "25",
           "interface": {
-            "codename": "25",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -396,13 +388,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": "11",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -420,13 +412,13 @@
                 "spec": "SCK",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": "8",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -444,7 +436,8 @@
                 "spec": "SS",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -455,13 +448,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": "7",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -475,13 +468,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "0",
           "interface": {
-            "codename": "0",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -495,13 +488,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "1",
           "interface": {
-            "codename": "1",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -515,13 +508,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": "5",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -535,7 +528,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -546,13 +540,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": "6",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -566,13 +560,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": "12",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -590,13 +584,13 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": "13",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -614,7 +608,8 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -625,13 +620,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "19",
           "interface": {
-            "codename": "19",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -649,13 +644,13 @@
                 "spec": "MISO1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "16",
           "interface": {
-            "codename": "16",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -669,13 +664,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "26",
           "interface": {
-            "codename": "26",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -689,13 +684,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "20",
           "interface": {
-            "codename": "20",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -713,7 +708,8 @@
                 "spec": "MOSI1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -724,13 +720,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "21",
           "interface": {
-            "codename": "21",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -748,7 +744,8 @@
                 "spec": "SCK1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -760,7 +757,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 1000000
+            "providesLoad": 1000000,
+            "portType": "provides"
           }
         },
         {
@@ -771,7 +769,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -784,7 +783,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 50
+            "requiresLoad": 50,
+            "portType": "requires"
           }
         },
         {
@@ -796,19 +796,199 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0,
       "requiredBlocks": [
         {
           "cost": 1,
           "blocks": [
             "PowerSupply12vExt"
           ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "MCP3008"
+          ]
+        },
+        {
+          "cost": 11,
+          "blocks": [
+            "PowerSupply12vExt",
+            "MCP3008"
+          ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RPI3B_1.3v3",
+          "to": "3v3"
+        },
+        {
+          "from": "RPI3B_1.5v",
+          "to": "5v"
+        },
+        {
+          "from": "RPI3B_1.2",
+          "to": "2"
+        },
+        {
+          "from": "RPI3B_1.5v_1",
+          "to": "5v_1"
+        },
+        {
+          "from": "RPI3B_1.3",
+          "to": "3"
+        },
+        {
+          "from": "RPI3B_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RPI3B_1.4",
+          "to": "4"
+        },
+        {
+          "from": "RPI3B_1.14",
+          "to": "14"
+        },
+        {
+          "from": "RPI3B_1.GND_1",
+          "to": "GND_1"
+        },
+        {
+          "from": "RPI3B_1.15",
+          "to": "15"
+        },
+        {
+          "from": "RPI3B_1.17",
+          "to": "17"
+        },
+        {
+          "from": "RPI3B_1.18",
+          "to": "18"
+        },
+        {
+          "from": "RPI3B_1.27",
+          "to": "27"
+        },
+        {
+          "from": "RPI3B_1.GND_2",
+          "to": "GND_2"
+        },
+        {
+          "from": "RPI3B_1.22",
+          "to": "22"
+        },
+        {
+          "from": "RPI3B_1.23",
+          "to": "23"
+        },
+        {
+          "from": "RPI3B_1.3v3_1",
+          "to": "3v3_1"
+        },
+        {
+          "from": "RPI3B_1.24",
+          "to": "24"
+        },
+        {
+          "from": "RPI3B_1.10",
+          "to": "10"
+        },
+        {
+          "from": "RPI3B_1.GND_3",
+          "to": "GND_3"
+        },
+        {
+          "from": "RPI3B_1.9",
+          "to": "9"
+        },
+        {
+          "from": "RPI3B_1.25",
+          "to": "25"
+        },
+        {
+          "from": "RPI3B_1.11",
+          "to": "11"
+        },
+        {
+          "from": "RPI3B_1.8",
+          "to": "8"
+        },
+        {
+          "from": "RPI3B_1.GND_4",
+          "to": "GND_4"
+        },
+        {
+          "from": "RPI3B_1.7",
+          "to": "7"
+        },
+        {
+          "from": "RPI3B_1.0",
+          "to": "0"
+        },
+        {
+          "from": "RPI3B_1.1",
+          "to": "1"
+        },
+        {
+          "from": "RPI3B_1.5",
+          "to": "5"
+        },
+        {
+          "from": "RPI3B_1.GND_5",
+          "to": "GND_5"
+        },
+        {
+          "from": "RPI3B_1.6",
+          "to": "6"
+        },
+        {
+          "from": "RPI3B_1.12",
+          "to": "12"
+        },
+        {
+          "from": "RPI3B_1.13",
+          "to": "13"
+        },
+        {
+          "from": "RPI3B_1.GND_6",
+          "to": "GND_6"
+        },
+        {
+          "from": "RPI3B_1.19",
+          "to": "19"
+        },
+        {
+          "from": "RPI3B_1.16",
+          "to": "16"
+        },
+        {
+          "from": "RPI3B_1.26",
+          "to": "26"
+        },
+        {
+          "from": "RPI3B_1.20",
+          "to": "20"
+        },
+        {
+          "from": "RPI3B_1.GND_7",
+          "to": "GND_7"
+        },
+        {
+          "from": "RPI3B_1.21",
+          "to": "21"
+        },
+        {
+          "from": "RPI3B_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "Ext",
@@ -820,7 +1000,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RPI3B_1",
           "part": "RPI3B"
         }
       ],
@@ -834,7 +1014,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 500
+            "providesLoad": 500,
+            "portType": "provides"
           }
         },
         {
@@ -846,19 +1027,20 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": "2",
             "provides": [
               {
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -870,19 +1052,20 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 1500
+            "providesLoad": 1500,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": "3",
             "provides": [
               {
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -893,13 +1076,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": "4",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -913,19 +1096,20 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "14",
           "interface": {
-            "codename": "14",
             "provides": [
               {
                 "spec": "TX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -936,25 +1120,25 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "15",
           "interface": {
-            "codename": "15",
             "provides": [
               {
                 "spec": "RX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "17",
           "interface": {
-            "codename": "17",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -968,13 +1152,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "18",
           "interface": {
-            "codename": "18",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -992,13 +1176,13 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "27",
           "interface": {
-            "codename": "27",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1012,7 +1196,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1023,13 +1208,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "22",
           "interface": {
-            "codename": "22",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1043,13 +1228,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "23",
           "interface": {
-            "codename": "23",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1063,7 +1248,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1075,13 +1261,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 500
+            "providesLoad": 500,
+            "portType": "provides"
           }
         },
         {
           "name": "24",
           "interface": {
-            "codename": "24",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1095,13 +1281,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": "10",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1119,7 +1305,8 @@
                 "spec": "MOSI",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1130,13 +1317,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": "9",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1154,13 +1341,13 @@
                 "spec": "MISO",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "25",
           "interface": {
-            "codename": "25",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1174,13 +1361,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": "11",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1198,13 +1385,13 @@
                 "spec": "SCK",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": "8",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1222,7 +1409,8 @@
                 "spec": "SS",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1233,13 +1421,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": "7",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1253,13 +1441,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "0",
           "interface": {
-            "codename": "0",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1273,13 +1461,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "1",
           "interface": {
-            "codename": "1",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1293,13 +1481,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": "5",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1313,7 +1501,8 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1324,13 +1513,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": "6",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1344,13 +1533,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": "12",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1368,13 +1557,13 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": "13",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1392,7 +1581,8 @@
                 "spec": "PWM",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1403,13 +1593,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "19",
           "interface": {
-            "codename": "19",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1427,13 +1617,13 @@
                 "spec": "MISO1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "16",
           "interface": {
-            "codename": "16",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1447,13 +1637,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "26",
           "interface": {
-            "codename": "26",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1467,13 +1657,13 @@
                 "spec": "DigitalOut",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "20",
           "interface": {
-            "codename": "20",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1491,7 +1681,8 @@
                 "spec": "MOSI1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1502,13 +1693,13 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "21",
           "interface": {
-            "codename": "21",
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1526,7 +1717,8 @@
                 "spec": "SCK1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1538,7 +1730,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 1000000
+            "providesLoad": 1000000,
+            "portType": "provides"
           }
         },
         {
@@ -1549,11 +1742,11 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 1,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -1566,8 +1759,189 @@
           "blocks": [
             "StepUp5v"
           ]
+        },
+        {
+          "cost": 0,
+          "blocks": [
+            "Reg5v",
+            "MCP3008"
+          ]
+        },
+        {
+          "cost": 1,
+          "blocks": [
+            "StepUp5v",
+            "MCP3008"
+          ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RPI3B_1.3v3",
+          "to": "3v3"
+        },
+        {
+          "from": "RPI3B_1.5v",
+          "to": "5v"
+        },
+        {
+          "from": "RPI3B_1.2",
+          "to": "2"
+        },
+        {
+          "from": "RPI3B_1.5v_1",
+          "to": "5v_1"
+        },
+        {
+          "from": "RPI3B_1.3",
+          "to": "3"
+        },
+        {
+          "from": "RPI3B_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RPI3B_1.4",
+          "to": "4"
+        },
+        {
+          "from": "RPI3B_1.14",
+          "to": "14"
+        },
+        {
+          "from": "RPI3B_1.GND_1",
+          "to": "GND_1"
+        },
+        {
+          "from": "RPI3B_1.15",
+          "to": "15"
+        },
+        {
+          "from": "RPI3B_1.17",
+          "to": "17"
+        },
+        {
+          "from": "RPI3B_1.18",
+          "to": "18"
+        },
+        {
+          "from": "RPI3B_1.27",
+          "to": "27"
+        },
+        {
+          "from": "RPI3B_1.GND_2",
+          "to": "GND_2"
+        },
+        {
+          "from": "RPI3B_1.22",
+          "to": "22"
+        },
+        {
+          "from": "RPI3B_1.23",
+          "to": "23"
+        },
+        {
+          "from": "RPI3B_1.3v3_1",
+          "to": "3v3_1"
+        },
+        {
+          "from": "RPI3B_1.24",
+          "to": "24"
+        },
+        {
+          "from": "RPI3B_1.10",
+          "to": "10"
+        },
+        {
+          "from": "RPI3B_1.GND_3",
+          "to": "GND_3"
+        },
+        {
+          "from": "RPI3B_1.9",
+          "to": "9"
+        },
+        {
+          "from": "RPI3B_1.25",
+          "to": "25"
+        },
+        {
+          "from": "RPI3B_1.11",
+          "to": "11"
+        },
+        {
+          "from": "RPI3B_1.8",
+          "to": "8"
+        },
+        {
+          "from": "RPI3B_1.GND_4",
+          "to": "GND_4"
+        },
+        {
+          "from": "RPI3B_1.7",
+          "to": "7"
+        },
+        {
+          "from": "RPI3B_1.0",
+          "to": "0"
+        },
+        {
+          "from": "RPI3B_1.1",
+          "to": "1"
+        },
+        {
+          "from": "RPI3B_1.5",
+          "to": "5"
+        },
+        {
+          "from": "RPI3B_1.GND_5",
+          "to": "GND_5"
+        },
+        {
+          "from": "RPI3B_1.6",
+          "to": "6"
+        },
+        {
+          "from": "RPI3B_1.12",
+          "to": "12"
+        },
+        {
+          "from": "RPI3B_1.13",
+          "to": "13"
+        },
+        {
+          "from": "RPI3B_1.GND_6",
+          "to": "GND_6"
+        },
+        {
+          "from": "RPI3B_1.19",
+          "to": "19"
+        },
+        {
+          "from": "RPI3B_1.16",
+          "to": "16"
+        },
+        {
+          "from": "RPI3B_1.26",
+          "to": "26"
+        },
+        {
+          "from": "RPI3B_1.20",
+          "to": "20"
+        },
+        {
+          "from": "RPI3B_1.GND_7",
+          "to": "GND_7"
+        },
+        {
+          "from": "RPI3B_1.21",
+          "to": "21"
+        },
+        {
+          "from": "RPI3B_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

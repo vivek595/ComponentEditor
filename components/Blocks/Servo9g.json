@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/joo2scbbkokxdfyt8em9",
     "numericName": "",
     "shortName": "9G Micro Servo",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This is a very simple &amp; small servo, weight only 9g. You can use to rotate an object, or move a robotic arm.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Flying-Manatee/\">Flying Manatee</a>.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Servo9g_1",
           "part": "Servo9g"
         }
       ],
@@ -58,7 +54,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,8 +73,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -99,7 +98,8 @@
                 "voltage": "6v"
               }
             ],
-            "requiresLoad": 300
+            "requiresLoad": 300,
+            "portType": "requires"
           }
         }
       ],
@@ -110,7 +110,22 @@
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Servo9g_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Servo9g_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Servo9g_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

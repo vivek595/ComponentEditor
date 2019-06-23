@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/nyahhxtttzomt0misg9z",
     "numericName": "HMC5883L",
     "shortName": "Magnetometer",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Low-field magnetic sensing over digital interface for applications such as lowcost compassing and magnetometry.</p>\n<p><strong>Returned Values</strong>: Three axis heading via I2C bus.</p>\n<p><strong>Requires</strong>: soldering 5 pin male header</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HMC5883L_1",
           "part": "HMC5883L"
         }
       ],
@@ -64,7 +60,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +73,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,7 +86,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -106,10 +105,30 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "HMC5883L_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "HMC5883L_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "HMC5883L_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HMC5883L_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

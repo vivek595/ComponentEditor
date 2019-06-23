@@ -23,16 +23,14 @@
   "license": "circuito",
   "instantiate": {
     "classname": "RGBLed",
-    "ports": [
-      "r",
-      "g",
-      "b"
-    ],
     "varname": "rgbLed"
   },
   "files": [
     "RGBLed.cpp",
     "RGBLed.h",
     "RGBLed_license.txt"
+  ],
+  "includeHeaders": [
+    "RGBLed.h"
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/cykutafc4v7y0hutdi50",
     "numericName": "DS3231",
     "shortName": "Real Time Clock",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Keep track of the current year, month, day as well as the current time.</p>\n<p><strong>Returned Value</strong>: Returns the time and date.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://edwardmallon.wordpress.com/2015/12/22/arduino-uno-based-data-logger-with-no-soldering/\">Data Logger</a></p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RTC_1",
           "part": "RTC"
         }
       ],
@@ -64,7 +60,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +73,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,7 +86,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -106,10 +105,30 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RTC_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "RTC_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RTC_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "RTC_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

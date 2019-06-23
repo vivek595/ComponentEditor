@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/rmcdu0fpz260w46ydy28",
     "numericName": "TMP102",
     "shortName": "Digital Temperature Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A breakout board for the TMP102 temperature sensor - a digital sensor, ideal for projects where high accuracy is required.<br><strong>Returned Values</strong>: from -25\u00b0C to +85\u00b0C, with an accuracy of 0.5\u00b0C.(Can also return Fahrenheit).<br><strong>Requires</strong>: Soldering of 6 male pins to fit onto a breadboard.<br><strong>Sample applications</strong>: (1) Measure and show temperature on a screen, (2) If temperature is higher than a certain threshold, turn on a fan.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "TMP102_1",
           "part": "TMP102"
         }
       ],
@@ -58,7 +54,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -70,7 +67,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,7 +86,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -100,7 +99,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -118,7 +118,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -131,10 +132,34 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 176
+            "requiresLoad": 176,
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "TMP102_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "TMP102_1.ADD0",
+          "to": "ADD0"
+        },
+        {
+          "from": "TMP102_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "TMP102_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "TMP102_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

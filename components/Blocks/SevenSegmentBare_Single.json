@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/jhyprl4hns2hdufcnbqp",
     "numericName": "",
     "shortName": "7-Segment",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A common-cathode Seven Segment display It feature one 7-segment digit and one decimal point. The LEDs have a forward voltage of 1.9VDC and a max forward current of 20mA.</p>",
@@ -43,22 +39,54 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "SevenSegmentBare_Single_1",
           "part": "SevenSegmentBare_Single"
         },
         {
-          "name": "r1",
+          "name": "Res220O_1",
           "part": "Res220O"
         }
       ],
       "wires": [
         {
-          "from": "this.Com",
-          "to": "r1.con0"
+          "from": "SevenSegmentBare_Single_1.Com",
+          "to": "Res220O_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res220O_1.con1",
           "to": "Common"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.DP",
+          "to": "DP"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.C",
+          "to": "C"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.D",
+          "to": "D"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.E",
+          "to": "E"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.B",
+          "to": "B"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.A",
+          "to": "A"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.F",
+          "to": "F"
+        },
+        {
+          "from": "SevenSegmentBare_Single_1.G",
+          "to": "G"
         }
       ],
       "ports": [
@@ -77,8 +105,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "C",
@@ -95,8 +125,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Common",
@@ -107,7 +139,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -125,8 +158,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "E",
@@ -143,8 +178,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "B",
@@ -161,8 +198,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "A",
@@ -179,8 +218,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "F",
@@ -197,8 +238,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "G",
@@ -215,10 +258,13 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

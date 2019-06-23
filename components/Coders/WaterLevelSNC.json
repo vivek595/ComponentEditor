@@ -12,20 +12,17 @@
     "ESP32DevKitC",
     "NodeMCU",
     "RPI3B",
-    "Teensy32",
     "ATTiny85",
     "Teensy32"
   ],
   "code": {
     "setup": "{{varname}}.init();\n",
-    "snippetCode": "//read Water Level Sensor state. \n//If the Water Level Sensor detects the liquid level, it will output HIGH (1) and turn the LED ON. \n//If no liquid is detected it output LOW (0) and turn the LED off.. \nbool {{varname}}Val = {{varname}}.read();\nSerial.print(F(\"Val: \")); Serial.println({{varname}}Val);\n"
+    "snippetCode": "//read Water Level Sensor state. \n//If the Water Level Sensor detects the liquid level, it will output HIGH (1) and turn the LED ON. \n//If no liquid is detected it output LOW (0) and turn the LED off.. \nbool {{varname}}Val = {{varname}}.read();\nSerial.print(F(\"Val: \")); Serial.println({{varname}}Val);\n",
+    "constructors": "{{classname}} {{varname}}({{SIG}});"
   },
   "license": "circuito",
   "instantiate": {
     "classname": "Button",
-    "ports": [
-      "SIG"
-    ],
     "varname": "WaterLevelSensor"
   },
   "files": [
@@ -33,5 +30,7 @@
     "Button.cpp",
     "Button_license.txt"
   ],
-  "includeHeaders": []
+  "includeHeaders": [
+    "Button.h"
+  ]
 }

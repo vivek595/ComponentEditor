@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/xod5e8xvhphbbt1rtwio",
     "numericName": "",
     "shortName": "Continuous Rotation Servo",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>simple, high quality continuous rotation servo motor. This servo is able to take in 6 volts and deliver 30.6 oz-in. of maximum torque at 0.14 sec/60\u00b0</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Servo360_1",
           "part": "Servo360"
         }
       ],
@@ -58,7 +54,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,8 +73,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -94,7 +93,8 @@
                 "voltage": "6v"
               }
             ],
-            "requiresLoad": 500
+            "requiresLoad": 500,
+            "portType": "requires"
           }
         }
       ],
@@ -105,7 +105,22 @@
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Servo360_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Servo360_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Servo360_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

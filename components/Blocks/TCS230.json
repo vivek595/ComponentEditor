@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/mb6dahzjphzyem8jr7mz",
     "numericName": "TCS230",
     "shortName": "RGB Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>Color Recognition Sensor RGB Detector Module allows you to detect the color in its surrounding.</p>",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "TCS230_1",
           "part": "TCS230"
         }
       ],
@@ -62,8 +58,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "S0",
@@ -80,8 +78,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "S3",
@@ -98,8 +98,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "S2",
@@ -116,8 +118,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Out",
@@ -134,8 +138,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Gnd",
@@ -146,7 +152,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -163,10 +170,42 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "TCS230_1.S1",
+          "to": "S1"
+        },
+        {
+          "from": "TCS230_1.S0",
+          "to": "S0"
+        },
+        {
+          "from": "TCS230_1.S3",
+          "to": "S3"
+        },
+        {
+          "from": "TCS230_1.S2",
+          "to": "S2"
+        },
+        {
+          "from": "TCS230_1.Out",
+          "to": "Out"
+        },
+        {
+          "from": "TCS230_1.Gnd",
+          "to": "Gnd"
+        },
+        {
+          "from": "TCS230_1.Vcc",
+          "to": "Vcc"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

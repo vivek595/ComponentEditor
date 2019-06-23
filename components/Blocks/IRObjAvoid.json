@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/nkztjsx6h9uq7rezdabf",
     "numericName": "",
     "shortName": "IR Obstacle Avoidance Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This sensor can detect the presence of an obstacle in front of it.<br>The discovery distance can be adjusted using the on board trimmer.<br><strong>Returned values</strong>: digital '1' or '0'.<br></p>\n",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRObjAvoid_1",
           "part": "IRObjAvoid"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -65,7 +62,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,11 +76,27 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "IRObjAvoid_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRObjAvoid_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "IRObjAvoid_1.OUT",
+          "to": "OUT"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,34 +114,42 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRObjAvoid_1",
           "part": "IRObjAvoid"
         },
         {
-          "name": "r1",
+          "name": "Res470O_1",
           "part": "Res470O"
         },
         {
-          "name": "r2",
+          "name": "Res1KO_1",
           "part": "Res1KO"
         }
       ],
       "wires": [
         {
-          "from": "this.GND",
-          "to": "r2.con1"
+          "from": "IRObjAvoid_1.GND",
+          "to": "Res1KO_1.con1"
         },
         {
-          "from": "r2.con0",
-          "to": "r1.con1"
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
         },
         {
-          "from": "this.OUT",
-          "to": "r1.con0"
+          "from": "IRObjAvoid_1.OUT",
+          "to": "Res470O_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res470O_1.con1",
           "to": "out"
+        },
+        {
+          "from": "IRObjAvoid_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRObjAvoid_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -140,7 +162,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -152,7 +175,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -165,11 +189,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

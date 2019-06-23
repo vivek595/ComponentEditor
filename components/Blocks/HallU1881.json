@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/u8ph3z6jtqarmdcdqjpy",
     "numericName": "U1881",
     "shortName": "Hall Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Hall effect latched sensor. Holding alternating magnet poles near the sensor will cause the output pin to toggle.</p>\n<p><strong>Returned Values</strong>: The output pin will toggle from digital &#39;1&#39; and &#39;0&#39;.</p>\n",
@@ -39,22 +35,34 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HallU1881_1",
           "part": "HallU1881"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.Vout",
-          "to": "r1.con1"
+          "from": "HallU1881_1.Vout",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "this.Vcc",
-          "to": "r1.con0"
+          "from": "HallU1881_1.Vcc",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "HallU1881_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallU1881_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallU1881_1.Gnd",
+          "to": "Gnd"
         }
       ],
       "ports": [
@@ -68,8 +76,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vcc",
@@ -80,7 +90,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -92,11 +103,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -114,22 +126,34 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HallU1881_1",
           "part": "HallU1881"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.Vout",
-          "to": "r1.con1"
+          "from": "HallU1881_1.Vout",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "this.Vcc",
-          "to": "r1.con0"
+          "from": "HallU1881_1.Vcc",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "HallU1881_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallU1881_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallU1881_1.Gnd",
+          "to": "Gnd"
         }
       ],
       "ports": [
@@ -143,8 +167,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vcc",
@@ -155,7 +181,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -167,11 +194,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

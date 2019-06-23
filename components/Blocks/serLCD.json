@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/aj4swuo96afhqonnpynq",
     "numericName": "",
     "shortName": "Serial Enabled 16x2 LCD",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A small LCD screen, allowing the display of short message or simple drawings.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/DIY-Nespresso-Capsule-Detector/\">DIY Nespresso Capsule Detector</a>.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "serLCD_1",
           "part": "serLCD"
         }
       ],
@@ -58,7 +54,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -70,7 +67,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -83,7 +81,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 165
+            "requiresLoad": 165,
+            "portType": "requires"
           }
         },
         {
@@ -111,10 +110,27 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "serLCD_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "serLCD_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "serLCD_1.RX",
+          "to": "RX"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

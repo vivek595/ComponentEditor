@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/p1vtfjt0catebrkviubs",
     "numericName": "",
     "shortName": "Surface Transducer",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>Use this surface transducer to turn almost any surface into a speaker</p>",
@@ -44,9 +40,8 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "SurfaceTransducer",
-          "rotation": 90
+          "name": "SurfaceTransducer_1",
+          "part": "SurfaceTransducer"
         }
       ],
       "ports": [
@@ -65,8 +60,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "neg",
@@ -77,10 +74,22 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "SurfaceTransducer_1.pos",
+          "to": "pos"
+        },
+        {
+          "from": "SurfaceTransducer_1.neg",
+          "to": "neg"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

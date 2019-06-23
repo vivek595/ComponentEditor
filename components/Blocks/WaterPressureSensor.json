@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/dcpnxc1spww3ulupxdse",
     "numericName": "",
     "shortName": "Water Pressure Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>This water pressure sensor can detect presence of water and how strong the water pressure is.</p>",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "WaterPressureSensor_1",
           "part": "WaterPressureSensor"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -66,8 +63,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -78,11 +77,26 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "WaterPressureSensor_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "WaterPressureSensor_1.SIG",
+          "to": "SIG"
+        },
+        {
+          "from": "WaterPressureSensor_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "WaterPressureSensor_1",
           "part": "WaterPressureSensor"
         }
       ],
@@ -114,7 +128,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -127,8 +142,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "WaterPressureSensor_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "WaterPressureSensor_1.SIG",
+          "to": "SIG"
+        },
+        {
+          "from": "WaterPressureSensor_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

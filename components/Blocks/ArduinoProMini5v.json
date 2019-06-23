@@ -9,21 +9,17 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/lfmpzli1mnzqqaxclwkn",
     "numericName": "",
     "shortName": "Arduino Pro Mini 5V",
-    "tags": [
-      "controller"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
-    "desc": "<p>This board was developed for applications and installations where space is premium and projects are made as permanent set ups.<br>The Arduino Pro Mini is a microcontroller board based on the ATmega328. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, an on-board resonator, a reset button, and holes for mounting pin headers.<br>A six pin header can be connected to an FTDI cable or Sparkfun breakout board to provide USB power and communication to the board. The Arduino Pro Mini is intended for semi-permanent installation in objects or exhibitions.<br>The board comes without pre-mounted headers, allowing the use of various types of connectors or direct soldering of wires. The pin layout is compatible with the Arduino Mini.<br>There are two version of the Pro Mini. One runs at 3.3V and 8 MHz, the other at 5V and 16 MHz. Circuito.io supports the 5V version.<br>The Arduino Pro Mini was designed and is manufactured by SparkFun Electronics - <a target=\"_blank\" href=\"https://www.arduino.cc/en/Main/ArduinoBoardProMini\">More Info</a>.</p>\n<p>This text is provided under the <strong>Creative Commons Attribution ShareAlike 3.0</strong></p>\n",
+    "desc": "<p>This board was developed for applications and installations where space is premium and projects are made as permanent set ups.<br>The Arduino Pro Mini is a microcontroller board based on the ATmega328. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, an on-board resonator, a reset button, and holes for mounting pin headers.<br>A six pin header can be connected to an FTDI cable or Sparkfun breakout board to provide USB power and communication to the board. The Arduino Pro Mini is intended for semi-permanent installation in objects or exhibitions.<br>The board comes without pre-mounted headers, allowing the use of various types of connectors or direct soldering of wires. The pin layout is compatible with the Arduino Mini.<br>There are two version of the Pro Mini. One runs at 3.3V and 8 MHz, the other at 5V and 16 MHz.<br>The Arduino Pro Mini was designed and is manufactured by SparkFun Electronics - <a target=\"_blank\" href=\"https://www.arduino.cc/en/Main/ArduinoBoardProMini\">More Info</a>.</p>\n<p>This text is provided under the <strong>Creative Commons Attribution ShareAlike 3.0</strong></p>\n",
     "visible": true
   },
-  "altComp": [
-    1000,
-    "ArduinoMicro"
-  ],
+  "altComp": {
+    "cost": 1000,
+    "block": "ArduinoMicro"
+  },
   "circuits": [
     {
       "name": "USB",
@@ -32,7 +28,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoProMini5v_1",
           "part": "ArduinoProMini5v"
         }
       ],
@@ -40,7 +36,6 @@
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -63,13 +58,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -100,13 +95,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -121,13 +116,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -146,13 +141,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -171,13 +166,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -192,13 +187,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -213,13 +208,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -242,13 +237,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -271,13 +266,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -296,13 +291,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -321,7 +316,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -332,7 +328,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -343,7 +340,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -355,7 +353,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -366,13 +365,13 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -391,7 +390,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -403,13 +403,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 2048
+            "providesLoad": 2048,
+            "portType": "provides"
           }
         },
         {
           "name": "A0",
           "interface": {
-            "codename": "A0",
             "provides": [
               {
                 "spec": "ADC",
@@ -423,13 +423,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A1",
           "interface": {
-            "codename": "A1",
             "provides": [
               {
                 "spec": "ADC",
@@ -443,13 +443,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A2",
           "interface": {
-            "codename": "A2",
             "provides": [
               {
                 "spec": "ADC",
@@ -463,13 +463,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A3",
           "interface": {
-            "codename": "A3",
             "provides": [
               {
                 "spec": "ADC",
@@ -483,13 +483,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A4",
           "interface": {
-            "codename": "A4",
             "provides": [
               {
                 "spec": "ADC",
@@ -507,13 +507,13 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A5",
           "interface": {
-            "codename": "A5",
             "provides": [
               {
                 "spec": "ADC",
@@ -531,7 +531,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -544,7 +545,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 50
+            "requiresLoad": 50,
+            "portType": "requires"
           }
         },
         {
@@ -556,7 +558,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -567,19 +570,110 @@
                 "spec": "FTDI",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 0,
       "requiredBlocks": [
         {
           "cost": 50,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoProMini5v_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ArduinoProMini5v_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ArduinoProMini5v_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ArduinoProMini5v_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ArduinoProMini5v_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ArduinoProMini5v_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ArduinoProMini5v_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ArduinoProMini5v_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ArduinoProMini5v_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ArduinoProMini5v_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ArduinoProMini5v_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ArduinoProMini5v_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoProMini5v_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "ArduinoProMini5v_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ArduinoProMini5v_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A5",
+          "to": "A5"
+        },
+        {
+          "from": "ArduinoProMini5v_1.FTDI",
+          "to": "FTDI"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "EXT",
@@ -588,7 +682,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoProMini5v_1",
           "part": "ArduinoProMini5v"
         }
       ],
@@ -596,7 +690,6 @@
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -619,13 +712,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -656,13 +749,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -677,13 +770,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -702,13 +795,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -727,13 +820,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -748,13 +841,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -769,13 +862,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -798,13 +891,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -827,13 +920,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -852,13 +945,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -877,7 +970,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -915,7 +1009,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 50
+            "requiresLoad": 50,
+            "portType": "requires"
           }
         },
         {
@@ -937,7 +1032,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -948,7 +1044,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -960,7 +1057,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -971,13 +1069,13 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -996,7 +1094,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -1008,13 +1107,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 2048
+            "providesLoad": 2048,
+            "portType": "provides"
           }
         },
         {
           "name": "A0",
           "interface": {
-            "codename": "A0",
             "provides": [
               {
                 "spec": "ADC",
@@ -1028,13 +1127,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A1",
           "interface": {
-            "codename": "A1",
             "provides": [
               {
                 "spec": "ADC",
@@ -1048,13 +1147,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A2",
           "interface": {
-            "codename": "A2",
             "provides": [
               {
                 "spec": "ADC",
@@ -1068,13 +1167,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A3",
           "interface": {
-            "codename": "A3",
             "provides": [
               {
                 "spec": "ADC",
@@ -1088,13 +1187,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A4",
           "interface": {
-            "codename": "A4",
             "provides": [
               {
                 "spec": "ADC",
@@ -1112,13 +1211,13 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A5",
           "interface": {
-            "codename": "A5",
             "provides": [
               {
                 "spec": "ADC",
@@ -1136,7 +1235,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1149,7 +1249,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 50
+            "requiresLoad": 50,
+            "portType": "requires"
           }
         },
         {
@@ -1161,7 +1262,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -1172,11 +1274,11 @@
                 "spec": "FTDI",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 1,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -1187,11 +1289,106 @@
         {
           "cost": 50,
           "blocks": [
-            "Reg3.3v",
+            "Reg3v3",
             "USBPowerMini_WithFTDI5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoProMini5v_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ArduinoProMini5v_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ArduinoProMini5v_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ArduinoProMini5v_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ArduinoProMini5v_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ArduinoProMini5v_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ArduinoProMini5v_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ArduinoProMini5v_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ArduinoProMini5v_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ArduinoProMini5v_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ArduinoProMini5v_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ArduinoProMini5v_1.RAW",
+          "to": "RAW"
+        },
+        {
+          "from": "ArduinoProMini5v_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoProMini5v_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "ArduinoProMini5v_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ArduinoProMini5v_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ArduinoProMini5v_1.A5",
+          "to": "A5"
+        },
+        {
+          "from": "ArduinoProMini5v_1.FTDI",
+          "to": "FTDI"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

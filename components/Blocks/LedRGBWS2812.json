@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/y6hf6glzzlghuksc5ffa",
     "numericName": "WS2812",
     "shortName": "Addressable RGB LED",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This LED looks like a regular 5mm RGB LED but it's not. It has a WS2812 IC inside of it, meaning that it is an addressable RGB LED. You can chain multiple LEDs and control them all with only 1 pin.</p>",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LedRGBWS2812_1",
           "part": "LedRGBWS2812"
         }
       ],
@@ -65,8 +61,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VDD",
@@ -77,7 +75,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -89,16 +88,38 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "DOUT",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "LedRGBWS2812_1.DIN",
+          "to": "DIN"
+        },
+        {
+          "from": "LedRGBWS2812_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LedRGBWS2812_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LedRGBWS2812_1.DOUT",
+          "to": "DOUT"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

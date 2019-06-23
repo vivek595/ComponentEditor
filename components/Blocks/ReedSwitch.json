@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/htaqbvtozf9t7kv2cmcf",
     "numericName": "",
     "shortName": "Reed Switch",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A neat magnetic switch, that closes a circuit in present of a magnet and disconnects when the magnet is removed.</p>\n",
@@ -39,22 +35,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ReedSwitch_1",
           "part": "ReedSwitch"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con0"
+          "from": "ReedSwitch_1.2",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ReedSwitch_1.1",
+          "to": "1"
         }
       ],
       "ports": [
@@ -67,7 +71,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -80,8 +85,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "1",
@@ -92,11 +99,12 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -114,22 +122,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ReedSwitch_1",
           "part": "ReedSwitch"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con0"
+          "from": "ReedSwitch_1.2",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ReedSwitch_1.1",
+          "to": "1"
         }
       ],
       "ports": [
@@ -142,7 +158,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -155,8 +172,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "1",
@@ -167,11 +186,12 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

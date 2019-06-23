@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/k6guurszijibgwhxdaqx",
     "numericName": "",
     "shortName": "2-Axis Joystick Module",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This Joystick is simply two 10Kohm potentiometers - one for each axis. The module also has a pushbutton for press functionality.</p>\n<p><strong>Returned Values</strong>: &#39;0 - 1023&#39; analog input value per direction and logical &#39;0&#39; or &#39;1&#39; for press.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://blog.arduino.cc/2012/12/23/xbee-controlled-4wd-wireless-robot/\">XBEE-CONTROLLED 4WD WIRELESS ROBOT</a></p>\n",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Joystick_1",
           "part": "Joystick"
         }
       ],
@@ -54,8 +50,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -66,7 +64,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,7 +77,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -91,8 +91,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VRY",
@@ -104,11 +106,35 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "Joystick_1.SW",
+          "to": "SW"
+        },
+        {
+          "from": "Joystick_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "Joystick_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "Joystick_1.VRX",
+          "to": "VRX"
+        },
+        {
+          "from": "Joystick_1.VRY",
+          "to": "VRY"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -125,7 +151,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Joystick_1",
           "part": "Joystick"
         }
       ],
@@ -140,8 +166,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -152,7 +180,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -164,7 +193,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -177,8 +207,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VRY",
@@ -190,11 +222,35 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "Joystick_1.SW",
+          "to": "SW"
+        },
+        {
+          "from": "Joystick_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "Joystick_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "Joystick_1.VRX",
+          "to": "VRX"
+        },
+        {
+          "from": "Joystick_1.VRY",
+          "to": "VRY"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

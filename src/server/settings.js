@@ -3,10 +3,10 @@ const fs = require('fs');
 const uuidv4 = require('uuid/v4');
 
 global.dataFolder = path.join(__dirname, '../../components');
-global.circuitoServer = process.env.CIRCUITO_SERVER || "***REMOVED***
+global.circuitoServer = process.env.CIRCUITO_SERVER || "https://www.circuito.io/";
 global.uploadEndpoint = "save_components";
 global.previewEndpoint = "app?u=";
-global.svgdataServer = "***REMOVED***
+global.svgdataServer = "https://api.circuito.io/v1/";
 global.segmentWriteKey = "v7Pr4l9fyYqO9kng77jp4UF1KzDNW7TN";
 
 console.log("Circutio server - " + global.circuitoServer);
@@ -21,7 +21,7 @@ try {
 }
 
 if (global.userid == undefined) {
-    global.userid = 'main';//uuidv4();
+    global.userid = uuidv4();
     console.log("Generated userid", global.userid);
 
     // save for next run

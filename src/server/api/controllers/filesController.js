@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-var Analytics = require("analytics-node");
+var object = require("lodash/object");
 
 var objFolder = function(objPrefix) {
   return path.join(global.dataFolder, objPrefix);
@@ -12,19 +12,31 @@ var objFile = function(objPrefix, objName) {
   return path.join(objFolder(objPrefix), objName + ".json");
 };
 
-exports.list_all_files_factory = function(objPrefix) {
+exports.list_all_files_factory = function(objPrefix, fields) {
   return function(req, res) {
-    if (req.app.locals.listCache[objPrefix]) {
-      res.json(req.app.locals.listCache[objPrefix]);
-    } else {
-      var err = false;
-      if (err) res.send(err);
+    console.log("list_all_files", objPrefix, fields);
+    var folder = objFolder(objPrefix);
+    var files = fs.readdirSync(folder).map(fn => {
+      var basename = path.basename(fn, ".json");
+      if (fields) {
+        // return defined fields from file
 
-      var files = fs
-        .readdirSync(objFolder(objPrefix))
-        .map(fn => path.basename(fn, ".json"));
-      res.json(files);
-    }
+        var data = {};
+        try {
+          data = JSON.parse(fs.readFileSync(path.join(folder, fn), "utf8"));
+        } catch (e) {
+          console.log("Can't read", fn, e);
+        }
+
+        var res = { name: basename };
+        if (data) {
+          fields.forEach(field => (res[field] = object.get(data, field)));
+        }
+        return res;
+      } else return basename;
+    });
+
+    res.json(files);
   };
 };
 
@@ -44,7 +56,7 @@ exports.read_a_file_factory = function(objPrefix) {
     fs.readFile(objFile(objPrefix, req.params.name), "utf8", (err, data) => {
       if (err) {
         console.log(err);
-        res.send(err);
+        return res.status(400).json({error: err.code});
       }
 
       try {
@@ -53,7 +65,7 @@ exports.read_a_file_factory = function(objPrefix) {
         console.log(err);
 
         if (err instanceof SyntaxError) {
-          res.send("Invalid JSON<br>" + data);
+          return res.status(400).json({error: "Invalid JSON<br>" + data});
         }
         return;
       }
@@ -82,7 +94,7 @@ exports.update_a_file_factory = function(objPrefix) {
       console.log(err);
 
       if (err instanceof SyntaxError) {
-        res.send("Invalid JSON<br>" + data);
+        res.status(400).send("Invalid JSON<br>" + data);
       }
       return;
     }
@@ -97,7 +109,7 @@ exports.create_a_file_factory = function(objPrefix) {
 
     if (!name) {
       console.log("CREATE request with missing object name");
-      res.send("Missing name in object");
+      res.status(400).send("Missing name in object");
       return;
     }
 
@@ -109,7 +121,7 @@ exports.create_a_file_factory = function(objPrefix) {
       console.log(err);
 
       if (err instanceof SyntaxError) {
-        res.send("Invalid JSON<br>" + data);
+        res.status(400).send("Invalid JSON<br>" + data);
       }
       return;
     }
@@ -119,15 +131,36 @@ exports.create_a_file_factory = function(objPrefix) {
 
 exports.delete_a_file_factory = function(objPrefix) {
   return function(req, res) {
+    console.log(req.params);
+    console.log("DELETE ", objPrefix, req.params.name);
+    try {
     fs.unlinkSync(objFile(objPrefix, req.params.name));
+    } catch (err) {
+      console.log(err)
+      return res.status(400).send("Delete failed");
+    }
+
+    res.send("OK");
   };
 };
 
 exports.delete_a_subdir_file_factory = function(objPrefix) {
   return function(req, res) {
-    fs.unlinkSync(
-      path.join(objFolder(objPrefix), req.params.name, req.params.filename)
+    const filepath = path.join(
+      objFolder(objPrefix),
+      req.params.name,
+      req.params.filename
     );
+    console.log("DELETE ", filepath);
+
+    fs.unlink(filepath, err => {
+      if (err) {
+        console.log("DELETE failed");
+        res.status(400).send("Can't find file" + err);
+      } else {
+        res.send("OK");
+      }
+    });
   };
 };
 

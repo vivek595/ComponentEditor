@@ -9,12 +9,8 @@
     "image": "",
     "numericName": "L293D",
     "shortName": "Micro DC Motors with Driver",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A DC motor driver with two Micro Gearmotor. Enables speed and direction control for both DC motor.</p>\n",
@@ -43,34 +39,82 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "DCMDriverL293D_1",
           "part": "DCMDriverL293D"
         },
         {
-          "name": "MotorA",
-          "part": "DCMotor"
+          "name": "DCMotorB_1",
+          "part": "DCMotorB"
         },
         {
-          "name": "MotorB",
-          "part": "DCMotor"
+          "name": "DCMotorB_2",
+          "part": "DCMotorB"
         }
       ],
       "wires": [
         {
-          "from": "this.Out1",
-          "to": "MotorA.Coil1"
+          "from": "DCMDriverL293D_1.Out1",
+          "to": "DCMotorB_1.Coil1"
         },
         {
-          "from": "this.Out2",
-          "to": "MotorA.Coil2"
+          "from": "DCMDriverL293D_1.Out2",
+          "to": "DCMotorB_1.Coil2"
         },
         {
-          "from": "this.Out3",
-          "to": "MotorB.Coil1"
+          "from": "DCMDriverL293D_1.Out3",
+          "to": "DCMotorB_2.Coil1"
         },
         {
-          "from": "this.Out4",
-          "to": "MotorB.Coil2"
+          "from": "DCMDriverL293D_1.Out4",
+          "to": "DCMotorB_2.Coil2"
+        },
+        {
+          "from": "DCMDriverL293D_1.Enable1",
+          "to": "Enable1"
+        },
+        {
+          "from": "DCMDriverL293D_1.In1",
+          "to": "In1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND2",
+          "to": "GND2"
+        },
+        {
+          "from": "DCMDriverL293D_1.In2",
+          "to": "In2"
+        },
+        {
+          "from": "DCMDriverL293D_1.+Vmotor",
+          "to": "+Vmotor"
+        },
+        {
+          "from": "DCMDriverL293D_1.Enable2",
+          "to": "Enable2"
+        },
+        {
+          "from": "DCMDriverL293D_1.In3",
+          "to": "In3"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND3",
+          "to": "GND3"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND4",
+          "to": "GND4"
+        },
+        {
+          "from": "DCMDriverL293D_1.In4",
+          "to": "In4"
+        },
+        {
+          "from": "DCMDriverL293D_1.+V",
+          "to": "+V"
         }
       ],
       "ports": [
@@ -89,8 +133,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "In1",
@@ -107,8 +153,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND1",
@@ -119,7 +167,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -131,7 +180,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -149,8 +199,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "+Vmotor",
@@ -197,7 +249,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 400
+            "requiresLoad": 400,
+            "portType": "requires"
           }
         },
         {
@@ -215,8 +268,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "In3",
@@ -233,8 +288,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND3",
@@ -245,7 +302,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -257,7 +315,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -275,8 +334,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "+V",
@@ -287,10 +348,12 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

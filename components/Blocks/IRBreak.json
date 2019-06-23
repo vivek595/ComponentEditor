@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/g0lm5mair4249xo8vegy",
     "numericName": "",
     "shortName": "IR Break Beam Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A simple way to detect motion. They work by having an emitting side that sends out an IR beam, then a receiver across the way which is sensitive to that same beam. When something breaks the beam the receiver will output a signal.  It works up to 25cm / 10\".</p>",
@@ -39,26 +35,42 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRBreak_1",
           "part": "IRBreak"
         },
         {
-          "name": "R_pullup",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.VCCR",
-          "to": "R_pullup.con0"
+          "from": "IRBreak_1.VCCR",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "this.SIG",
-          "to": "R_pullup.con1"
+          "from": "IRBreak_1.SIG",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "R_pullup.con1",
+          "from": "Res10KO_1.con1",
           "to": "sig"
+        },
+        {
+          "from": "IRBreak_1.VCCT",
+          "to": "VCCT"
+        },
+        {
+          "from": "IRBreak_1.GNDR",
+          "to": "GNDR"
+        },
+        {
+          "from": "IRBreak_1.GNDT",
+          "to": "GNDT"
+        },
+        {
+          "from": "IRBreak_1.VCCR",
+          "to": "VCCR"
         }
       ],
       "ports": [
@@ -71,7 +83,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -83,7 +96,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -95,7 +109,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -107,7 +122,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -120,11 +136,13 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -142,26 +160,42 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "IRBreak_1",
           "part": "IRBreak"
         },
         {
-          "name": "R_pullup",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.VCCR",
-          "to": "R_pullup.con0"
+          "from": "IRBreak_1.VCCR",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "this.SIG",
-          "to": "R_pullup.con1"
+          "from": "IRBreak_1.SIG",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "R_pullup.con1",
+          "from": "Res10KO_1.con1",
           "to": "sig"
+        },
+        {
+          "from": "IRBreak_1.VCCT",
+          "to": "VCCT"
+        },
+        {
+          "from": "IRBreak_1.GNDR",
+          "to": "GNDR"
+        },
+        {
+          "from": "IRBreak_1.GNDT",
+          "to": "GNDT"
+        },
+        {
+          "from": "IRBreak_1.VCCR",
+          "to": "VCCR"
         }
       ],
       "ports": [
@@ -174,7 +208,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -186,7 +221,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -198,7 +234,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -210,7 +247,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -223,11 +261,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

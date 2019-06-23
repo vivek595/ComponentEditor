@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/scrh4hywavxcrlvpich8",
     "numericName": "",
     "shortName": "Ultimate GPS",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A high-quality GPS module that can track up to 22 satellites on 66 channels. It has an excellent high-sensitivity receiver (-165 dB ) and a built in antenna. It can do up to 10 location updates a second for high speed, high sensitivity logging or tracking. The module has low power consumption, to save some more power use the ENABLE pin to disable the module.Thanks to the on-board voltage level shifter the module is 5v tolerant.It also has an on board coin cell slot for the RTC to run and allow warm starts, an external antenna connector and a built in data logger.</p>",
@@ -36,7 +32,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "GPSUltimateADA_1",
           "part": "GPSUltimateADA"
         }
       ],
@@ -56,7 +52,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 25
+            "requiresLoad": 25,
+            "portType": "requires"
           }
         },
         {
@@ -68,7 +65,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -86,7 +84,8 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -104,11 +103,30 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "GPSUltimateADA_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "GPSUltimateADA_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "GPSUltimateADA_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "GPSUltimateADA_1.TX",
+          "to": "TX"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "SoftwareSerial",
@@ -131,7 +149,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "GPSUltimateADA_1",
           "part": "GPSUltimateADA"
         }
       ],
@@ -145,7 +163,8 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -163,7 +182,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 25
+            "requiresLoad": 25,
+            "portType": "requires"
           }
         },
         {
@@ -175,7 +195,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -203,8 +224,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "TX",
@@ -231,11 +254,31 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 100
+      "wires": [
+        {
+          "from": "GPSUltimateADA_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "GPSUltimateADA_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "GPSUltimateADA_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "GPSUltimateADA_1.TX",
+          "to": "TX"
+        }
+      ],
+      "cost": 100
     }
   ]
 }

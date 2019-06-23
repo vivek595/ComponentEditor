@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/hcatijixfmyknxi8esba",
     "numericName": "WS2812",
     "shortName": "Flora NeoPixel",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This pack contains 4 RGB NeoPixels leds. The leds are chainable, which means it possible to control all of them with only one wire.  Nevertheless every pixel led can controlled separately. This is the second faster version (800KHz).</p>",
@@ -38,7 +34,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "floraRGBNeoPixel2_1",
           "part": "floraRGBNeoPixel2"
         }
       ],
@@ -54,8 +50,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -66,7 +64,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,16 +77,38 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "DOUT",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "floraRGBNeoPixel2_1.DIN",
+          "to": "DIN"
+        },
+        {
+          "from": "floraRGBNeoPixel2_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "floraRGBNeoPixel2_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "floraRGBNeoPixel2_1.DOUT",
+          "to": "DOUT"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

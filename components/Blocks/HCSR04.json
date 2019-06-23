@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/hc2bnew6g3ku7cc85osy",
     "numericName": "HCSR04",
     "shortName": "Ultrasonic Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A low cost ultrasonic sensor, for your common range measuring needs.</p>\n<p><strong>Returned Values</strong>: 2cm - 400cm detection range, with an accuracy of 3mm.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Obstacle-Avoider-Using-HC-SR04-Ultrasonic-Sensor/\">Obstacle Avoider</a><br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/hc-sr04/\">Learn More</a></p></p>\n",
@@ -36,34 +32,46 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HCSR04_1",
           "part": "HCSR04"
         },
         {
-          "name": "r1",
+          "name": "Res470O_1",
           "part": "Res470O"
         },
         {
-          "name": "r2",
+          "name": "Res1KO_1",
           "part": "Res1KO"
         }
       ],
       "wires": [
         {
-          "from": "this.GND",
-          "to": "r2.con1"
+          "from": "HCSR04_1.GND",
+          "to": "Res1KO_1.con1"
         },
         {
-          "from": "r2.con0",
-          "to": "r1.con1"
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
         },
         {
-          "from": "this.ECHO",
-          "to": "r1.con0"
+          "from": "HCSR04_1.ECHO",
+          "to": "Res470O_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res470O_1.con1",
           "to": "Echo"
+        },
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
         }
       ],
       "ports": [
@@ -77,8 +85,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -89,7 +99,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -102,8 +113,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -114,11 +127,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     },
     {
       "name": "5v",
@@ -138,7 +152,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HCSR04_1",
           "part": "HCSR04"
         }
       ],
@@ -153,8 +167,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -165,7 +181,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -178,8 +195,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -190,11 +209,30 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.ECHO",
+          "to": "ECHO"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
     },
     {
       "name": "Gemma",
@@ -208,22 +246,38 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "HCSR04_1",
           "part": "HCSR04"
         },
         {
-          "name": "Res",
+          "name": "Res1KO_1",
           "part": "Res1KO"
         }
       ],
       "wires": [
         {
-          "from": "this.TRIG",
-          "to": "Res.con0"
+          "from": "HCSR04_1.TRIG",
+          "to": "Res1KO_1.con0"
         },
         {
-          "from": "this.GND",
-          "to": "Res.con1"
+          "from": "HCSR04_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.ECHO",
+          "to": "ECHO"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
         }
       ],
       "ports": [
@@ -237,8 +291,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VCC",
@@ -249,7 +305,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -262,8 +319,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -274,11 +333,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 3
+      "cost": 3
     }
   ]
 }

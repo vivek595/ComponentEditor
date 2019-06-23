@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/enajyskg5jznkjdmpuzr",
     "numericName": "",
     "shortName": "Sound Detector",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A small and easy to use audio sensing board with three different outputs: amplified analog output (Audio), sound presence binary indication (Gate), and an analog representation of its amplitude (envelope).</p>",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "SparkFunSoundDetector_1",
           "part": "SparkFunSoundDetector"
         }
       ],
@@ -64,8 +60,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "AUDIO",
@@ -82,8 +80,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "ENVELOPE",
@@ -100,8 +100,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -112,7 +114,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -129,10 +132,34 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "SparkFunSoundDetector_1.GATE",
+          "to": "GATE"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.AUDIO",
+          "to": "AUDIO"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.ENVELOPE",
+          "to": "ENVELOPE"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

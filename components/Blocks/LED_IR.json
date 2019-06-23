@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/gs4219wlunn7lrzz7bbn",
     "numericName": "SFH4512",
     "shortName": "IR LED",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This is a very simple IR emitter, that allows you to build your own IR remote control for devices that can receive an IR signal \u2026 replace a lost air-conditioner remote, or control a custom device you\u2019ve built from afar. Works for most known system. For more details, check the code library you\u2019ll receive with the circuit.</p>\n",
@@ -39,35 +35,38 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LED_IR",
-          "properties": "Infrared (940nm)"
+          "name": "LED_IR_1",
+          "part": "LED_IR"
         },
         {
-          "name": "BJT",
+          "name": "TSBC337_1",
           "part": "TSBC337"
         },
         {
-          "name": "Res1",
+          "name": "Res470O_1",
           "part": "Res470O"
         }
       ],
       "wires": [
         {
-          "from": "BJT.B",
-          "to": "Res1.con0"
+          "from": "TSBC337_1.B",
+          "to": "Res470O_1.con0"
         },
         {
-          "from": "BJT.C",
-          "to": "this.Gnd"
+          "from": "TSBC337_1.C",
+          "to": "LED_IR_1.Gnd"
         },
         {
-          "from": "BJT.E",
+          "from": "TSBC337_1.E",
           "to": "0"
         },
         {
-          "from": "Res1.con1",
+          "from": "Res470O_1.con1",
           "to": "SIG"
+        },
+        {
+          "from": "LED_IR_1.Vin",
+          "to": "Vin"
         }
       ],
       "ports": [
@@ -80,7 +79,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -93,7 +93,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 190
+            "requiresLoad": 190,
+            "portType": "requires"
           }
         },
         {
@@ -106,7 +107,8 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -118,11 +120,12 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -137,35 +140,38 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LED_IR",
-          "properties": "Infrared (940nm)"
+          "name": "LED_IR_1",
+          "part": "LED_IR"
         },
         {
-          "name": "BJT",
+          "name": "TSBC337_1",
           "part": "TSBC337"
         },
         {
-          "name": "Res1",
+          "name": "Res220O_1",
           "part": "Res220O"
         }
       ],
       "wires": [
         {
-          "from": "BJT.B",
-          "to": "Res1.con0"
+          "from": "TSBC337_1.B",
+          "to": "Res220O_1.con0"
         },
         {
-          "from": "BJT.C",
-          "to": "this.Gnd"
+          "from": "TSBC337_1.C",
+          "to": "LED_IR_1.Gnd"
         },
         {
-          "from": "BJT.E",
+          "from": "TSBC337_1.E",
           "to": "0"
         },
         {
-          "from": "Res1.con1",
+          "from": "Res220O_1.con1",
           "to": "SIG"
+        },
+        {
+          "from": "LED_IR_1.Vin",
+          "to": "Vin"
         }
       ],
       "ports": [
@@ -178,7 +184,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -191,7 +198,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 190
+            "requiresLoad": 190,
+            "portType": "requires"
           }
         },
         {
@@ -204,7 +212,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -216,11 +225,12 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     },
     {
       "name": "RPI",
@@ -233,35 +243,38 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LED_IR",
-          "properties": "Infrared (940nm)"
+          "name": "LED_IR_1",
+          "part": "LED_IR"
         },
         {
-          "name": "BJT",
+          "name": "TSBC337_1",
           "part": "TSBC337"
         },
         {
-          "name": "Res1",
+          "name": "Res220O_1",
           "part": "Res220O"
         }
       ],
       "wires": [
         {
-          "from": "BJT.B",
-          "to": "Res1.con0"
+          "from": "TSBC337_1.B",
+          "to": "Res220O_1.con0"
         },
         {
-          "from": "BJT.C",
-          "to": "this.Gnd"
+          "from": "TSBC337_1.C",
+          "to": "LED_IR_1.Gnd"
         },
         {
-          "from": "BJT.E",
+          "from": "TSBC337_1.E",
           "to": "0"
         },
         {
-          "from": "Res1.con1",
+          "from": "Res220O_1.con1",
           "to": "SIG"
+        },
+        {
+          "from": "LED_IR_1.Vin",
+          "to": "Vin"
         }
       ],
       "ports": [
@@ -274,7 +287,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -287,7 +301,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -299,11 +314,12 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 2
+      "cost": 2
     }
   ]
 }

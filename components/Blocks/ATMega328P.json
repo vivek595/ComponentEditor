@@ -9,21 +9,17 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ghyh4jxq69d5sfyrzqgj",
     "numericName": "",
     "shortName": "ATMega328P",
-    "tags": [
-      "controller"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": false
     },
     "desc": "<p>The ATMega328P is a great way to migrate your circuit from Arduino board to a standalone microcontroller on a breadboard. please note that you will need to burn the bootloader for the chip, and install the MiniCore package on your Arduino IDE board manager.<br><br><a href=https://www.circuito.io/blog/atmega328p-bootloader/ class=\"text-app-info\" target=\"_blank\">See our tutorial for burning the Bootloader</a></p>",
     "visible": true
   },
-  "altComp": [
-    1000,
-    "ArduinoUno"
-  ],
+  "altComp": {
+    "cost": 1000,
+    "block": "ArduinoUno"
+  },
   "circuits": [
     {
       "name": "5v",
@@ -32,74 +28,166 @@
       ],
       "parts": [
         {
-          "name": "Cap3",
+          "name": "CapCeramic100nF_1",
           "part": "CapCeramic100nF"
         },
         {
-          "name": "Res1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         },
         {
-          "name": "this",
+          "name": "ATMega328P_1",
           "part": "ATMega328P"
         },
         {
-          "name": "Cap2",
+          "name": "CapCeramic22pF_1",
           "part": "CapCeramic22pF"
         },
         {
-          "name": "C1",
+          "name": "CapCeramic22pF_2",
+          "part": "CapCeramic22pF"
+        },
+        {
+          "name": "Crystal16MHz_1",
           "part": "Crystal16MHz"
-        },
-        {
-          "name": "Cap1",
-          "part": "CapCeramic22pF"
         }
       ],
       "wires": [
         {
-          "from": "this.XTAL1",
-          "to": "C1.0"
+          "from": "ATMega328P_1.XTAL1",
+          "to": "Crystal16MHz_1.0"
         },
         {
-          "from": "this.XTAL2",
-          "to": "C1.1"
+          "from": "ATMega328P_1.XTAL2",
+          "to": "Crystal16MHz_1.1"
         },
         {
-          "from": "Cap1.con1",
-          "to": "C1.1"
+          "from": "CapCeramic22pF_2.con1",
+          "to": "Crystal16MHz_1.1"
         },
         {
-          "from": "Cap2.con0",
-          "to": "C1.0"
+          "from": "CapCeramic22pF_1.con0",
+          "to": "Crystal16MHz_1.0"
         },
         {
-          "from": "Cap1.con0",
-          "to": "this.GND"
+          "from": "CapCeramic22pF_2.con0",
+          "to": "ATMega328P_1.GND"
         },
         {
-          "from": "Cap2.con1",
-          "to": "this.GND"
+          "from": "CapCeramic22pF_1.con1",
+          "to": "ATMega328P_1.GND"
         },
         {
-          "from": "this.AVCC",
-          "to": "this.VCC"
+          "from": "ATMega328P_1.AVCC",
+          "to": "ATMega328P_1.VCC"
         },
         {
-          "from": "Res1.con0",
-          "to": "Cap3.con1"
+          "from": "Res10KO_1.con0",
+          "to": "CapCeramic100nF_1.con1"
         },
         {
-          "from": "this.RESET",
-          "to": "Cap3.con0"
+          "from": "ATMega328P_1.RESET",
+          "to": "CapCeramic100nF_1.con0"
         },
         {
-          "from": "this.VCC",
-          "to": "Res1.con1"
+          "from": "ATMega328P_1.VCC",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "Cap3.con1",
+          "from": "CapCeramic100nF_1.con1",
           "to": "DTR"
+        },
+        {
+          "from": "ATMega328P_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ATMega328P_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ATMega328P_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ATMega328P_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ATMega328P_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ATMega328P_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ATMega328P_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ATMega328P_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ATMega328P_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ATMega328P_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ATMega328P_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ATMega328P_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ATMega328P_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ATMega328P_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "AVCC"
+        },
+        {
+          "from": "ATMega328P_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ATMega328P_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ATMega328P_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ATMega328P_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ATMega328P_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ATMega328P_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ATMega328P_1.A5",
+          "to": "A5"
         }
       ],
       "ports": [
@@ -112,7 +200,8 @@
                 "spec": "TX",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -124,7 +213,8 @@
                 "spec": "RX",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -136,13 +226,13 @@
                 "spec": "DTR",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -165,13 +255,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -202,13 +292,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -223,13 +313,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -248,13 +338,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -273,13 +363,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -294,13 +384,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -315,13 +405,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -344,13 +434,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -373,13 +463,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -398,13 +488,13 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -423,7 +513,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -434,7 +525,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -446,7 +538,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -459,7 +552,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 400
+            "requiresLoad": 400,
+            "portType": "requires"
           }
         },
         {
@@ -470,13 +564,13 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -495,7 +589,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -507,13 +602,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 2048
+            "providesLoad": 2048,
+            "portType": "provides"
           }
         },
         {
           "name": "A0",
           "interface": {
-            "codename": "A0",
             "provides": [
               {
                 "spec": "ADC",
@@ -527,13 +622,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A1",
           "interface": {
-            "codename": "A1",
             "provides": [
               {
                 "spec": "ADC",
@@ -547,13 +642,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A2",
           "interface": {
-            "codename": "A2",
             "provides": [
               {
                 "spec": "ADC",
@@ -567,13 +662,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A3",
           "interface": {
-            "codename": "A3",
             "provides": [
               {
                 "spec": "ADC",
@@ -587,13 +682,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A4",
           "interface": {
-            "codename": "A4",
             "provides": [
               {
                 "spec": "ADC",
@@ -611,13 +706,13 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A5",
           "interface": {
-            "codename": "A5",
             "provides": [
               {
                 "spec": "ADC",
@@ -635,11 +730,11 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 1,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -658,7 +753,7 @@
           "cost": 20,
           "blocks": [
             "Reg5v",
-            "Reg3.3v",
+            "Reg3v3",
             "FTDI_DATA_5v"
           ]
         },
@@ -669,7 +764,8 @@
             "FTDI_DATA_5v"
           ]
         }
-      ]
+      ],
+      "cost": 1
     },
     {
       "name": "3v3",
@@ -678,74 +774,166 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ATMega328P_1",
           "part": "ATMega328P"
         },
         {
-          "name": "Cap3",
+          "name": "CapCeramic100nF_1",
           "part": "CapCeramic100nF"
         },
         {
-          "name": "Res1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         },
         {
-          "name": "C1",
+          "name": "Crystal8MHz_1",
           "part": "Crystal8MHz"
         },
         {
-          "name": "Cap1",
+          "name": "CapCeramic22pF_1",
           "part": "CapCeramic22pF"
         },
         {
-          "name": "Cap2",
+          "name": "CapCeramic22pF_2",
           "part": "CapCeramic22pF"
         }
       ],
       "wires": [
         {
-          "from": "this.XTAL1",
-          "to": "C1.0"
+          "from": "ATMega328P_1.XTAL1",
+          "to": "Crystal8MHz_1.0"
         },
         {
-          "from": "this.XTAL2",
-          "to": "C1.1"
+          "from": "ATMega328P_1.XTAL2",
+          "to": "Crystal8MHz_1.1"
         },
         {
-          "from": "Cap1.con1",
-          "to": "C1.1"
+          "from": "CapCeramic22pF_1.con1",
+          "to": "Crystal8MHz_1.1"
         },
         {
-          "from": "Cap2.con0",
-          "to": "C1.0"
+          "from": "CapCeramic22pF_2.con0",
+          "to": "Crystal8MHz_1.0"
         },
         {
-          "from": "Cap1.con0",
-          "to": "this.GND"
+          "from": "CapCeramic22pF_1.con0",
+          "to": "ATMega328P_1.GND"
         },
         {
-          "from": "Cap2.con1",
-          "to": "this.GND"
+          "from": "CapCeramic22pF_2.con1",
+          "to": "ATMega328P_1.GND"
         },
         {
-          "from": "this.AVCC",
-          "to": "this.VCC"
+          "from": "ATMega328P_1.AVCC",
+          "to": "ATMega328P_1.VCC"
         },
         {
-          "from": "Res1.con0",
-          "to": "Cap3.con1"
+          "from": "Res10KO_1.con0",
+          "to": "CapCeramic100nF_1.con1"
         },
         {
-          "from": "this.RESET",
-          "to": "Cap3.con0"
+          "from": "ATMega328P_1.RESET",
+          "to": "CapCeramic100nF_1.con0"
         },
         {
-          "from": "this.VCC",
-          "to": "Res1.con1"
+          "from": "ATMega328P_1.VCC",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "Cap3.con1",
+          "from": "CapCeramic100nF_1.con1",
           "to": "DTR"
+        },
+        {
+          "from": "ATMega328P_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ATMega328P_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ATMega328P_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ATMega328P_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ATMega328P_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ATMega328P_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ATMega328P_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ATMega328P_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ATMega328P_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ATMega328P_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ATMega328P_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ATMega328P_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ATMega328P_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ATMega328P_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "AVCC"
+        },
+        {
+          "from": "ATMega328P_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ATMega328P_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ATMega328P_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ATMega328P_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ATMega328P_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ATMega328P_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ATMega328P_1.A5",
+          "to": "A5"
         }
       ],
       "ports": [
@@ -758,7 +946,8 @@
                 "spec": "TX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -770,7 +959,8 @@
                 "spec": "RX",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -782,13 +972,13 @@
                 "spec": "DTR",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
           "name": "2",
           "interface": {
-            "codename": 2,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -811,13 +1001,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "3",
           "interface": {
-            "codename": 3,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -848,13 +1038,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "4",
           "interface": {
-            "codename": 4,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -869,13 +1059,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "5",
           "interface": {
-            "codename": 5,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -894,13 +1084,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "6",
           "interface": {
-            "codename": 6,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -919,13 +1109,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "7",
           "interface": {
-            "codename": 7,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -940,13 +1130,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "8",
           "interface": {
-            "codename": 8,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -961,13 +1151,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "10",
           "interface": {
-            "codename": 10,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -990,13 +1180,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "11",
           "interface": {
-            "codename": 11,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1019,13 +1209,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "12",
           "interface": {
-            "codename": 12,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1044,13 +1234,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
           "name": "13",
           "interface": {
-            "codename": 13,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1069,7 +1259,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -1080,7 +1271,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -1092,7 +1284,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -1105,7 +1298,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "requiresLoad": 400
+            "requiresLoad": 400,
+            "portType": "requires"
           }
         },
         {
@@ -1116,13 +1310,13 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "9",
           "interface": {
-            "codename": 9,
             "provides": [
               {
                 "spec": "DigitalIn",
@@ -1141,7 +1335,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 20
+            "providesLoad": 20,
+            "portType": "provides"
           }
         },
         {
@@ -1153,13 +1348,13 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 2048
+            "providesLoad": 2048,
+            "portType": "provides"
           }
         },
         {
           "name": "A0",
           "interface": {
-            "codename": "A0",
             "provides": [
               {
                 "spec": "ADC",
@@ -1173,13 +1368,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A1",
           "interface": {
-            "codename": "A1",
             "provides": [
               {
                 "spec": "ADC",
@@ -1193,13 +1388,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A2",
           "interface": {
-            "codename": "A2",
             "provides": [
               {
                 "spec": "ADC",
@@ -1213,13 +1408,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A3",
           "interface": {
-            "codename": "A3",
             "provides": [
               {
                 "spec": "ADC",
@@ -1233,13 +1428,13 @@
                 "spec": "DigitalIn-Int",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A4",
           "interface": {
-            "codename": "A4",
             "provides": [
               {
                 "spec": "ADC",
@@ -1257,13 +1452,13 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
           "name": "A5",
           "interface": {
-            "codename": "A5",
             "provides": [
               {
                 "spec": "ADC",
@@ -1281,11 +1476,11 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 2,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -1296,14 +1491,14 @@
         {
           "cost": 10,
           "blocks": [
-            "Reg3.3v",
+            "Reg3v3",
             "FTDI_DATA_3v3"
           ]
         },
         {
           "cost": 20,
           "blocks": [
-            "Reg3.3v",
+            "Reg3v3",
             "Reg5v",
             "FTDI_DATA_3v3"
           ]
@@ -1315,7 +1510,8 @@
             "FTDI_DATA_3v3"
           ]
         }
-      ]
+      ],
+      "cost": 2
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/bvtpexcewrxogl7cle6d",
     "numericName": "",
     "shortName": "Electret Microphone",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>Microphone+amplifier allows you to detect standard sounds in your environment like voices, knocks, claps.<br><strong>Returned values</strong>: from 0 (no sound) to 1023 (maximal sound). - Works with regular ambient noises, silence vs. fall or knock, etc\u2026<br><strong>Requires</strong>: soldering 3 male header pins to fit onto a breadboard.<br><strong>Sample applications</strong>: Detect a knock and perform some action, like open the door, or a secret drawer.</p>\n",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Mic_1",
           "part": "Mic"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -66,8 +63,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -78,11 +77,26 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "Mic_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Mic_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Mic_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Mic_1",
           "part": "Mic"
         }
       ],
@@ -114,7 +128,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -127,8 +142,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Vin",
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "Mic_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Mic_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Mic_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

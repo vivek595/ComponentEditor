@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/xsi1ge123362c2eqmt8c",
     "numericName": "SI1145",
     "shortName": "UV Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>The SI1145 is a new sensor from SiLabs with a calibrated light sensing algorithm that can calculate UV Index. It doesn't contain an actual UV sensing element, instead it approximates it based on visible & IR light from the sun. </p>",
@@ -38,7 +34,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "UVSensorSI1145_1",
           "part": "UVSensorSI1145"
         }
       ],
@@ -52,7 +48,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -64,7 +61,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +74,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,11 +87,30 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "UVSensorSI1145_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "UVSensorSI1145_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "UVSensorSI1145_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "UVSensorSI1145_1.VIN",
+          "to": "VIN"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -108,7 +126,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "UVSensorSI1145_1",
           "part": "UVSensorSI1145"
         }
       ],
@@ -122,7 +140,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -134,7 +153,8 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -146,7 +166,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -158,11 +179,30 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "UVSensorSI1145_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "UVSensorSI1145_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "UVSensorSI1145_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "UVSensorSI1145_1.VIN",
+          "to": "VIN"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

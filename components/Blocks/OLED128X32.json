@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/vigjwz5uzm2hnq0f62ad",
     "numericName": "",
     "shortName": "OLED",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This is a 1-inch diagonal OLED Breakout Board. It communicates via I2C, and altough it's small this OLED is very readable due to the high contrast.</p>",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "OLED128X32_1",
           "part": "OLED128X32"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -65,7 +62,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -77,7 +75,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -89,7 +88,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -102,11 +102,35 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "OLED128X32_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "OLED128X32_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "OLED128X32_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "OLED128X32_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "OLED128X32_1.RST",
+          "to": "RST"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -123,7 +147,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "OLED128X32_1",
           "part": "OLED128X32"
         }
       ],
@@ -137,7 +161,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -149,7 +174,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -161,7 +187,8 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -173,7 +200,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -186,11 +214,35 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "OLED128X32_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "OLED128X32_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "OLED128X32_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "OLED128X32_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "OLED128X32_1.RST",
+          "to": "RST"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

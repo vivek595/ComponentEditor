@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/nuqtt1aib3sia118u6wn",
     "numericName": "RC522",
     "shortName": "RFID Card Reader",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>The RFID module allows reading/writing RFID card/Tags.<br><strong>Returned Value</strong>: Card tag ID via SPI</p>\n<p><strong>Requires</strong>: Soldering 8 pin male header</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Security-System-and-Access-Control-with-Arduino-an/?ALLSTEPS\">Security System and Access Control with Arduino and RFID</a></p>\n",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RFID_1",
           "part": "RFID"
         }
       ],
@@ -62,8 +58,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "MISO",
@@ -80,7 +78,8 @@
                 "spec": "MISO",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -98,7 +97,8 @@
                 "spec": "SCK",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -126,8 +126,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -138,7 +140,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -150,7 +153,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -168,10 +172,42 @@
                 "spec": "MOSI",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RFID_1.RST",
+          "to": "RST"
+        },
+        {
+          "from": "RFID_1.MISO",
+          "to": "MISO"
+        },
+        {
+          "from": "RFID_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "RFID_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "RFID_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RFID_1.3.3v",
+          "to": "3.3v"
+        },
+        {
+          "from": "RFID_1.MOSI",
+          "to": "MOSI"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

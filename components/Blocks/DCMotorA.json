@@ -9,12 +9,8 @@
     "image": "",
     "numericName": "ASLONG-JGB37",
     "shortName": "Geared Motor",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A full metal geared DC motor. It has a ratio of 56:1 and has a max speed of 107 RPM.</p>\n",
@@ -43,23 +39,30 @@
       ],
       "parts": [
         {
-          "name": "d1",
-          "part": "DIRect1A50v",
-          "rotation": 180
+          "name": "DIRect1A50v_1",
+          "part": "DIRect1A50v"
         },
         {
-          "name": "this",
-          "part": "DCMotor"
+          "name": "DCMotorA_1",
+          "part": "DCMotorA"
         }
       ],
       "wires": [
         {
-          "from": "this.Coil1",
-          "to": "d1.pos"
+          "from": "DCMotorA_1.Coil1",
+          "to": "DIRect1A50v_1.pos"
         },
         {
-          "from": "this.Coil2",
-          "to": "d1.neg"
+          "from": "DCMotorA_1.Coil2",
+          "to": "DIRect1A50v_1.neg"
+        },
+        {
+          "from": "DCMotorA_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "DCMotorA_1.Coil2",
+          "to": "Coil2"
         }
       ],
       "ports": [
@@ -74,8 +77,10 @@
               }
             ],
             "requiresLoad": 400,
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Coil2",
@@ -122,7 +127,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 400
+            "requiresLoad": 400,
+            "portType": "requires"
           }
         }
       ],
@@ -133,7 +139,8 @@
             "GndHighLoadPWMSwitching"
           ]
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

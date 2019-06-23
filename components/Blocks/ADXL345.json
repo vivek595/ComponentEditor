@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pd49wdojw9mpsbbrovzy",
     "numericName": "ADXL345",
     "shortName": "Triple-axis Accelerometer ADXL345",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>This accelerometer measures the acceleration of an object in 3 axes - x-y-z. Acceleration is a change in rate, speed, etc.. If an object start moving faster or slower - it is detected by the accelerometer.<br><strong>Range</strong>: +-16 g.<br><strong>Requires</strong>: soldering 8 male header pins to fit onto a breadboard.<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/34five-Arduino-Pet/\">34five Arduino Pet</a>.</p>\n",
@@ -44,14 +40,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ADXL345_1",
           "part": "ADXL345"
         }
       ],
       "wires": [
         {
-          "from": "this.VCC",
-          "to": "this.CS"
+          "from": "ADXL345_1.VCC",
+          "to": "ADXL345_1.CS"
+        },
+        {
+          "from": "ADXL345_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "ADXL345_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ADXL345_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ADXL345_1.SCL",
+          "to": "SCL"
         }
       ],
       "ports": [
@@ -70,7 +82,8 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -82,7 +95,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -94,7 +108,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -107,7 +122,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 335
+            "requiresLoad": 335,
+            "portType": "requires"
           }
         },
         {
@@ -125,10 +141,12 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

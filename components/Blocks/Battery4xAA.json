@@ -9,21 +9,17 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/bjeqmr0wg1nvytgzrqhj",
     "numericName": "",
     "shortName": "4xAA Battery Holder",
-    "tags": [
-      "power"
-    ],
     "indicators": {
       "verified": true,
-      "code": false,
       "solder": false
     },
     "desc": "<p>An easy to replace power option, as you can always refresh the batteries in this holder quite easily. Use for circuits that require porting. Also contains a switch which allows you to turn the circuit power on and off easily..</p>\n",
     "visible": true
   },
-  "altComp": [
-    100,
-    "Battery8xAA"
-  ],
+  "altComp": {
+    "cost": 100,
+    "block": "Battery8xAA"
+  },
   "circuits": [
     {
       "name": "default",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Battery4xAA_1",
           "part": "Battery4xAA"
         }
       ],
@@ -57,7 +53,8 @@
                 "voltage": "6v"
               }
             ],
-            "providesLoad": 600
+            "providesLoad": 600,
+            "portType": "provides"
           }
         },
         {
@@ -69,7 +66,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -80,10 +78,22 @@
                 "spec": "Battery",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Battery4xAA_1.pos",
+          "to": "pos"
+        },
+        {
+          "from": "Battery4xAA_1.neg",
+          "to": "neg"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

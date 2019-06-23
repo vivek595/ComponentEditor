@@ -9,15 +9,11 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/sete1lzghxcrjcdpmdeg",
     "numericName": "ESP8266",
     "shortName": "WiFi Module",
-    "tags": [
-      "connectivity"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
-    "desc": "<p>The <strong>ESP8266</strong> is a low-cost Wi-Fi board, that you can easily wire to a microcontroller, and connect any project you build to the internet (of things). </p>\n<p>The microcontroller communicates with the module using AT commands, either via Software Serial or Hardware Serial.<br><strong>Returned Values</strong>: from 0 (completely dry) to 1023 (completely moist). (air/soil humidity - ambient conditions).<br><strong>Requires</strong>: Soldering of jumper/regular wires to the sensor board, to fit onto a breadboard.<br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/esp8266-01-wifi-module/\">Learn More</a></p>\n",
+    "desc": "<p>The <strong>ESP8266</strong> is a low-cost Wi-Fi board, that you can easily wire to a microcontroller, and connect any project you build to the internet (of things). </p>\n<p>The microcontroller communicates with the module using AT commands, either via Software Serial or Hardware Serial.<br><strong>Requires</strong>: soldering 8 pin male header</p><br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/esp8266-01-wifi-module/\">Learn More</a></p>\n",
     "visible": true
   },
   "circuits": [
@@ -30,60 +26,59 @@
         "ArduinoLeonardo",
         "ArduinoMega",
         "ArduinoMicro",
-        "ArduinoMicro",
         "ArduinoNano",
         "ArduinoProMini5v",
         "ArduinoUno"
       ],
       "parts": [
         {
-          "name": "LLC",
+          "name": "LogicLevelConverter_1",
           "part": "LogicLevelConverter"
         },
         {
-          "name": "this",
+          "name": "ESP8266_1",
           "part": "ESP8266"
         }
       ],
       "wires": [
         {
-          "from": "this.RXD",
-          "to": "LLC.LV1"
+          "from": "ESP8266_1.RXD",
+          "to": "LogicLevelConverter_1.LV1"
         },
         {
-          "from": "this.TXD",
-          "to": "LLC.LV2"
+          "from": "ESP8266_1.TXD",
+          "to": "LogicLevelConverter_1.LV2"
         },
         {
-          "from": "this.VCC",
-          "to": "LLC.LV"
+          "from": "ESP8266_1.VCC",
+          "to": "LogicLevelConverter_1.LV"
         },
         {
-          "from": "this.GND",
-          "to": "LLC.GND"
+          "from": "ESP8266_1.GND",
+          "to": "LogicLevelConverter_1.GND"
         },
         {
-          "from": "this.CH_PD",
-          "to": "LLC.LV"
+          "from": "ESP8266_1.CH_PD",
+          "to": "LogicLevelConverter_1.LV"
         },
         {
-          "from": "LLC.HV1",
+          "from": "LogicLevelConverter_1.HV1",
           "to": "Tx"
         },
         {
-          "from": "LLC.LV",
+          "from": "LogicLevelConverter_1.LV",
           "to": "LV"
         },
         {
-          "from": "LLC.HV2",
+          "from": "LogicLevelConverter_1.HV2",
           "to": "Rx"
         },
         {
-          "from": "LLC.HV",
+          "from": "LogicLevelConverter_1.HV",
           "to": "hv"
         },
         {
-          "from": "LLC.GND",
+          "from": "LogicLevelConverter_1.GND",
           "to": "Gnd"
         }
       ],
@@ -97,7 +92,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -110,7 +106,8 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -123,7 +120,8 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -135,7 +133,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -148,7 +147,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 1220
+            "requiresLoad": 1220,
+            "portType": "requires"
           }
         },
         {
@@ -160,19 +160,20 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0,
       "requiredBlocks": [
         {
           "cost": 1,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "cost": 0
     },
     {
       "name": "SoftwareSerial3v3",
@@ -184,7 +185,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ESP8266_1",
           "part": "ESP8266"
         }
       ],
@@ -199,7 +200,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "requiresLoad": 200
+            "requiresLoad": 200,
+            "portType": "requires"
           }
         },
         {
@@ -217,8 +219,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "CH_PD",
@@ -229,7 +233,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -247,8 +252,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SerialType",
@@ -259,7 +266,8 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -271,7 +279,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -284,19 +293,42 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 1220
+            "requiresLoad": 1220,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1,
       "requiredBlocks": [
         {
           "cost": 1,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ESP8266_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ESP8266_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ESP8266_1.CH_PD",
+          "to": "CH_PD"
+        },
+        {
+          "from": "ESP8266_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ESP8266_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
     },
     {
       "name": "SoftwareSerial5v",
@@ -307,60 +339,59 @@
         "ArduinoLeonardo",
         "ArduinoMega",
         "ArduinoMicro",
-        "ArduinoMicro",
         "ArduinoNano",
         "ArduinoProMini5v",
         "ArduinoUno"
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ESP8266_1",
           "part": "ESP8266"
         },
         {
-          "name": "LLC",
+          "name": "LogicLevelConverter_1",
           "part": "LogicLevelConverter"
         }
       ],
       "wires": [
         {
-          "from": "this.RXD",
-          "to": "LLC.LV1"
+          "from": "ESP8266_1.RXD",
+          "to": "LogicLevelConverter_1.LV1"
         },
         {
-          "from": "this.TXD",
-          "to": "LLC.LV2"
+          "from": "ESP8266_1.TXD",
+          "to": "LogicLevelConverter_1.LV2"
         },
         {
-          "from": "this.VCC",
-          "to": "LLC.LV"
+          "from": "ESP8266_1.VCC",
+          "to": "LogicLevelConverter_1.LV"
         },
         {
-          "from": "this.GND",
-          "to": "LLC.GND"
+          "from": "ESP8266_1.GND",
+          "to": "LogicLevelConverter_1.GND"
         },
         {
-          "from": "this.CH_PD",
-          "to": "LLC.LV"
+          "from": "ESP8266_1.CH_PD",
+          "to": "LogicLevelConverter_1.LV"
         },
         {
-          "from": "LLC.HV1",
+          "from": "LogicLevelConverter_1.HV1",
           "to": "Tx"
         },
         {
-          "from": "LLC.LV",
+          "from": "LogicLevelConverter_1.LV",
           "to": "LV"
         },
         {
-          "from": "LLC.HV2",
+          "from": "LogicLevelConverter_1.HV2",
           "to": "Rx"
         },
         {
-          "from": "LLC.HV",
+          "from": "LogicLevelConverter_1.HV",
           "to": "hv"
         },
         {
-          "from": "LLC.GND",
+          "from": "LogicLevelConverter_1.GND",
           "to": "Gnd"
         }
       ],
@@ -374,7 +405,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -392,8 +424,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Rx",
@@ -410,8 +444,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "SerialType",
@@ -422,7 +458,8 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -434,7 +471,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -447,7 +485,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 1220
+            "requiresLoad": 1220,
+            "portType": "requires"
           }
         },
         {
@@ -459,19 +498,20 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 100,
       "requiredBlocks": [
         {
           "cost": 1,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "cost": 100
     },
     {
       "name": "HardwareSerial3v3",
@@ -484,7 +524,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ESP8266_1",
           "part": "ESP8266"
         }
       ],
@@ -499,7 +539,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "requiresLoad": 200
+            "requiresLoad": 200,
+            "portType": "requires"
           }
         },
         {
@@ -512,7 +553,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -524,7 +566,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -537,7 +580,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -549,7 +593,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -562,19 +607,42 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 1220
+            "requiresLoad": 1220,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 101,
       "requiredBlocks": [
         {
           "cost": 1,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ESP8266_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ESP8266_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ESP8266_1.CH_PD",
+          "to": "CH_PD"
+        },
+        {
+          "from": "ESP8266_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ESP8266_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 101
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "",
     "numericName": "",
     "shortName": "1x4 Matrix Keypad",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A simple 1-by-4 membrane Keypad matrix. You can set the keys as you wish.</p>\n<p><strong>Return Value</strong>: Returns the pressed KeyPad.</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"http://www.vathsav.com/post/arduino_calculator.html\">Arduino Calculator</a></p>\n",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "KeyPadMem1x4_1",
           "part": "KeyPadMem1x4"
         }
       ],
@@ -62,8 +58,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "2",
@@ -80,8 +78,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "3",
@@ -98,8 +98,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "4",
@@ -116,8 +118,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "5",
@@ -134,10 +138,35 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "KeyPadMem1x4_1.1",
+          "to": "1"
+        },
+        {
+          "from": "KeyPadMem1x4_1.2",
+          "to": "2"
+        },
+        {
+          "from": "KeyPadMem1x4_1.3",
+          "to": "3"
+        },
+        {
+          "from": "KeyPadMem1x4_1.4",
+          "to": "4"
+        },
+        {
+          "from": "KeyPadMem1x4_1.5",
+          "to": "5"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

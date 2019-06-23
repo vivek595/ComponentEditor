@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pwwbdklgkowblqaefbyu",
     "numericName": "ISL29125",
     "shortName": "RGB Light Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A small board that allows you to detect the color in its surrounding.<br><strong>Returned Values</strong>: 0 (no color) to 256 (maximal intensity color) reading for each color: Red, Green, Blue.<br><strong>Requires</strong> : soldering of 5 male header pins to fit onto a breadboard.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/DIY-Nespresso-Capsule-Detector/\">DIY Nespresson Capsule Detector</a>.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RGBSensor_1",
           "part": "RGBSensor"
         }
       ],
@@ -59,7 +55,8 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -71,7 +68,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -84,7 +82,8 @@
                 "voltage": ""
               }
             ],
-            "requiresLoad": 450
+            "requiresLoad": 450,
+            "portType": "requires"
           }
         },
         {
@@ -97,7 +96,8 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -109,7 +109,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
@@ -120,7 +121,26 @@
             "LogicLevelConverterI2C-5-3.3"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RGBSensor_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "RGBSensor_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "RGBSensor_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "RGBSensor_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

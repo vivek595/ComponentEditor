@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/oiqdk163gqsgfjkpmlzp",
     "numericName": "",
     "shortName": "Brushless Motor",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": true
     },
     "desc": "<p>This Brushless Motor is great for R/C projects such as drones, RC car, and more. To run the motor, it needs to be attached to an ESC (electronic speed controller), that converts the servo-style interface into three-phase AC for driving the motor.</p>",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BrushlessMotor_1",
           "part": "BrushlessMotor"
         }
       ],
@@ -58,7 +54,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 550
+            "requiresLoad": 550,
+            "portType": "requires"
           }
         },
         {
@@ -76,8 +73,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -88,7 +87,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -100,7 +100,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
@@ -111,7 +112,26 @@
             "BarrelJack12v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "BrushlessMotor_1.+12V",
+          "to": "+12V"
+        },
+        {
+          "from": "BrushlessMotor_1.DATA",
+          "to": "DATA"
+        },
+        {
+          "from": "BrushlessMotor_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BrushlessMotor_1.GROUND",
+          "to": "GROUND"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

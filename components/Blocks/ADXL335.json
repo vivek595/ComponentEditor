@@ -9,17 +9,14 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/bbk2cbblkapeu7dl7pjt",
     "numericName": "ADXL335",
     "shortName": "Triple Axis Accelerometer",
-    "tags": [
-      "input"
-    ],
+    "visible": true,
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
-    "desc": "<p>Triple axis analog accelerometer. It features low noise and low power consumption. The sensor has a full sensing range of +/-3g using three ADC pins.</p>",
-    "visible": true
+    "desc": "<p>Triple axis analog accelerometer. It features low noise and low power consumption. The sensor has a full sensing range of +/-3g using three ADC pins.</p>"
   },
+  "altComp": {},
   "circuits": [
     {
       "name": "default",
@@ -42,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ADXL335_1",
           "part": "ADXL335"
         }
       ],
@@ -56,7 +53,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -68,7 +66,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -81,8 +80,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "YOUT",
@@ -94,8 +95,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "ZOUT",
@@ -107,10 +110,35 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ADXL335_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ADXL335_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ADXL335_1.XOUT",
+          "to": "XOUT"
+        },
+        {
+          "from": "ADXL335_1.YOUT",
+          "to": "YOUT"
+        },
+        {
+          "from": "ADXL335_1.ZOUT",
+          "to": "ZOUT"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

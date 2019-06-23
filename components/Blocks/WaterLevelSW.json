@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/tfn8sbg6tdff9zby7h5l",
     "numericName": "",
     "shortName": "Liquid Level Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>The Liquid Level Sensor provides single point liquid detection via a TTL compatible push/pull output.</p>",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "WaterLevelSW_1",
           "part": "WaterLevelSW"
         }
       ],
@@ -64,8 +60,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -76,7 +74,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,10 +87,26 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "WaterLevelSW_1.SIG",
+          "to": "SIG"
+        },
+        {
+          "from": "WaterLevelSW_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "WaterLevelSW_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

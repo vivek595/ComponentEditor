@@ -10,12 +10,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pc1ki1ihyz0rugls8djb",
     "numericName": "",
     "shortName": "12V Wall Power",
-    "tags": [
-      "power"
-    ],
     "indicators": {
       "verified": true,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A 12V power source you plug into your regular socket. Works with 100-240VAC inputs. The most reliable and most likely to work for all components you choose. Use it when you don\u2019t need your circuit to be mobile, or positioned in a location without wall power.</p>\n",
@@ -41,7 +37,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PowerSupply12v2A_1",
           "part": "PowerSupply12v2A"
         }
       ],
@@ -55,7 +51,8 @@
                 "voltage": "12v"
               }
             ],
-            "providesLoad": 2000
+            "providesLoad": 2000,
+            "portType": "provides"
           }
         },
         {
@@ -66,7 +63,8 @@
                 "spec": "Barrel",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -79,7 +77,8 @@
                 "voltage": ""
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         }
       ],
@@ -90,7 +89,14 @@
             "BarrelJack12v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "PowerSupply12v2A_1.BARREL_JACK",
+          "to": "BARREL_JACK"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/xcnhxptxwlm65q4hbzsd",
     "numericName": "",
     "shortName": "Vibration Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>This is a spring-vibration switch, when everything is still the switch is open, when there\u2019s movement the spring touches the center pole and the switch is \u201cclosed\u201d.</p>",
@@ -39,22 +35,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "VibrationSensor_1",
           "part": "VibrationSensor"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con0"
+          "from": "VibrationSensor_1.2",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "VibrationSensor_1.1",
+          "to": "1"
+        },
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "2"
         }
       ],
       "ports": [
@@ -67,7 +71,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -80,8 +85,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "0",
@@ -92,11 +99,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -114,22 +122,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "VibrationSensor_1",
           "part": "VibrationSensor"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con0"
+          "from": "VibrationSensor_1.2",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "VibrationSensor_1.1",
+          "to": "1"
+        },
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "2"
         }
       ],
       "ports": [
@@ -142,7 +158,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -155,8 +172,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "0",
@@ -167,11 +186,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

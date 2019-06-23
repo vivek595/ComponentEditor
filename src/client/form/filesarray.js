@@ -1,19 +1,17 @@
-import AddButton from "react-jsonschema-form/lib/components/AddButton";
-import IconButton from "react-jsonschema-form/lib/components/IconButton";
 import React from "react";
 import Upload from "rc-upload";
-
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { delete_a_coder_file } from "../controller";
 import {
-  getDefaultFormState,
   getUiOptions,
-  isFixedItems,
-  allowAdditionalItems,
   retrieveSchema,
   toIdSchema,
   getDefaultRegistry
 } from "react-jsonschema-form/lib/utils";
 import PropTypes from "prop-types";
-import { upload_a_file } from "../controller";
+import { toast } from "react-toastify";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ArrayFieldTitle({ TitleField, idSchema, title, required }) {
   if (!title) {
@@ -35,19 +33,12 @@ function ArrayFieldDescription({ DescriptionField, idSchema, description }) {
 
 function FileArrayItem(props) {
   const btnStyle = {
-    flex: 1,
-    paddingLeft: 6,
-    paddingRight: 6,
-    fontWeight: "bold"
+    flex: 1
   };
   return (
-    <div key={props.index} className={props.className}>
-      <div className={props.hasToolbar ? "col-xs-9" : "col-xs-12"}>
-        {props.children}
-      </div>
-
+    <Row key={props.index} className={props.className}>
       {props.hasToolbar && (
-        <div className="col-xs-3 array-item-toolbox">
+        <Col xs={1}>
           <div
             className="btn-group"
             style={{
@@ -55,45 +46,21 @@ function FileArrayItem(props) {
               justifyContent: "space-around"
             }}
           >
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <IconButton
-                icon="arrow-up"
-                className="array-item-move-up"
-                tabIndex="-1"
-                style={btnStyle}
-                disabled={props.disabled || props.readonly || !props.hasMoveUp}
-                onClick={props.onReorderClick(props.index, props.index - 1)}
-              />
-            )}
-
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <IconButton
-                icon="arrow-down"
-                className="array-item-move-down"
-                tabIndex="-1"
-                style={btnStyle}
-                disabled={
-                  props.disabled || props.readonly || !props.hasMoveDown
-                }
-                onClick={props.onReorderClick(props.index, props.index + 1)}
-              />
-            )}
-
             {props.hasRemove && (
-              <IconButton
-                type="danger"
-                icon="remove"
-                className="array-item-remove"
-                tabIndex="-1"
-                style={btnStyle}
+              <Button
+                variant="outline-danger"
+                size="small"
                 disabled={props.disabled || props.readonly}
                 onClick={props.onDropIndexClick(props.index)}
-              />
+              >
+                <FontAwesomeIcon icon={faTrashAlt} />
+              </Button>
             )}
           </div>
-        </div>
+        </Col>
       )}
-    </div>
+      <Col xs={11}>{props.children.props.formData}</Col>
+    </Row>
   );
 }
 
@@ -117,22 +84,29 @@ function FilesArrayFieldTemplate(props) {
         />
       )}
 
-      <div
-        className="row array-item-list"
+      <Container
+        className="container array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}
       >
         {props.items && props.items.map(p => FileArrayItem(p))}
-      </div>
 
-      {props.canAdd && (
-        <Upload 
-          action={"/api/coders-file/" + props.formContext.targetFolder}
-          onStart = {file => {
-            console.log('onStart', props, file.name)
-            props.addItem(file.name);
-          }}
-        ><a>Upload file...</a></Upload>
-      )}
+        {props.canAdd && (
+          <Row>
+            <Col xs={1} />
+            <Col xs={11}>
+              <Upload
+                action={"/api/coders-file/" + props.formContext.targetFolder}
+                onStart={file => {
+                  props.addItem(file.name);
+                }}
+                className="btn btn-outline-primary"
+              >
+                <a>Upload file...</a>
+              </Upload>
+            </Col>
+          </Row>
+        )}
+      </Container>
     </fieldset>
   );
 }
@@ -182,13 +156,25 @@ export class FilesArrayField extends React.Component {
     this.props.onChange(this.props.formData.concat(item).sort());
   }
 
-
   onDropIndexClick = index => {
     return event => {
       if (event) {
         event.preventDefault();
       }
       const { formData, onChange } = this.props;
+
+      var filename = formData[index];
+      var folder = this.props.formContext.targetFolder;
+      delete_a_coder_file(folder, filename).then(res => {
+        if (res && !res.ok) {
+          res.text().then(text => toast.error("Delete failed:" + text));
+        } else if (!(res && res.ok)) {
+          toast.error(
+            "Delete failed:" + ((res && res.statusText) || "can't connect")
+          );
+        }
+      });
+
       // refs #195: revalidate to ensure properly reindexing errors
       let newErrorSchema;
       if (this.props.errorSchema) {

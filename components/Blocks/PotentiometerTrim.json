@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ma1ii4dkdwr2o5k49i1e",
     "numericName": "",
     "shortName": "Trimmer Potentiometer",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Turning the Knob changes the resistance of the potentiometer. It can be used to control other components in your circuit with a simple turn of a knob.<br><strong>Returned values</strong>: from 0 (resting position) to 1023 (maximal turn).</p>\n",
@@ -39,7 +35,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PotentiometerTrim_1",
           "part": "PotentiometerTrim"
         }
       ],
@@ -53,7 +49,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -66,8 +63,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VDD",
@@ -78,11 +77,26 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "PotentiometerTrim_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "PotentiometerTrim_1.SIG",
+          "to": "SIG"
+        },
+        {
+          "from": "PotentiometerTrim_1.VDD",
+          "to": "VDD"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -100,7 +114,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PotentiometerTrim_1",
           "part": "PotentiometerTrim"
         }
       ],
@@ -114,7 +128,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -127,8 +142,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "VDD",
@@ -139,11 +156,26 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "PotentiometerTrim_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "PotentiometerTrim_1.SIG",
+          "to": "SIG"
+        },
+        {
+          "from": "PotentiometerTrim_1.VDD",
+          "to": "VDD"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

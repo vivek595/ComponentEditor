@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pisyjvyvi0db5ti1qeqg",
     "numericName": "",
     "shortName": "Arcade Button",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": true
     },
     "desc": "<p>This is an Translucent Red Arcade Button with 2 built-in LED that are connected in series with a 1K resistor, so you can power it directly from a 5v pin. it can be mounted easily to a panel since it have screwing around it (requires 30mm diameter hole for mounting).</p>",
@@ -39,22 +35,38 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PushButtonArcade_1",
           "part": "PushButtonArcade"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.BUTTON_SIG",
-          "to": "r1.con1"
+          "from": "PushButtonArcade_1.BUTTON_SIG",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "r1.con0",
+          "from": "Res10KO_1.con0",
           "to": "0"
+        },
+        {
+          "from": "PushButtonArcade_1.BUTTON_SIG",
+          "to": "BUTTON_SIG"
+        },
+        {
+          "from": "PushButtonArcade_1.BUTTON_VCC",
+          "to": "BUTTON_VCC"
+        },
+        {
+          "from": "PushButtonArcade_1.LED_VCC",
+          "to": "LED_VCC"
+        },
+        {
+          "from": "PushButtonArcade_1.LED_GND",
+          "to": "LED_GND"
         }
       ],
       "ports": [
@@ -67,7 +79,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -80,8 +93,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "BUTTON_VCC",
@@ -92,7 +107,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -110,8 +126,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "LED_GND",
@@ -122,10 +140,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

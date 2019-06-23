@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/rwnggyk8kpaquyciptnz",
     "numericName": "MICS5524",
     "shortName": "Gas Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This sensor can easily detect gas leak indoor. It is sensitive to CO (~ 1 to 1000 ppm), Ammonia (~ 1 to 500 ppm), Ethanol (~ 10 to 500 ppm), H2 (~ 1 - 1000 ppm), and Methane / Propane / Iso-Butane (~ 1,000++ ppm).</p>",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "MICS5524_1",
           "part": "MICS5524"
         }
       ],
@@ -59,7 +55,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 35
+            "requiresLoad": 35,
+            "portType": "requires"
           }
         },
         {
@@ -71,7 +68,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -89,10 +87,27 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "MICS5524_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "MICS5524_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MICS5524_1.Ao",
+          "to": "Ao"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

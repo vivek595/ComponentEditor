@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/xazaxavjmwjrr1pgslp7",
     "numericName": "",
     "shortName": "Momentary Push Button",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": true
     },
     "desc": "<p>This button is perfect for basic On/Off functions, it's N.O (norammaly open), and can be mounted into a panel easily.</p>",
@@ -39,22 +35,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PushButtonMomentary_1",
           "part": "PushButtonMomentary"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con1"
+          "from": "PushButtonMomentary_1.2",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "r1.con0",
+          "from": "Res10KO_1.con0",
           "to": "0"
+        },
+        {
+          "from": "PushButtonMomentary_1.1",
+          "to": "1"
+        },
+        {
+          "from": "PushButtonMomentary_1.2",
+          "to": "2"
         }
       ],
       "ports": [
@@ -67,7 +71,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -79,7 +84,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -92,11 +98,13 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -114,22 +122,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "PushButtonMomentary_1",
           "part": "PushButtonMomentary"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.2",
-          "to": "r1.con1"
+          "from": "PushButtonMomentary_1.2",
+          "to": "Res10KO_1.con1"
         },
         {
-          "from": "r1.con0",
+          "from": "Res10KO_1.con0",
           "to": "0"
+        },
+        {
+          "from": "PushButtonMomentary_1.1",
+          "to": "1"
+        },
+        {
+          "from": "PushButtonMomentary_1.2",
+          "to": "2"
         }
       ],
       "ports": [
@@ -142,7 +158,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -154,7 +171,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -167,11 +185,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/h4tkc5gh0ywuadtgntcp",
     "numericName": "BME680",
     "shortName": "Temperature, Humidity, Pressure and Gas Sensor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": true
     },
     "desc": "<p>This sensnor can measure Temperature, Humidity, Pressure and Gas. The gas sensor detects the volatile organic compounds (VOC) in the air, but it can not distinguish between different gasses. It is recommended to calibrate it, if you wish to use the gas sensor.</p>",
@@ -38,7 +34,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BME680_1",
           "part": "BME680"
         }
       ],
@@ -52,7 +48,8 @@
                 "spec": "SCL",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -64,7 +61,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -76,7 +74,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -88,11 +87,30 @@
                 "spec": "SDA",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "wires": [
+        {
+          "from": "BME680_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "BME680_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BME680_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BME680_1.SDI",
+          "to": "SDI"
+        }
+      ],
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -109,7 +127,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BME680_1",
           "part": "BME680"
         }
       ],
@@ -123,7 +141,8 @@
                 "spec": "SCL",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -135,7 +154,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -147,7 +167,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -159,11 +180,30 @@
                 "spec": "SDA",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "BME680_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "BME680_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BME680_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BME680_1.SDI",
+          "to": "SDI"
+        }
+      ],
+      "cost": 1
     }
   ]
 }

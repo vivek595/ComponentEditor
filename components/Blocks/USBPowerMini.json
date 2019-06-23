@@ -10,34 +10,26 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/a9enhdowwykxyguiumlf",
     "numericName": "",
     "shortName": "Mini USB Cable",
-    "tags": [
-      "power"
-    ],
     "indicators": {
       "verified": true,
-      "code": false,
       "solder": false
     },
     "desc": "<p>A standard Mini USB cable to power your circuit from your computer or a USB socket.</p>\n",
     "visible": true
   },
-  "altComp": [
-    150,
-    "PowerSupply12v2A"
-  ],
+  "altComp": {
+    "cost": 150,
+    "block": "PowerSupply12v2A"
+  },
   "circuits": [
     {
       "name": "WithFTDI5v",
-      "altComp": [
-        150,
-        "PowerSupply12v2A"
-      ],
       "supportedControllers": [
         "ArduinoProMini5v"
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "USBPowerMiniWithFTDI_1",
           "part": "USBPowerMiniWithFTDI"
         }
       ],
@@ -51,7 +43,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -62,7 +55,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -74,24 +68,27 @@
                 "spec": "FTDI",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "wires": [
+        {
+          "from": "USBPowerMiniWithFTDI_1.FTDI",
+          "to": "FTDI"
+        }
+      ],
+      "cost": 1
     },
     {
       "name": "WithFTDI3v3",
-      "altComp": [
-        150,
-        "PowerSupply12v2A"
-      ],
       "supportedControllers": [
         "ArduinoProMini3v3"
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "USBPowerMiniWithFTDI_1",
           "part": "USBPowerMiniWithFTDI"
         }
       ],
@@ -105,7 +102,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -116,7 +114,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -128,24 +127,27 @@
                 "spec": "FTDI",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 2
+      "wires": [
+        {
+          "from": "USBPowerMiniWithFTDI_1.FTDI",
+          "to": "FTDI"
+        }
+      ],
+      "cost": 2
     },
     {
       "name": "Cable",
-      "altComp": [
-        150,
-        "PowerSupply12v2A"
-      ],
       "supportedControllers": [
         "ArduinoNano"
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "USBPowerMini_1",
           "part": "USBPowerMini"
         }
       ],
@@ -159,7 +161,8 @@
                 "voltage": "5v"
               }
             ],
-            "providesLoad": 400
+            "providesLoad": 400,
+            "portType": "provides"
           }
         },
         {
@@ -170,7 +173,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -182,11 +186,18 @@
                 "spec": "USB_MINI",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 3
+      "wires": [
+        {
+          "from": "USBPowerMini_1.USB_MINI",
+          "to": "USB_MINI"
+        }
+      ],
+      "cost": 3
     }
   ]
 }

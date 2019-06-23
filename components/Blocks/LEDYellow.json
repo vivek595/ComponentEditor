@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/cygmgaah80lantzvtyjs",
     "numericName": "",
     "shortName": "Yellow LED",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>This is a very basic, small, Yellow LED. Control the intensity of the color at a range of 0-255. Its Luminous Intensity is 150-200mcd.</p>\n",
@@ -39,23 +35,26 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LEDYellow",
-          "properties": "Yellow (585nm)"
+          "name": "LEDYellow_1",
+          "part": "LEDYellow"
         },
         {
-          "name": "Res1",
+          "name": "Res220O_1",
           "part": "Res220O"
         }
       ],
       "wires": [
         {
-          "from": "this.Gnd",
-          "to": "Res1.con1"
+          "from": "LEDYellow_1.Gnd",
+          "to": "Res220O_1.con1"
         },
         {
-          "from": "Res1.con0",
+          "from": "Res220O_1.con0",
           "to": "GND"
+        },
+        {
+          "from": "LEDYellow_1.Vin",
+          "to": "Vin"
         }
       ],
       "ports": [
@@ -69,8 +68,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -81,11 +82,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     },
     {
       "name": "3.3v",
@@ -103,23 +105,26 @@
       ],
       "parts": [
         {
-          "name": "this",
-          "part": "LEDYellow",
-          "properties": "Yellow (585nm)"
+          "name": "LEDYellow_1",
+          "part": "LEDYellow"
         },
         {
-          "name": "Res1",
+          "name": "Res100O_1",
           "part": "Res100O"
         }
       ],
       "wires": [
         {
-          "from": "this.Gnd",
-          "to": "Res1.con1"
+          "from": "LEDYellow_1.Gnd",
+          "to": "Res100O_1.con1"
         },
         {
-          "from": "Res1.con0",
+          "from": "Res100O_1.con0",
           "to": "GND"
+        },
+        {
+          "from": "LEDYellow_1.Vin",
+          "to": "Vin"
         }
       ],
       "ports": [
@@ -133,8 +138,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "GND",
@@ -145,11 +152,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 2
+      "cost": 2
     }
   ]
 }

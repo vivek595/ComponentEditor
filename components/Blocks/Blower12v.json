@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/yhs0dqdcgcmvvyleau6x",
     "numericName": "",
     "shortName": "Blower",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": false
     },
     "desc": "<p>DC Blower rates 1Amp @ 12VDC.</p>\n",
@@ -43,7 +39,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Blower12v_1",
           "part": "Blower12v"
         }
       ],
@@ -59,8 +55,10 @@
               }
             ],
             "requiresLoad": 400,
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Coil2",
@@ -72,7 +70,8 @@
                 "voltage": "12v"
               }
             ],
-            "requiresLoad": 400
+            "requiresLoad": 400,
+            "portType": "requires"
           }
         }
       ],
@@ -83,7 +82,18 @@
             "GndHighLoadPWMSwitching"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Blower12v_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "Blower12v_1.Coil2",
+          "to": "Coil2"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

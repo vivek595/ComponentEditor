@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pbmty1bnmuk73pzum53i",
     "numericName": "",
     "shortName": "Chainable Smart LED Pixel",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>The Adafruit Pixie is very bright 3W RGB LED and it is also chainable. It communicates with the MCU over serial at 115200 baud rate.<p> It can be easily manipulated using <a href=\"https://learn.adafruit.com/pixie-3-watt-smart-chainable-led-pixels/wiring-and-test\">Adafruit Pixie library</a></p>",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "LEDPixie3W_1",
           "part": "LEDPixie3W"
         }
       ],
@@ -58,7 +54,8 @@
                 "voltage": "5v"
               }
             ],
-            "requiresLoad": 500
+            "requiresLoad": 500,
+            "portType": "requires"
           }
         },
         {
@@ -71,7 +68,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -90,25 +88,33 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "OUT",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         },
         {
           "name": "5V_Ch",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         },
         {
           "name": "GND_Ch",
           "interface": {
-            "chain": true
+            "chain": true,
+            "portType": "provides",
+            "provides": []
           }
         }
       ],
@@ -125,7 +131,34 @@
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "LEDPixie3W_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "LEDPixie3W_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LEDPixie3W_1.IN",
+          "to": "IN"
+        },
+        {
+          "from": "LEDPixie3W_1.OUT",
+          "to": "OUT"
+        },
+        {
+          "from": "LEDPixie3W_1.5V_Ch",
+          "to": "5V_Ch"
+        },
+        {
+          "from": "LEDPixie3W_1.GND_Ch",
+          "to": "GND_Ch"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "BLEHM10",
   "category": [
-    "input"
+    "input", "connectivity"
   ],
   "blockId": "395589",
   "app": {
@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/ivdaiq1yd6jwoakjb7lr",
     "numericName": "HM10",
     "shortName": "BLE",
-    "tags": [
-      "connectivity"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Bluetooth Low Energy (BLE) serial device. Use it to communicate with other BLE devices like other arduino boards or Smartphones which support BLE.<br><strong>Returned Value</strong>: Strings via Serial communication.</p>\n<p><strong>Sample Application</strong>:<a target=\"_blank\" href=\"https://evothings.com/control-an-led-using-hm-10-ble-module-an-arduino-and-a-mobile-app/\">Control an Arduino via the HM-10 BLE module, from a mobile app on your smartphone</a></p>\n",
@@ -42,18 +38,34 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BLEHM10_1",
           "part": "BLEHM10"
         }
       ],
       "wires": [
         {
-          "from": "this.RX",
+          "from": "BLEHM10_1.RX",
           "to": "TXD"
         },
         {
-          "from": "this.TX",
+          "from": "BLEHM10_1.TX",
           "to": "RXD"
+        },
+        {
+          "from": "BLEHM10_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BLEHM10_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "BLEHM10_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "BLEHM10_1.RX",
+          "to": "RX"
         }
       ],
       "ports": [
@@ -66,7 +78,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -78,7 +91,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -96,7 +110,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         },
         {
@@ -114,11 +129,12 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
+            "unique": true,
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "SoftwareSerial",
@@ -142,18 +158,26 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "BLEHM10_1",
           "part": "BLEHM10"
         }
       ],
       "wires": [
         {
-          "from": "this.RX",
+          "from": "BLEHM10_1.RX",
           "to": "TXD"
         },
         {
-          "from": "this.TX",
+          "from": "BLEHM10_1.TX",
           "to": "RXD"
+        },
+        {
+          "from": "BLEHM10_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BLEHM10_1.VCC",
+          "to": "VCC"
         }
       ],
       "ports": [
@@ -166,7 +190,8 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -178,7 +203,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -190,7 +216,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -218,8 +245,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "RXD",
@@ -246,11 +275,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 100
+      "cost": 100
     }
   ]
 }

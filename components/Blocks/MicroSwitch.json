@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/x8knpjlz9ychdknf2jif",
     "numericName": "",
     "shortName": "Micro Switch",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Micro-switches are really handy in any kind of project, it actuated by very little physical force, it\u2019s reliable, cheap, and comes in many sizes and shapes. It actually acts as a small push button, and have a \u2018clicky\u2019 sound and a nice tactile feel.<br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/micro-switch/\">Learn More</a></p>",
@@ -39,22 +35,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "MicroSwitch_1",
           "part": "MicroSwitch"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.COM",
-          "to": "r1.con0"
+          "from": "MicroSwitch_1.COM",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "MicroSwitch_1.NO",
+          "to": "NO"
+        },
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "COM"
         }
       ],
       "ports": [
@@ -67,7 +71,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -79,7 +84,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -92,11 +98,13 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -114,22 +122,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "MicroSwitch_1",
           "part": "MicroSwitch"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.COM",
-          "to": "r1.con0"
+          "from": "MicroSwitch_1.COM",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "0"
+        },
+        {
+          "from": "MicroSwitch_1.NO",
+          "to": "NO"
+        },
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "COM"
         }
       ],
       "ports": [
@@ -142,7 +158,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -154,7 +171,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -167,11 +185,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }

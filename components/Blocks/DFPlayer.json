@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/pz2iprbotarg7xedbhts",
     "numericName": "",
     "shortName": "DFPlayer",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>The DFPlayer Mini is a small and low price MP3 module with an simplified output directly to the speaker.<br>The module can be used as a stand alone module with attached battery, speaker and push buttons or used in combination with an Arduino UNO or any other with RX/TX capabilities.</p>",
@@ -43,34 +39,46 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "DFPlayer_1",
           "part": "DFPlayer"
         },
         {
-          "name": "res",
+          "name": "Res1KO_1",
           "part": "Res1KO"
         },
         {
-          "name": "Speaker",
+          "name": "Speaker05W_1",
           "part": "Speaker05W"
         }
       ],
       "wires": [
         {
-          "from": "this.RX",
-          "to": "res.con0"
+          "from": "DFPlayer_1.RX",
+          "to": "Res1KO_1.con0"
         },
         {
-          "from": "this.SPK_1",
-          "to": "Speaker.POS"
+          "from": "DFPlayer_1.SPK_1",
+          "to": "Speaker05W_1.POS"
         },
         {
-          "from": "this.SPK_2",
-          "to": "Speaker.NEG"
+          "from": "DFPlayer_1.SPK_2",
+          "to": "Speaker05W_1.NEG"
         },
         {
-          "from": "res.con1",
+          "from": "Res1KO_1.con1",
           "to": "Rx"
+        },
+        {
+          "from": "DFPlayer_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "DFPlayer_1.GND-1",
+          "to": "GND-1"
+        },
+        {
+          "from": "DFPlayer_1.TX",
+          "to": "TX"
         }
       ],
       "ports": [
@@ -89,7 +97,8 @@
                 "voltage": "3.3v"
               }
             ],
-            "requiresLoad": 100
+            "requiresLoad": 100,
+            "portType": "requires"
           }
         },
         {
@@ -101,7 +110,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -139,8 +149,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "Rx",
@@ -177,10 +189,13 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "cost": 0
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/vpj3s6thbwmuoazt8zwi",
     "numericName": "",
     "shortName": "Arduino Gemma",
-    "tags": [
-      "controller"
-    ],
     "indicators": {
       "verified": false,
-      "code": false,
       "solder": false
     },
     "desc": "<p>GEMMA is a tiny wearable platform board powered by a Attiny85 and programmable with an Arduino IDE over USB. It is perfect for small wearable project!</p>",
@@ -31,7 +27,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoGemma_1",
           "part": "ArduinoGemma"
         }
       ],
@@ -44,7 +40,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -80,7 +77,8 @@
                 "spec": "ESPSoftwareSerialRX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -112,7 +110,8 @@
                 "spec": "ESPSoftwareSerialTX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -140,7 +139,8 @@
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -151,7 +151,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -162,7 +163,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -174,7 +176,8 @@
                 "spec": "USB",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -186,7 +189,8 @@
                 "spec": "USB",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -197,7 +201,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -209,7 +214,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 512
+            "providesLoad": 512,
+            "portType": "provides"
           }
         },
         {
@@ -220,11 +226,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 1,
       "requiredBlocks": [
         {
           "cost": 20,
@@ -241,10 +247,41 @@
         {
           "cost": 40,
           "blocks": [
-            "Reg3.3v"
+            "Reg3v3"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoGemma_1.3.3V",
+          "to": "3.3V"
+        },
+        {
+          "from": "ArduinoGemma_1.D0",
+          "to": "D0"
+        },
+        {
+          "from": "ArduinoGemma_1.D1",
+          "to": "D1"
+        },
+        {
+          "from": "ArduinoGemma_1.D2",
+          "to": "D2"
+        },
+        {
+          "from": "ArduinoGemma_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoGemma_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "ArduinoGemma_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 1
     },
     {
       "name": "Barrel12v",
@@ -256,7 +293,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoGemma_1",
           "part": "ArduinoGemma"
         }
       ],
@@ -269,7 +306,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -305,7 +343,8 @@
                 "spec": "ESPSoftwareSerialRX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -337,7 +376,8 @@
                 "spec": "ESPSoftwareSerialTX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -365,7 +405,8 @@
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -376,7 +417,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -388,7 +430,8 @@
                 "spec": "",
                 "voltage": "12v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -399,7 +442,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -411,7 +455,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 512
+            "providesLoad": 512,
+            "portType": "provides"
           }
         },
         {
@@ -422,11 +467,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 2,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -452,18 +497,49 @@
           "cost": 40,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v"
+            "Reg3v3"
           ]
         },
         {
           "cost": 50,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v",
+            "Reg3v3",
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoGemma_1.3.3V",
+          "to": "3.3V"
+        },
+        {
+          "from": "ArduinoGemma_1.D0",
+          "to": "D0"
+        },
+        {
+          "from": "ArduinoGemma_1.D1",
+          "to": "D1"
+        },
+        {
+          "from": "ArduinoGemma_1.D2",
+          "to": "D2"
+        },
+        {
+          "from": "ArduinoGemma_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoGemma_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "ArduinoGemma_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 2
     },
     {
       "name": "BatteryEx",
@@ -475,7 +551,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoGemma_1",
           "part": "ArduinoGemma"
         }
       ],
@@ -488,7 +564,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -524,7 +601,8 @@
                 "spec": "ESPSoftwareSerialRX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -556,7 +634,8 @@
                 "spec": "ESPSoftwareSerialTX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -584,7 +663,8 @@
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -595,7 +675,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -622,7 +703,8 @@
                 "spec": "",
                 "voltage": "9v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -633,7 +715,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -645,7 +728,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 512
+            "providesLoad": 512,
+            "portType": "provides"
           }
         },
         {
@@ -656,11 +740,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 3,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -686,18 +770,49 @@
           "cost": 40,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v"
+            "Reg3v3"
           ]
         },
         {
           "cost": 50,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v",
+            "Reg3v3",
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoGemma_1.3.3V",
+          "to": "3.3V"
+        },
+        {
+          "from": "ArduinoGemma_1.D0",
+          "to": "D0"
+        },
+        {
+          "from": "ArduinoGemma_1.D1",
+          "to": "D1"
+        },
+        {
+          "from": "ArduinoGemma_1.D2",
+          "to": "D2"
+        },
+        {
+          "from": "ArduinoGemma_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoGemma_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "ArduinoGemma_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 3
     },
     {
       "name": "Lipo3v7",
@@ -709,7 +824,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "ArduinoGemma_1",
           "part": "ArduinoGemma"
         }
       ],
@@ -722,7 +837,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -758,7 +874,8 @@
                 "spec": "ESPSoftwareSerialRX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -790,7 +907,8 @@
                 "spec": "ESPSoftwareSerialTX1",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -818,7 +936,8 @@
                 "spec": "ADC",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -829,7 +948,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -840,7 +960,8 @@
                 "spec": "",
                 "voltage": "3.7v"
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -852,7 +973,8 @@
                 "spec": "Battery",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -864,7 +986,8 @@
                 "spec": "Battery",
                 "voltage": "3.7v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -875,7 +998,8 @@
                 "spec": "USB_MICRO",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         },
         {
@@ -887,7 +1011,8 @@
                 "voltage": ""
               }
             ],
-            "providesLoad": 512
+            "providesLoad": 512,
+            "portType": "provides"
           }
         },
         {
@@ -898,11 +1023,11 @@
                 "spec": "ESPSoftwareSerialTag",
                 "voltage": ""
               }
-            ]
+            ],
+            "portType": "provides"
           }
         }
       ],
-      "priority": 4,
       "requiredBlocks": [
         {
           "cost": 0,
@@ -928,18 +1053,57 @@
           "cost": 40,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v"
+            "Reg3v3"
           ]
         },
         {
           "cost": 50,
           "blocks": [
             "USBPowerMicro",
-            "Reg3.3v",
+            "Reg3v3",
             "Reg5v"
           ]
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "ArduinoGemma_1.3.3V",
+          "to": "3.3V"
+        },
+        {
+          "from": "ArduinoGemma_1.D0",
+          "to": "D0"
+        },
+        {
+          "from": "ArduinoGemma_1.D1",
+          "to": "D1"
+        },
+        {
+          "from": "ArduinoGemma_1.D2",
+          "to": "D2"
+        },
+        {
+          "from": "ArduinoGemma_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ArduinoGemma_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "ArduinoGemma_1.BAT-",
+          "to": "BAT-"
+        },
+        {
+          "from": "ArduinoGemma_1.BAT+",
+          "to": "BAT+"
+        },
+        {
+          "from": "ArduinoGemma_1.USB_MICRO",
+          "to": "USB_MICRO"
+        }
+      ],
+      "cost": 4
     }
   ]
 }

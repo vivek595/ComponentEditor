@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/r73syfuynzumbamzzdte",
     "numericName": "",
     "shortName": "KeyPad 4x3",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": true
     },
     "desc": "<p>A simple 4-by-3 keypad matrix. You can set the keys as you wish.</p>\n<p><strong>Return Value</strong>: Returns the pressed keypad.</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"http://www.vathsav.com/post/arduino_calculator.html\">Arduino Calculator</a></p>\n",
@@ -42,7 +38,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Keypad_1",
           "part": "Keypad"
         }
       ],
@@ -62,8 +58,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "row1",
@@ -80,8 +78,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "col2",
@@ -98,8 +98,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "col3",
@@ -116,8 +118,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "row2",
@@ -134,8 +138,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "col1",
@@ -152,8 +158,10 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "row4",
@@ -170,10 +178,43 @@
                 "voltage": "5v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "Keypad_1.row3",
+          "to": "row3"
+        },
+        {
+          "from": "Keypad_1.row1",
+          "to": "row1"
+        },
+        {
+          "from": "Keypad_1.col2",
+          "to": "col2"
+        },
+        {
+          "from": "Keypad_1.col3",
+          "to": "col3"
+        },
+        {
+          "from": "Keypad_1.row2",
+          "to": "row2"
+        },
+        {
+          "from": "Keypad_1.col1",
+          "to": "col1"
+        },
+        {
+          "from": "Keypad_1.row4",
+          "to": "row4"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/dfavatcul13uitff56sq",
     "numericName": "",
     "shortName": "Relay",
-    "tags": [
-      "output"
-    ],
     "indicators": {
       "verified": true,
-      "code": true,
       "solder": false
     },
     "desc": "<p>Relay with breakout board. It is used to isolate components and create a sub-circuit in your circuit, with a different voltage.</p>\n",
@@ -44,7 +40,7 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "RelayModule_1",
           "part": "RelayModule"
         }
       ],
@@ -64,8 +60,10 @@
                 "voltage": "3.3v"
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "ground",
@@ -76,7 +74,8 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -93,10 +92,26 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
-      ]
+      ],
+      "wires": [
+        {
+          "from": "RelayModule_1.signal",
+          "to": "signal"
+        },
+        {
+          "from": "RelayModule_1.ground",
+          "to": "ground"
+        },
+        {
+          "from": "RelayModule_1.power",
+          "to": "power"
+        }
+      ],
+      "cost": 0
     }
   ]
 }

@@ -9,12 +9,8 @@
     "image": "http://res.cloudinary.com/circuito/image/upload/rgxsi1omllfhbuwuskih",
     "numericName": "",
     "shortName": "Thermistor",
-    "tags": [
-      "input"
-    ],
     "indicators": {
       "verified": false,
-      "code": true,
       "solder": false
     },
     "desc": "<p>A thermistor is a thermal resistor - a resistor that changes its resistance with temperature. it\u2019s a simple, inexpensive, and accurate component that makes it easy to get temperature data for your projects. It can be used in many applications including temperature measurement, compensation and control.</p>",
@@ -39,22 +35,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Thermistor_1",
           "part": "Thermistor"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.con1",
-          "to": "r1.con0"
+          "from": "Thermistor_1.con1",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "VCC"
+        },
+        {
+          "from": "Thermistor_1.con1",
+          "to": "con1"
+        },
+        {
+          "from": "Thermistor_1.con0",
+          "to": "con0"
         }
       ],
       "ports": [
@@ -67,7 +71,8 @@
                 "spec": "",
                 "voltage": "5v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -80,8 +85,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "con0",
@@ -92,11 +99,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 0
+      "cost": 0
     },
     {
       "name": "3v3",
@@ -113,22 +121,30 @@
       ],
       "parts": [
         {
-          "name": "this",
+          "name": "Thermistor_1",
           "part": "Thermistor"
         },
         {
-          "name": "r1",
+          "name": "Res10KO_1",
           "part": "Res10KO"
         }
       ],
       "wires": [
         {
-          "from": "this.con1",
-          "to": "r1.con0"
+          "from": "Thermistor_1.con1",
+          "to": "Res10KO_1.con0"
         },
         {
-          "from": "r1.con1",
+          "from": "Res10KO_1.con1",
           "to": "VCC"
+        },
+        {
+          "from": "Thermistor_1.con1",
+          "to": "con1"
+        },
+        {
+          "from": "Thermistor_1.con0",
+          "to": "con0"
         }
       ],
       "ports": [
@@ -141,7 +157,8 @@
                 "spec": "",
                 "voltage": "3.3v"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         },
         {
@@ -154,8 +171,10 @@
                 "voltage": ""
               }
             ],
-            "unique": true
-          }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         },
         {
           "name": "con0",
@@ -166,11 +185,12 @@
                 "spec": "",
                 "voltage": "GND"
               }
-            ]
+            ],
+            "portType": "requires"
           }
         }
       ],
-      "priority": 1
+      "cost": 1
     }
   ]
 }
