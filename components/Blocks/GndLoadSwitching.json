@@ -1,0 +1,89 @@
+{
+  "name": "GndLoadSwitching",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
+        {
+          "name": "TSBC337_1",
+          "part": "TSBC337"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "TSBC337_1.B",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "TSBC337_1.E",
+          "to": "GndIn"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Sig"
+        },
+        {
+          "from": "TSBC337_1.C",
+          "to": "GndOut"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GndIn",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GndOut",
+          "interface": {
+            "codenameRedirect": "Sig",
+            "provides": [
+              {
+                "spec": "GndLoadSwitching",
+                "voltage": ""
+              }
+            ],
+            "providesLoad": 3000,
+            "portType": "provides"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

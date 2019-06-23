@@ -1,0 +1,197 @@
+{
+  "name": "MicroSwitch",
+  "category": [
+    "input"
+  ],
+  "blockId": "305155",
+  "app": {
+    "appName": "Micro Switch",
+    "image": "http://res.cloudinary.com/circuito/image/upload/x8knpjlz9ychdknf2jif",
+    "numericName": "",
+    "shortName": "Micro Switch",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>Micro-switches are really handy in any kind of project, it actuated by very little physical force, it\u2019s reliable, cheap, and comes in many sizes and shapes. It actually acts as a small push button, and have a \u2018clicky\u2019 sound and a nice tactile feel.<br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/micro-switch/\">Learn More</a></p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "MicroSwitch"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MicroSwitch_1",
+          "part": "MicroSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "MicroSwitch_1.NO",
+          "to": "NO"
+        },
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "COM"
+        }
+      ],
+      "ports": [
+        {
+          "name": "NO",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "COM",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "MicroSwitch"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MicroSwitch_1",
+          "part": "MicroSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "MicroSwitch_1.NO",
+          "to": "NO"
+        },
+        {
+          "from": "MicroSwitch_1.COM",
+          "to": "COM"
+        }
+      ],
+      "ports": [
+        {
+          "name": "NO",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "COM",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "SIM800L_HardwareSerial",
+  "supportedControllers": [],
+  "license": "rapid",
+  "code": {
+    "constructors": "{{classname}} {{varname}}(Serial1);"
+  },
+  "instantiate": {
+    "classname": "HardwareSerial&",
+    "varname": "sim800"
+  }
+}

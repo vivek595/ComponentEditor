@@ -1,0 +1,117 @@
+{
+  "name": "RelayModule",
+  "category": [
+    "output"
+  ],
+  "blockId": "3061987",
+  "app": {
+    "appName": "Relay Module",
+    "image": "http://res.cloudinary.com/circuito/image/upload/dfavatcul13uitff56sq",
+    "numericName": "",
+    "shortName": "Relay",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>Relay with breakout board. It is used to isolate components and create a sub-circuit in your circuit, with a different voltage.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "RelayModule"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "RelayModule_1",
+          "part": "RelayModule"
+        }
+      ],
+      "ports": [
+        {
+          "name": "signal",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "ground",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "power",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "RelayModule_1.signal",
+          "to": "signal"
+        },
+        {
+          "from": "RelayModule_1.ground",
+          "to": "ground"
+        },
+        {
+          "from": "RelayModule_1.power",
+          "to": "power"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

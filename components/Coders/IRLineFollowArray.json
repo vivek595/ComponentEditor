@@ -1,0 +1,9 @@
+{
+  "name": "IRLineFollowArray",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

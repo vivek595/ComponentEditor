@@ -1,0 +1,11 @@
+{
+  "name": "BMP280",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  },
+  "files": [],
+  "includeHeaders": []
+}

@@ -1,0 +1,181 @@
+{
+  "name": "Potentiometer",
+  "category": [
+    "input"
+  ],
+  "blockId": "9939",
+  "app": {
+    "appName": "Rotary Potentiometer - 10k Ohm, Linear",
+    "image": "http://res.cloudinary.com/circuito/image/upload/oyjpnf3arkrq0obbrbcr",
+    "numericName": "",
+    "shortName": "Rotary Potentiometer",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>Turning the Knob changes the resistance of the potentiometer. It can be used to control other components in your circuit with a simple turn of a knob.<br><strong>Returned values</strong>: from 0 (resting position) to 1023 (maximal turn).<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/How-to-Make-an-Office-Neighbor-Shield-With-Arduino-1/\">Neighbour Shield</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "Potentiometer"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "Potentiometer_1",
+          "part": "Potentiometer"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "Potentiometer_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Potentiometer_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Potentiometer_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "Potentiometer"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "Potentiometer_1",
+          "part": "Potentiometer"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "Potentiometer_1.0",
+          "to": "0"
+        },
+        {
+          "from": "Potentiometer_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "Potentiometer_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

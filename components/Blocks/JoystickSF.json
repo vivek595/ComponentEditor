@@ -1,0 +1,256 @@
+{
+  "name": "JoystickSF",
+  "category": [
+    "input"
+  ],
+  "blockId": "713952",
+  "app": {
+    "appName": "Thumb Joystick",
+    "image": "http://res.cloudinary.com/circuito/image/upload/xo9kuwhjyidyyqrvwxtl",
+    "numericName": "",
+    "shortName": "Thumb Joystick",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>This Joystick is simply two 10Kohm potentiometers - one for each axis. The module also has a pushbutton for press functionality.</p>\n<p><strong>Returned Values</strong>: &#39;0 - 1023&#39; analog input value per direction and logical &#39;0&#39; or &#39;1&#39; for press.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://blog.arduino.cc/2012/12/23/xbee-controlled-4wd-wireless-robot/\">XBEE-CONTROLLED 4WD WIRELESS ROBOT</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "JoystickSF"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "JoystickSF_1",
+          "part": "JoystickSF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SEL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VERT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "HORZ",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "JoystickSF_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "JoystickSF_1.SEL",
+          "to": "SEL"
+        },
+        {
+          "from": "JoystickSF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "JoystickSF_1.VERT",
+          "to": "VERT"
+        },
+        {
+          "from": "JoystickSF_1.HORZ",
+          "to": "HORZ"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "JoystickSF"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "JoystickSF_1",
+          "part": "JoystickSF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SEL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VERT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "HORZ",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "JoystickSF_1.SEL",
+          "to": "SEL"
+        },
+        {
+          "from": "JoystickSF_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "JoystickSF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "JoystickSF_1.VERT",
+          "to": "VERT"
+        },
+        {
+          "from": "JoystickSF_1.HORZ",
+          "to": "HORZ"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

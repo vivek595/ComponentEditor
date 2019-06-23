@@ -1,0 +1,77 @@
+{
+  "name": "PowerSupply12vExt",
+  "category": [
+    "powerConnector",
+    "power"
+  ],
+  "blockId": "9444",
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [
+        "RPI3B"
+      ],
+      "parts": [
+        {
+          "name": "PowerSupply12v2A_1",
+          "part": "PowerSupply12v2A"
+        }
+      ],
+      "ports": [
+        {
+          "name": "pos",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "12v"
+              }
+            ],
+            "providesLoad": 2000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "neg",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "BARREL_JACK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "BARREL_JACK",
+                "voltage": ""
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 1,
+          "blocks": [
+            "BarrelJack12v"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "PowerSupply12v2A_1.BARREL_JACK",
+          "to": "BARREL_JACK"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

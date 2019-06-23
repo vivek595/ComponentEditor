@@ -1,0 +1,151 @@
+{
+  "name": "PushButtonArcade",
+  "category": [
+    "input"
+  ],
+  "blockId": "62012",
+  "app": {
+    "appName": "Arcade Button with LED - 30mm Translucent Red",
+    "image": "http://res.cloudinary.com/circuito/image/upload/pisyjvyvi0db5ti1qeqg",
+    "numericName": "",
+    "shortName": "Arcade Button",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>This is an Translucent Red Arcade Button with 2 built-in LED that are connected in series with a 1K resistor, so you can power it directly from a 5v pin. it can be mounted easily to a panel since it have screwing around it (requires 30mm diameter hole for mounting).</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "PushButtonArcade"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PushButtonArcade_1",
+          "part": "PushButtonArcade"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "PushButtonArcade_1.BUTTON_SIG",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "Res10KO_1.con0",
+          "to": "0"
+        },
+        {
+          "from": "PushButtonArcade_1.BUTTON_SIG",
+          "to": "BUTTON_SIG"
+        },
+        {
+          "from": "PushButtonArcade_1.BUTTON_VCC",
+          "to": "BUTTON_VCC"
+        },
+        {
+          "from": "PushButtonArcade_1.LED_VCC",
+          "to": "LED_VCC"
+        },
+        {
+          "from": "PushButtonArcade_1.LED_GND",
+          "to": "LED_GND"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "BUTTON_SIG",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "BUTTON_VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "LED_VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "LED_GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

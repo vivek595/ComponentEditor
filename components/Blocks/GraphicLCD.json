@@ -1,0 +1,150 @@
+{
+  "name": "GraphicLCD",
+  "category": [
+    "output"
+  ],
+  "blockId": "8799",
+  "app": {
+    "appName": "Graphic LCD 160x128 Huge",
+    "image": "http://res.cloudinary.com/circuito/image/upload/pwbeovatluc0uwehggza",
+    "numericName": "",
+    "shortName": "Graphic LCD",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A huge LCD screen, allowing you to display long messages, or complex drawings. It\u2019s background is blue with a white font. The  screen may be sensitive to very low or very high temperature.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "GraphicLCD"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "Arduino101",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "GraphicLCD_1",
+          "part": "GraphicLCD"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 200,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "TX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 113,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "RX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "GraphicLCD_1.Vin",
+          "to": "Vin"
+        },
+        {
+          "from": "GraphicLCD_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "GraphicLCD_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "GraphicLCD_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

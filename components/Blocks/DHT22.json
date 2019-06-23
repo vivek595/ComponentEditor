@@ -1,0 +1,205 @@
+{
+  "name": "DHT22",
+  "category": [
+    "input"
+  ],
+  "blockId": "10167",
+  "app": {
+    "appName": "DHT22/11 Humidity and Temperature Sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/dbhe5vbq7epmevqu4taf",
+    "numericName": "DHT22",
+    "shortName": "Temperature and Humidity Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A low cost humidity and temperature sensor.<br><strong>Returned Values</strong>:  Temperature and Humidity through a single wire digital interface.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "DHT22"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "DHT22_1",
+          "part": "DHT22"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "DHT22_1.DATA",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "DHT22_1.VDD",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "DHT22_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "DHT22_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "DHT22_1.DATA",
+          "to": "DATA"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DATA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "DHT22"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "DHT22_1",
+          "part": "DHT22"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "DHT22_1.DATA",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "DHT22_1.VDD",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "DHT22_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "DHT22_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "DHT22_1.DATA",
+          "to": "DATA"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DATA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "BME280SF",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

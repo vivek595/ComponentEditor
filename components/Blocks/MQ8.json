@@ -1,0 +1,201 @@
+{
+  "name": "MQ8",
+  "category": [
+    "input"
+  ],
+  "blockId": "398788",
+  "app": {
+    "appName": "Hydrogen Gas Sensor - MQ-8",
+    "image": "http://res.cloudinary.com/circuito/image/upload/pdhjxmvtm3suyjn4w2hd",
+    "numericName": "MQ8",
+    "shortName": "Hydrogen Gas Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This sensor is sensitive for hydrogen concentrations in the air. The MQ-8 can detect hydrogen gas concentrations anywhere from 100-10000ppm.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "MQ8"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ8_1",
+          "part": "MQ8"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "AOUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ8_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ8_1.AOUT",
+          "to": "AOUT"
+        },
+        {
+          "from": "MQ8_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "MQ83v3"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ8_1",
+          "part": "MQ8"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ8_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
+        },
+        {
+          "from": "MQ8_1.AOUT",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "Aout"
+        },
+        {
+          "from": "MQ8_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ8_1.5V",
+          "to": "5V"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Aout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

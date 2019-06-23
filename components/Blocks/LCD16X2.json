@@ -1,0 +1,347 @@
+{
+  "name": "LCD16X2",
+  "category": [
+    "output"
+  ],
+  "blockId": "341099",
+  "app": {
+    "appName": "LCD 16x2",
+    "image": "http://res.cloudinary.com/circuito/image/upload/st9eaifr2logxoyvvfrm",
+    "numericName": "",
+    "shortName": "LCD 16x2",
+    "indicators": {
+      "verified": true,
+      "solder": true
+    },
+    "desc": "<p>A small LCD screen, allowing the display of short message or simple drawings.</p>\n<p><strong>Contribution</strong>: This component is introduced into circuito.io with the help of members of our community: <strong>maheswar.nani, paeric & adarmaori</strong>.</p>\n<p><strong>Disclaimer</strong>: This component is <strong>in testing</strong>, therefore it may be buggy. Please be kind and report any bugs you may find.</p>\n<strong>Requires</strong>: Soldering 16 pin male header</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/My-First-Project-Arduino-LCD-16x2-Display/?ALLSTEPS#intro\">My First Project: Arduino LCD 16x2 Display</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LCD16X2"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LCD16X2_1",
+          "part": "LCD16X2"
+        },
+        {
+          "name": "Res220O_1",
+          "part": "Res220O"
+        },
+        {
+          "name": "Potentiometer_1",
+          "part": "Potentiometer"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LCD16X2_1.A",
+          "to": "Res220O_1.con1"
+        },
+        {
+          "from": "LCD16X2_1.VO",
+          "to": "Potentiometer_1.Sig"
+        },
+        {
+          "from": "Res220O_1.con0",
+          "to": "a"
+        },
+        {
+          "from": "Potentiometer_1.0",
+          "to": "PotGND"
+        },
+        {
+          "from": "Potentiometer_1.Vin",
+          "to": "PotVCC"
+        },
+        {
+          "from": "LCD16X2_1.VSS",
+          "to": "VSS"
+        },
+        {
+          "from": "LCD16X2_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LCD16X2_1.RS",
+          "to": "RS"
+        },
+        {
+          "from": "LCD16X2_1.R_W",
+          "to": "R_W"
+        },
+        {
+          "from": "LCD16X2_1.E",
+          "to": "E"
+        },
+        {
+          "from": "LCD16X2_1.DB4",
+          "to": "DB4"
+        },
+        {
+          "from": "LCD16X2_1.DB5",
+          "to": "DB5"
+        },
+        {
+          "from": "LCD16X2_1.DB6",
+          "to": "DB6"
+        },
+        {
+          "from": "LCD16X2_1.DB7",
+          "to": "DB7"
+        },
+        {
+          "from": "LCD16X2_1.K",
+          "to": "K"
+        }
+      ],
+      "ports": [
+        {
+          "name": "PotVCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "PotGND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VSS",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "RS",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "R_W",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "E",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "DB4",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "DB5",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "DB6",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "DB7",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "a",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "K",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

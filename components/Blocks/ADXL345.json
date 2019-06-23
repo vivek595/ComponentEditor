@@ -1,0 +1,152 @@
+{
+  "name": "ADXL345",
+  "category": [
+    "input"
+  ],
+  "blockId": "9836",
+  "app": {
+    "appName": "SparkFun ADXL345 - Triple Axis Accelerometer Breakout",
+    "image": "http://res.cloudinary.com/circuito/image/upload/pd49wdojw9mpsbbrovzy",
+    "numericName": "ADXL345",
+    "shortName": "Triple-axis Accelerometer ADXL345",
+    "indicators": {
+      "verified": true,
+      "solder": true
+    },
+    "desc": "<p>This accelerometer measures the acceleration of an object in 3 axes - x-y-z. Acceleration is a change in rate, speed, etc.. If an object start moving faster or slower - it is detected by the accelerometer.<br><strong>Range</strong>: +-16 g.<br><strong>Requires</strong>: soldering 8 male header pins to fit onto a breadboard.<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/34five-Arduino-Pet/\">34five Arduino Pet</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "ADXL345"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "ADXL345_1",
+          "part": "ADXL345"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ADXL345_1.VCC",
+          "to": "ADXL345_1.CS"
+        },
+        {
+          "from": "ADXL345_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "ADXL345_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ADXL345_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ADXL345_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 335,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "BreadBoard",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
+        {
+          "name": "BreadBoard_1",
+          "part": "BreadBoard"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

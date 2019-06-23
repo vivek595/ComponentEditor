@@ -1,0 +1,197 @@
+{
+  "name": "ToggleSwitch",
+  "category": [
+    "input"
+  ],
+  "blockId": "243599",
+  "app": {
+    "appName": "Mini Panel Mount SPDT Toggle Switch",
+    "image": "http://res.cloudinary.com/circuito/image/upload/wo3xcl7iwop30flctbxg",
+    "numericName": "",
+    "shortName": "Toggle Switch",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>This is a simple SPDT Slide Switch, it can be used as on/off switches or selector switch. It requires soldering to connect to breadboard.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "ToggleSwitch"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "ToggleSwitch_1",
+          "part": "ToggleSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ToggleSwitch_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "ToggleSwitch_1.1",
+          "to": "1"
+        },
+        {
+          "from": "ToggleSwitch_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "ToggleSwitch"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "ToggleSwitch_1",
+          "part": "ToggleSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ToggleSwitch_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "ToggleSwitch_1.1",
+          "to": "1"
+        },
+        {
+          "from": "ToggleSwitch_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

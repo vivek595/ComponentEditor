@@ -1,0 +1,19 @@
+{
+  "name": "BreadBoardHalf",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
+        {
+          "name": "BreadBoardHalf_1",
+          "part": "BreadBoardHalf"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

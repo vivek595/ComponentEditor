@@ -1,0 +1,9 @@
+{
+  "name": "KeyPadMem1x4",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "Keypad",
+    "varname": "keypadmem1x4"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "name": "BME680",
+  "category": [
+    "input"
+  ],
+  "blockId": "164792",
+  "app": {
+    "appName": "BME680 Temperature, Humidity, Pressure and Gas sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/h4tkc5gh0ywuadtgntcp",
+    "numericName": "BME680",
+    "shortName": "Temperature, Humidity, Pressure and Gas Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>This sensnor can measure Temperature, Humidity, Pressure and Gas. The gas sensor detects the volatile organic compounds (VOC) in the air, but it can not distinguish between different gasses. It is recommended to calibrate it, if you wish to use the gas sensor.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "BME680"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "BME680_1",
+          "part": "BME680"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDI",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "BME680_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "BME680_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BME680_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BME680_1.SDI",
+          "to": "SDI"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "BME680"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "BME680_1",
+          "part": "BME680"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDI",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "BME680_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "BME680_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BME680_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BME680_1.SDI",
+          "to": "SDI"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "name": "LEDUV",
+  "category": [
+    "output"
+  ],
+  "blockId": "8662",
+  "app": {
+    "appName": "Basic Ultraviolet LED 5mm",
+    "image": "http://res.cloudinary.com/circuito/image/upload/sr3umgz940jgby6xkisc",
+    "numericName": "",
+    "shortName": "UV LED",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This is a very basic, small, UV LED. Its Luminous Intensity is 100-180mcd.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "LEDUV"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDUV_1",
+          "part": "LEDUV"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDUV_1.Gnd",
+          "to": "Res100O_1.con1"
+        },
+        {
+          "from": "Res100O_1.con0",
+          "to": "GND"
+        },
+        {
+          "from": "LEDUV_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3.3v",
+      "coders": [
+        "LEDUV"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDUV_1",
+          "part": "LEDUV"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDUV_1.Gnd",
+          "to": "Res100O_1.con1"
+        },
+        {
+          "from": "Res100O_1.con0",
+          "to": "GND"
+        },
+        {
+          "from": "LEDUV_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

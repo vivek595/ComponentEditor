@@ -1,0 +1,9 @@
+{
+  "name": "SevenSegmentBare_Quad_withShiftReg",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "s7Seg"
+  }
+}

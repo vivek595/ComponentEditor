@@ -1,0 +1,9 @@
+{
+  "name": "LEDBarI2C",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "name": "MQ2",
+  "category": [
+    "input"
+  ],
+  "blockId": "398782",
+  "app": {
+    "appName": "Methane, Butane, LPG and Smoke Gas Sensor - MQ-2",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ppjijyv5sog7qwg7tz1v",
+    "numericName": "MQ2",
+    "shortName": "Smoke and Gas Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This sensor is sensitive for flamable and combustible gasses such as Methane, Butane, LPG, smoke.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "MQ2"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ2_1",
+          "part": "MQ2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "AOUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ2_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ2_1.AOUT",
+          "to": "AOUT"
+        },
+        {
+          "from": "MQ2_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "MQ23v3"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ2_1",
+          "part": "MQ2"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ2_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
+        },
+        {
+          "from": "MQ2_1.AOUT",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "Aout"
+        },
+        {
+          "from": "MQ2_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ2_1.5V",
+          "to": "5V"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Aout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

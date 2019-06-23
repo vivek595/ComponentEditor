@@ -1,0 +1,25 @@
+{
+  "name": "ArduinoUno",
+  "symbol": "https://res.cloudinary.com/circuito/image/upload/qjihfsqw4c35vrsby6mm",
+  "displayName": "Arduino Uno",
+  "category": [
+    "controller"
+  ],
+  "desc": "",
+  "bom": [
+    {
+      "name": "octopart",
+      "image": "https://res.cloudinary.com/circuito/image/upload/rk0xnhbo7iiviyw1nwjx",
+      "link": "https://octopart.com/a000066-arduino-21222240",
+      "price": "23.38",
+      "SKU": "1050-1024-ND"
+    }
+  ],
+  "info": {
+    "setup": "",
+    "test": ""
+  },
+  "placing": {
+    "onBreadboard": false
+  }
+}

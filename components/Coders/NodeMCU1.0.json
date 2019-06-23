@@ -1,0 +1,6 @@
+{
+  "name": "NodeMCU1",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {}
+}

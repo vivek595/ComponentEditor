@@ -1,0 +1,9 @@
+{
+  "name": "MLX90614",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

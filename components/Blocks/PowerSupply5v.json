@@ -1,0 +1,167 @@
+{
+  "name": "PowerSupply5v",
+  "category": [
+    "power",
+    "powerConnector"
+  ],
+  "circuits": [
+    {
+      "name": "2A",
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B"
+      ],
+      "parts": [
+        {
+          "name": "PowerSupply5v2A_1",
+          "part": "PowerSupply5v2A"
+        }
+      ],
+      "ports": [
+        {
+          "name": "pos",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 2000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "neg",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "BARREL_JACK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "BARREL_JACK",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 1,
+          "blocks": [
+            "BarrelJack5v"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "PowerSupply5v2A_1.BARREL_JACK",
+          "to": "BARREL_JACK"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "5A",
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B"
+      ],
+      "parts": [
+        {
+          "name": "PowerSupply5v5A_1",
+          "part": "PowerSupply5v5A"
+        }
+      ],
+      "ports": [
+        {
+          "name": "pos",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 5000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "neg",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Barrel",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "BARREL_JACK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "BARREL_JACK",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 1,
+          "blocks": [
+            "BarrelJack5v"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "PowerSupply5v5A_1.BARREL_JACK",
+          "to": "BARREL_JACK"
+        }
+      ],
+      "cost": 5
+    }
+  ]
+}

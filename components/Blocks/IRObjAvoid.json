@@ -1,0 +1,201 @@
+{
+  "name": "IRObjAvoid",
+  "category": [
+    "input"
+  ],
+  "blockId": "811437",
+  "app": {
+    "appName": "IR Obstacle Avoidance sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/nkztjsx6h9uq7rezdabf",
+    "numericName": "",
+    "shortName": "IR Obstacle Avoidance Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This sensor can detect the presence of an obstacle in front of it.<br>The discovery distance can be adjusted using the on board trimmer.<br><strong>Returned values</strong>: digital '1' or '0'.<br></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "IRObjAvoid"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "IRObjAvoid_1",
+          "part": "IRObjAvoid"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "OUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "IRObjAvoid_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRObjAvoid_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "IRObjAvoid_1.OUT",
+          "to": "OUT"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "IRObjAvoid3v3"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "IRObjAvoid_1",
+          "part": "IRObjAvoid"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "IRObjAvoid_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
+        },
+        {
+          "from": "IRObjAvoid_1.OUT",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "out"
+        },
+        {
+          "from": "IRObjAvoid_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRObjAvoid_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "out",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

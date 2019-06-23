@@ -1,0 +1,215 @@
+{
+  "name": "PiezoSpeaker",
+  "category": [
+    "input"
+  ],
+  "blockId": "7950",
+  "app": {
+    "appName": "Piezo Speaker - PC Mount 12mm 2.048kHz",
+    "image": "http://res.cloudinary.com/circuito/image/upload/z2hfiw8pu2vn9oog4ccc",
+    "numericName": "",
+    "shortName": "Piezo Speaker",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A very small vibration speaker, that allows you to play simple tones and basic melodies.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Piezo-Tunes/\">Piezo Tunes</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "PiezoSpeaker"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PiezoSpeaker_1",
+          "part": "PiezoSpeaker"
+        },
+        {
+          "name": "TSBC337_1",
+          "part": "TSBC337"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "PiezoSpeaker_1.neg",
+          "to": "TSBC337_1.C"
+        },
+        {
+          "from": "TSBC337_1.B",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "TSBC337_1.E",
+          "to": "0"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Sig"
+        },
+        {
+          "from": "PiezoSpeaker_1.pos",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "PiezoSpeaker"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PiezoSpeaker_1",
+          "part": "PiezoSpeaker"
+        },
+        {
+          "name": "TSBC337_1",
+          "part": "TSBC337"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "PiezoSpeaker_1.neg",
+          "to": "TSBC337_1.C"
+        },
+        {
+          "from": "TSBC337_1.B",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "TSBC337_1.E",
+          "to": "0"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Sig"
+        },
+        {
+          "from": "PiezoSpeaker_1.pos",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

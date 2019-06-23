@@ -1,0 +1,9 @@
+{
+  "name": "MQ3",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

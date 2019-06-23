@@ -1,0 +1,9 @@
+{
+  "name": "LSM303",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

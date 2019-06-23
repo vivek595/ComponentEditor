@@ -1,0 +1,9 @@
+{
+  "name": "MPU9255",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "name": "LIDARlitev3",
+  "category": [
+    "input"
+  ],
+  "blockId": "14032",
+  "app": {
+    "appName": "LIDAR-Lite v3",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ngz31kwdobj36bcme5vi",
+    "numericName": "",
+    "shortName": "LIDAR-Lite",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>a compact, high-performance optical distance measurement sensor from Garmin\u2122. <p>Features: <li>Range: 0-40m Laser Emitter</li><li>Accuracy: +/- 2.5cm at distances greater than 1m</li><li>Rep Rate: 1\u2013500Hz</li><li>Interface: I2C or PWM</li></p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LIDARlitev3"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LIDARlitev3_1",
+          "part": "LIDARlitev3"
+        },
+        {
+          "name": "CapElectro470uF_1",
+          "part": "CapElectro470uF"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LIDARlitev3_1.GND",
+          "to": "CapElectro470uF_1.neg"
+        },
+        {
+          "from": "LIDARlitev3_1.5V",
+          "to": "CapElectro470uF_1.pos"
+        },
+        {
+          "from": "LIDARlitev3_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "LIDARlitev3_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "LIDARlitev3_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "LIDARlitev3_1.GND",
+          "to": "GND"
+        }
+      ],
+      "ports": [
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

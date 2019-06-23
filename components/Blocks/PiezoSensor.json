@@ -1,0 +1,102 @@
+{
+  "name": "PiezoSensor",
+  "category": [
+    "input"
+  ],
+  "blockId": "10293",
+  "app": {
+    "appName": "Piezo Element",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ykaggtuuezufipl2togh",
+    "numericName": "",
+    "shortName": "Piezo",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>Piezo generates a voltage when it is physically deformed by a vibration, sound wave, or mechanical strain.<br><strong>Returned values</strong>: from 0 (no strain) to 1023 (maximal strain).<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"https://www.arduino.cc/en/Tutorial/Knock\">Secret Knock</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "PiezoSensor"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PiezoSensor_1",
+          "part": "PiezoSensor"
+        },
+        {
+          "name": "Res1MO_1",
+          "part": "Res1MO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "PiezoSensor_1.neg",
+          "to": "Res1MO_1.con0"
+        },
+        {
+          "from": "PiezoSensor_1.pos",
+          "to": "Res1MO_1.con1"
+        },
+        {
+          "from": "PiezoSensor_1.pos",
+          "to": "pos"
+        },
+        {
+          "from": "PiezoSensor_1.neg",
+          "to": "neg"
+        }
+      ],
+      "ports": [
+        {
+          "name": "pos",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "neg",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

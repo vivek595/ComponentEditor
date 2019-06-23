@@ -1,0 +1,25 @@
+{
+  "name": "IRLineFollowSF",
+  "symbol": "https://res.cloudinary.com/circuito/image/upload/i0bl7mjz9we8idcfk15o",
+  "displayName": "SparkFun RedBot Sensor - Line Follower",
+  "category": [
+    "input"
+  ],
+  "desc": "",
+  "bom": [
+    {
+      "name": "octopart",
+      "image": "https://res.cloudinary.com/circuito/image/upload/pddoejz8tmndggey9c6i",
+      "link": "https://octopart.com/sen-11769-sparkfun-67250657",
+      "price": "2.95",
+      "SKU": "1568-1556-ND"
+    }
+  ],
+  "info": {
+    "setup": "",
+    "test": ""
+  },
+  "placing": {
+    "onBreadboard": true
+  }
+}

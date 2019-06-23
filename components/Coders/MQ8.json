@@ -1,0 +1,9 @@
+{
+  "name": "MQ8",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

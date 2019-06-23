@@ -1,0 +1,134 @@
+{
+  "name": "BME280SF",
+  "category": [
+    "input"
+  ],
+  "blockId": "13676",
+  "app": {
+    "appName": "SparkFun BME280 - Atmospheric Sensor Breakout",
+    "image": "http://res.cloudinary.com/circuito/image/upload/f40irfp8rts56ajesire",
+    "numericName": "BME280",
+    "shortName": "Atmospheric Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>Atmospheric Sensor Breakout is the easy way to measure barometric pressure, humidity, and temperature readings.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "BME280SF"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "BME280SF_1",
+          "part": "BME280SF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "3.3V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDI_SDA",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCK_SCL",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "BME280SF_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BME280SF_1.3.3V",
+          "to": "3.3V"
+        },
+        {
+          "from": "BME280SF_1.SDI_SDA",
+          "to": "SDI_SDA"
+        },
+        {
+          "from": "BME280SF_1.SCK_SCL",
+          "to": "SCK_SCL"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

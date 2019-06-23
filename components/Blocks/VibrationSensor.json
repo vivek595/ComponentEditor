@@ -1,0 +1,197 @@
+{
+  "name": "VibrationSensor",
+  "category": [
+    "input"
+  ],
+  "blockId": "773723",
+  "app": {
+    "appName": "Fast Vibration Sensor Switch (Easy to trigger)",
+    "image": "http://res.cloudinary.com/circuito/image/upload/xcnhxptxwlm65q4hbzsd",
+    "numericName": "",
+    "shortName": "Vibration Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This is a spring-vibration switch, when everything is still the switch is open, when there\u2019s movement the spring touches the center pole and the switch is \u201cclosed\u201d.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "VibrationSensor"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "VibrationSensor_1",
+          "part": "VibrationSensor"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "VibrationSensor_1.1",
+          "to": "1"
+        },
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "VibrationSensor"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "VibrationSensor_1",
+          "part": "VibrationSensor"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "VibrationSensor_1.1",
+          "to": "1"
+        },
+        {
+          "from": "VibrationSensor_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

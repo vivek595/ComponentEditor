@@ -1,0 +1,280 @@
+{
+  "name": "TCRT5000L",
+  "category": [
+    "input"
+  ],
+  "blockId": "315997",
+  "app": {
+    "appName": "Reflective IR Sensor TCRT5000L",
+    "image": "http://res.cloudinary.com/circuito/image/upload/jclbm5ejei1mw8lbby1i",
+    "numericName": "TCRT5000L",
+    "shortName": "IR Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This sensor can detect the presence of a black line underneath it and also for distance sensing of nearby objects. The package includes two mounting clips and blocks visible light to prevent noise on the measurement.<br><strong>Returned values</strong>: digital '1' or '0'.<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"https://circuitdigest.com/microcontroller-projects/line-follower-robot-using-arduino\">Line Follower Robot using Arduino</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "TCRT5000L"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "TCRT5000L_1",
+          "part": "TCRT5000L"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Res220O_1",
+          "part": "Res220O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "TCRT5000L_1.Coll",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "TCRT5000L_1.A",
+          "to": "Res220O_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "5v"
+        },
+        {
+          "from": "Res220O_1.con1",
+          "to": "5v1"
+        },
+        {
+          "from": "TCRT5000L_1.Coll",
+          "to": "Coll"
+        },
+        {
+          "from": "TCRT5000L_1.Cath",
+          "to": "Cath"
+        },
+        {
+          "from": "TCRT5000L_1.E",
+          "to": "E"
+        }
+      ],
+      "ports": [
+        {
+          "name": "5v",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "5v1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Coll",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Cath",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "E",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "TCRT5000L"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "TCRT5000L_1",
+          "part": "TCRT5000L"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "TCRT5000L_1.Coll",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "TCRT5000L_1.A",
+          "to": "Res100O_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "5v"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "5v1"
+        },
+        {
+          "from": "TCRT5000L_1.Coll",
+          "to": "Coll"
+        },
+        {
+          "from": "TCRT5000L_1.Cath",
+          "to": "Cath"
+        },
+        {
+          "from": "TCRT5000L_1.E",
+          "to": "E"
+        }
+      ],
+      "ports": [
+        {
+          "name": "5v",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "5v1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Coll",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Cath",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "E",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

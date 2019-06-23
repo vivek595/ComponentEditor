@@ -1,0 +1,9 @@
+{
+  "name": "HTU21D-F",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

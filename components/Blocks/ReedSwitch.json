@@ -1,0 +1,197 @@
+{
+  "name": "ReedSwitch",
+  "category": [
+    "input"
+  ],
+  "blockId": "8642",
+  "app": {
+    "appName": "Reed Switch",
+    "image": "http://res.cloudinary.com/circuito/image/upload/htaqbvtozf9t7kv2cmcf",
+    "numericName": "",
+    "shortName": "Reed Switch",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A neat magnetic switch, that closes a circuit in present of a magnet and disconnects when the magnet is removed.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "ReedSwitch"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "ReedSwitch_1",
+          "part": "ReedSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ReedSwitch_1.1",
+          "to": "1"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "ReedSwitch"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "ReedSwitch_1",
+          "part": "ReedSwitch"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "0"
+        },
+        {
+          "from": "ReedSwitch_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ReedSwitch_1.1",
+          "to": "1"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

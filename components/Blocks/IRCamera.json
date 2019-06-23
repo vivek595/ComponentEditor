@@ -1,0 +1,280 @@
+{
+  "name": "IRCamera",
+  "category": [
+    "input"
+  ],
+  "blockId": "908638",
+  "app": {
+    "appName": "AMG8833 IR Thermal Camera Breakout",
+    "image": "http://res.cloudinary.com/circuito/image/upload/idvgt23v69jfv9wwubzf",
+    "numericName": "AMG8833",
+    "shortName": "IR Thermal Camera",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This sensor from Panasonic is an 8x8 array of IR thermal sensors, it returns an array of 64 individual infrared temperature readings over I2C. It\u2019s like having compact thermal camera but in low resolution.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "IRCamera"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "IRCamera_1",
+          "part": "IRCamera"
+        }
+      ],
+      "ports": [
+        {
+          "name": "INT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "IRCamera_1.INT",
+          "to": "INT"
+        },
+        {
+          "from": "IRCamera_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "IRCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRCamera_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "IRCamera_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "IRCamera"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "IRCamera_1",
+          "part": "IRCamera"
+        }
+      ],
+      "ports": [
+        {
+          "name": "INT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "IRCamera_1.INT",
+          "to": "INT"
+        },
+        {
+          "from": "IRCamera_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "IRCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRCamera_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "IRCamera_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

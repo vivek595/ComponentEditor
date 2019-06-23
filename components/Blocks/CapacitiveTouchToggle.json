@@ -1,0 +1,181 @@
+{
+  "name": "CapacitiveTouchToggle",
+  "category": [
+    "input"
+  ],
+  "blockId": "926213",
+  "app": {
+    "appName": "AT42QT1012 - Toggle Capacitive Touch Sensor Breakout",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ijc5drqsdeodkcjo1uer",
+    "numericName": "AT42QT1012",
+    "shortName": "Capacitive Touch Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>A single \"Toggle\" capacitive touch sensor. When a capacitive load is detected the output pin will toggle. You can also solder a wire to the middle pad and create your own capacitive pad.To save power, the LED can be disconnected from the output pin by cutting the trace between the jumper on its back side.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "CapacitiveTouchToggle"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "CapacitiveTouchToggle_1",
+          "part": "CapacitiveTouchToggle"
+        }
+      ],
+      "ports": [
+        {
+          "name": "OUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "CapacitiveTouchToggle_1.OUT",
+          "to": "OUT"
+        },
+        {
+          "from": "CapacitiveTouchToggle_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "CapacitiveTouchToggle_1.VDD",
+          "to": "VDD"
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "CapacitiveTouchToggle"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "CapacitiveTouchToggle_1",
+          "part": "CapacitiveTouchToggle"
+        }
+      ],
+      "ports": [
+        {
+          "name": "OUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "CapacitiveTouchToggle_1.OUT",
+          "to": "OUT"
+        },
+        {
+          "from": "CapacitiveTouchToggle_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "CapacitiveTouchToggle_1.VDD",
+          "to": "VDD"
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "name": "HallA1302",
+  "category": [
+    "input"
+  ],
+  "blockId": "2331989",
+  "app": {
+    "appName": "Hall Sensor A1302",
+    "image": "http://res.cloudinary.com/circuito/image/upload/l0dssxs1lqhhzrvozenv",
+    "numericName": "A1302",
+    "shortName": "Hall Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>Analog linear hall effect sensor. It outputs voltage that is proportional to an applied magnetic field.</p>\n<p><strong>Returned Value</strong>: Analog values. After calibration, 0 - for no magnetic field. Value decreases with negative field and increases with positive filed present.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "HallA1302"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HallA1302_1",
+          "part": "HallA1302"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vcc",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "HallA1302_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallA1302_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallA1302_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "HallA1302"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HallA1302_1",
+          "part": "HallA1302"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vcc",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "HallA1302_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "HallA1302_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "HallA1302_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "name": "LedStripRGB",
+  "category": [
+    "output"
+  ],
+  "blockId": "12021",
+  "app": {
+    "appName": "LED RGB Strip - Bare (1m)",
+    "image": "http://res.cloudinary.com/circuito/image/upload/zsxdrunkomhaomuwb0ii",
+    "numericName": "",
+    "shortName": "LED RGB Strip",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>One meter non-addressable RGB LED strips with 60 LED's per meter.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LedStripRGB"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LedStripRGB_1",
+          "part": "LedStripRGB"
+        },
+        {
+          "name": "TNMOSFETFQP_1",
+          "part": "TNMOSFETFQP"
+        },
+        {
+          "name": "TNMOSFETFQP_2",
+          "part": "TNMOSFETFQP"
+        },
+        {
+          "name": "TNMOSFETFQP_3",
+          "part": "TNMOSFETFQP"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LedStripRGB_1.B",
+          "to": "TNMOSFETFQP_3.D"
+        },
+        {
+          "from": "LedStripRGB_1.R",
+          "to": "TNMOSFETFQP_2.D"
+        },
+        {
+          "from": "LedStripRGB_1.G",
+          "to": "TNMOSFETFQP_1.D"
+        },
+        {
+          "from": "TNMOSFETFQP_2.S",
+          "to": "TNMOSFETFQP_3.S"
+        },
+        {
+          "from": "TNMOSFETFQP_3.S",
+          "to": "TNMOSFETFQP_1.S"
+        },
+        {
+          "from": "TNMOSFETFQP_2.S",
+          "to": "Gnd"
+        },
+        {
+          "from": "TNMOSFETFQP_2.G",
+          "to": "SigR"
+        },
+        {
+          "from": "TNMOSFETFQP_3.G",
+          "to": "SigB"
+        },
+        {
+          "from": "TNMOSFETFQP_1.G",
+          "to": "SigG"
+        },
+        {
+          "from": "LedStripRGB_1.VDD",
+          "to": "VDD"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "requiresLoad": 1400,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SigB",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "SigR",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "SigG",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

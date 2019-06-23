@@ -1,0 +1,201 @@
+{
+  "name": "MQ9",
+  "category": [
+    "input"
+  ],
+  "blockId": "398789",
+  "app": {
+    "appName": "Carbon Monoxide and Combustible Gas Sensor - MQ-9",
+    "image": "http://res.cloudinary.com/circuito/image/upload/xuy7cxwsvnkw0wyjjp1v",
+    "numericName": "MQ9",
+    "shortName": "Carbon Monoxide and Combustible Gas Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This sensor is sensitive for carbon monoxide and combustible gas in the air. The MQ-9 can detect carbon monoxide gas concentrations anywhere from 10-1000ppm.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "MQ9"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ9_1",
+          "part": "MQ9"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "AOUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ9_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ9_1.AOUT",
+          "to": "AOUT"
+        },
+        {
+          "from": "MQ9_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "MQ93v3"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MQ9_1",
+          "part": "MQ9"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MQ9_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
+        },
+        {
+          "from": "MQ9_1.AOUT",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "Aout"
+        },
+        {
+          "from": "MQ9_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MQ9_1.5V",
+          "to": "5V"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Aout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

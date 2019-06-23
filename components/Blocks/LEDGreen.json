@@ -1,0 +1,163 @@
+{
+  "name": "LEDGreen",
+  "category": [
+    "output"
+  ],
+  "blockId": "9591",
+  "app": {
+    "appName": "Basic Green LED 5mm",
+    "image": "http://res.cloudinary.com/circuito/image/upload/zvnxbcygolx8lbjsijbq",
+    "numericName": "",
+    "shortName": "Green LED",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This is a very basic, small, Green LED. Control the intensity of the color at a range of 0-255. Its Luminous Intensity is 150-200mcd.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "LEDGreen"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDGreen_1",
+          "part": "LEDGreen"
+        },
+        {
+          "name": "Res330O_1",
+          "part": "Res330O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDGreen_1.Gnd",
+          "to": "Res330O_1.con1"
+        },
+        {
+          "from": "Res330O_1.con0",
+          "to": "GND"
+        },
+        {
+          "from": "LEDGreen_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3.3v",
+      "coders": [
+        "LEDGreen"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDGreen_1",
+          "part": "LEDGreen"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDGreen_1.Gnd",
+          "to": "Res100O_1.con1"
+        },
+        {
+          "from": "Res100O_1.con0",
+          "to": "GND"
+        },
+        {
+          "from": "LEDGreen_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

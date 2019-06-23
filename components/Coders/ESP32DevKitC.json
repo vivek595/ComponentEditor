@@ -1,0 +1,6 @@
+{
+  "name": "ESP32DevKitC",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {}
+}

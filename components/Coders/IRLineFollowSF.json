@@ -1,0 +1,8 @@
+{
+  "name": "IRLineFollowSF",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "varname": "irLineFollowSF"
+  }
+}

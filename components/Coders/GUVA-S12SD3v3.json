@@ -1,0 +1,9 @@
+{
+  "name": "GUVA-S12SD3v3",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "GUVA_S12SD"
+  }
+}

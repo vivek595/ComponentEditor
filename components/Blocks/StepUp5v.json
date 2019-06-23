@@ -1,0 +1,118 @@
+{
+  "name": "StepUp5v",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
+        {
+          "name": "StepUp5v_1",
+          "part": "StepUp5v"
+        }
+      ],
+      "wires": [
+        {
+          "from": "StepUp5v_1.OUT5v-",
+          "to": "StepUp5v_1.BAT-"
+        },
+        {
+          "from": "StepUp5v_1.OUT5v-",
+          "to": "OUT5v-"
+        },
+        {
+          "from": "StepUp5v_1.OUT5v+",
+          "to": "OUT5v+"
+        },
+        {
+          "from": "StepUp5v_1.BAT+",
+          "to": "BAT+"
+        },
+        {
+          "from": "StepUp5v_1.BAT-",
+          "to": "BAT-"
+        }
+      ],
+      "ports": [
+        {
+          "name": "OUT5v-",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "OUT5v+",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 1000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "BAT+",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "Battery",
+                "voltage": "3.7v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.7v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "BAT-",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "Battery",
+                "voltage": "GND"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "PowerType",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "Battery",
+                "voltage": ""
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

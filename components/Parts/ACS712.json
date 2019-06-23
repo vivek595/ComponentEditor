@@ -1,0 +1,25 @@
+{
+  "name": "ACS712",
+  "symbol": "http://res.cloudinary.com/circuito/image/upload/qvmzrygiuo0dszdrh8ra",
+  "displayName": "Current Sensor Module ACS712",
+  "category": [
+    "input"
+  ],
+  "desc": "",
+  "bom": [
+    {
+      "name": "octopart",
+      "image": "https://res.cloudinary.com/circuito/image/upload/ob5151tubdlojhzh4kop",
+      "link": "https://octopart.com/a14041500ux1200-newegg+business-93711112?r=sp&s=RF_Fj_a3RBa1wzRebKE70Q",
+      "price": "2.01",
+      "SKU": ""
+    }
+  ],
+  "info": {
+    "setup": "",
+    "test": ""
+  },
+  "placing": {
+    "onBreadboard": false
+  }
+}

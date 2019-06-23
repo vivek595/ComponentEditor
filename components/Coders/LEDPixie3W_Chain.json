@@ -1,0 +1,9 @@
+{
+  "name": "LEDPixie3W_Chain",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

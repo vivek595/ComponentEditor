@@ -1,0 +1,344 @@
+{
+  "name": "HCSR04",
+  "category": [
+    "input"
+  ],
+  "blockId": "13959",
+  "app": {
+    "appName": "Ultrasonic Sensor - HC-SR04",
+    "image": "http://res.cloudinary.com/circuito/image/upload/hc2bnew6g3ku7cc85osy",
+    "numericName": "HCSR04",
+    "shortName": "Ultrasonic Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A low cost ultrasonic sensor, for your common range measuring needs.</p>\n<p><strong>Returned Values</strong>: 2cm - 400cm detection range, with an accuracy of 3mm.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Obstacle-Avoider-Using-HC-SR04-Ultrasonic-Sensor/\">Obstacle Avoider</a><br><a class=\"more-info\" target=\"_blank\" href=\"https://www.circuito.io/component/hc-sr04/\">Learn More</a></p></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "3v3",
+      "coders": [
+        "HCSR043v3"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HCSR04_1",
+          "part": "HCSR04"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "HCSR04_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "Res1KO_1.con0",
+          "to": "Res470O_1.con1"
+        },
+        {
+          "from": "HCSR04_1.ECHO",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "Echo"
+        },
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
+        }
+      ],
+      "ports": [
+        {
+          "name": "TRIG",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Echo",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "5v",
+      "coders": [
+        "HCSR04"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HCSR04_1",
+          "part": "HCSR04"
+        }
+      ],
+      "ports": [
+        {
+          "name": "TRIG",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "ECHO",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.ECHO",
+          "to": "ECHO"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "Gemma",
+      "coders": [
+        "HCSR04"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HCSR04_1",
+          "part": "HCSR04"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "Res1KO_1.con0"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "HCSR04_1.TRIG",
+          "to": "TRIG"
+        },
+        {
+          "from": "HCSR04_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "HCSR04_1.ECHO",
+          "to": "ECHO"
+        },
+        {
+          "from": "HCSR04_1.GND",
+          "to": "GND"
+        }
+      ],
+      "ports": [
+        {
+          "name": "TRIG",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "ECHO",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 3
+    }
+  ]
+}

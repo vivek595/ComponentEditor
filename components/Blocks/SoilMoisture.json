@@ -1,0 +1,181 @@
+{
+  "name": "SoilMoisture",
+  "category": [
+    "input"
+  ],
+  "blockId": "13322",
+  "app": {
+    "appName": "Soil Moisture Sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ni7dsiyc64uguaw3f2me",
+    "numericName": "",
+    "shortName": "Soil Moisture Sensor",
+    "indicators": {
+      "verified": true,
+      "solder": true
+    },
+    "desc": "<p>A cool moisture breakout from Sparkfun. It measures moisture in soil, water, air.<br><strong>Returned Values</strong>: from 0 (completely dry) to 1023 (completely moist). (air/soil humidity - ambient conditions).<br><strong>Requires</strong>: Soldering of jumper/regular wires to the sensor board, to fit onto a breadboard.<br><strong>Sample applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Thirsty-Flamingo/\">Thirsty Flamingo</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "SoilMoisture"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SoilMoisture_1",
+          "part": "SoilMoisture"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SoilMoisture_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SoilMoisture_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "SoilMoisture_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "SoilMoisture"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SoilMoisture_1",
+          "part": "SoilMoisture"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SoilMoisture_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SoilMoisture_1.Sig",
+          "to": "Sig"
+        },
+        {
+          "from": "SoilMoisture_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

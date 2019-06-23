@@ -1,0 +1,285 @@
+{
+  "name": "SIM800L",
+  "category": [
+    "input", "connectivity"
+  ],
+  "blockId": "316349",
+  "app": {
+    "appName": "QuadBand GPRS-GSM SIM800L",
+    "image": "http://res.cloudinary.com/circuito/image/upload/kfv2ydvhe4yixh0ss38g",
+    "numericName": "SIM800L",
+    "shortName": "GPRS-GSM",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>SIM800L is a small quad-band GSM / GPRS module, equipped with quad-band antenna. Insert a valid SIM card and you can use it for voice calls, sending text messages and accessing the internet.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "HardwareSerial",
+      "coders": [
+        "SIM800L_HardwareSerial"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SIM800L_1",
+          "part": "SIM800L"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "RST",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "TX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "RX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "RX",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "RX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "TX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "TX",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SIM800L_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SIM800L_1.RST",
+          "to": "RST"
+        },
+        {
+          "from": "SIM800L_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "SIM800L_1.5V",
+          "to": "5V"
+        },
+        {
+          "from": "SIM800L_1.RX",
+          "to": "RX"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "SoftwareSerial",
+      "coders": [
+        "SIM800L_SoftwareSerial"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno"
+      ],
+      "parts": [
+        {
+          "name": "SIM800L_1",
+          "part": "SIM800L"
+        }
+      ],
+      "ports": [
+        {
+          "name": "RST",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "TX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialRX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialRX1",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "RX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialTX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialTX1",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "SerialType",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ESPSoftwareSerialTag",
+                "voltage": ""
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "5V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SIM800L_1.RST",
+          "to": "RST"
+        },
+        {
+          "from": "SIM800L_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "SIM800L_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "SIM800L_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SIM800L_1.5V",
+          "to": "5V"
+        }
+      ],
+      "cost": 100
+    }
+  ]
+}

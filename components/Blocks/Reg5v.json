@@ -1,0 +1,108 @@
+{
+  "name": "Reg5v",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
+        {
+          "name": "L7805_1",
+          "part": "L7805"
+        },
+        {
+          "name": "CapCeramic100nF_1",
+          "part": "CapCeramic100nF"
+        },
+        {
+          "name": "CapElectro1uF_1",
+          "part": "CapElectro1uF"
+        }
+      ],
+      "wires": [
+        {
+          "from": "L7805_1.Vin",
+          "to": "CapCeramic100nF_1.con0"
+        },
+        {
+          "from": "L7805_1.0",
+          "to": "CapCeramic100nF_1.con1"
+        },
+        {
+          "from": "L7805_1.Vout",
+          "to": "CapElectro1uF_1.pos"
+        },
+        {
+          "from": "L7805_1.0",
+          "to": "CapElectro1uF_1.neg"
+        },
+        {
+          "from": "L7805_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "L7805_1.0",
+          "to": "0"
+        },
+        {
+          "from": "L7805_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vout",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 1500,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "9v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "12v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "7.4v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "name": "TSOP38238",
+  "category": [
+    "input"
+  ],
+  "blockId": "10266",
+  "app": {
+    "appName": "IR Receiver Diode - TSOP38238",
+    "image": "http://res.cloudinary.com/circuito/image/upload/cvenimkvwxpfmlsozjpd",
+    "numericName": "TSOP38238",
+    "shortName": "IR Receiver",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A diode that can receive an IR code - wire it to your circuit whenever you\u2019d like to control your circuit with an IR remote control (standard or yof your own making).<br><strong>Returned values</strong>: detected IR codes for all major remote providers.<br><strong>Sample Applications</strong>:<a target=\"_blank\" href=\"http://www.instructables.com/id/Remote-controlled-switch-using-Atmega-328p/\">Remote Control Switch</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "TSOP38238"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "TSOP38238_1",
+          "part": "TSOP38238"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 227,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Out",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "TSOP38238_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "TSOP38238_1.Out",
+          "to": "Out"
+        },
+        {
+          "from": "TSOP38238_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "TSOP38238"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "TSOP38238_1",
+          "part": "TSOP38238"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 227,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Out",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "TSOP38238_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "TSOP38238_1.Out",
+          "to": "Out"
+        },
+        {
+          "from": "TSOP38238_1.Gnd",
+          "to": "Gnd"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

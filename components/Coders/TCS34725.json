@@ -1,0 +1,9 @@
+{
+  "name": "TCS34725",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "TCS34725"
+  }
+}

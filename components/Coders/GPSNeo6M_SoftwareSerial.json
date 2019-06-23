@@ -1,0 +1,9 @@
+{
+  "name": "GPSNeo6M_SoftwareSerial",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "SoftwareSerial",
+    "varname": "gps"
+  }
+}

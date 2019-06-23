@@ -1,0 +1,308 @@
+{
+  "name": "FingerprintScanner",
+  "category": [
+    "input"
+  ],
+  "blockId": "11792",
+  "app": {
+    "appName": "Fingerprint Scanner - TTL (GT-511C3)",
+    "image": "http://res.cloudinary.com/circuito/image/upload/kfry7we7nu7wp3odybkh",
+    "numericName": "GT511C3",
+    "shortName": "Fingerprint Scanner",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>This is a Fingerprint Scanner over TTL communication.<br>The module reads and identifies the fingerprints using an on-board optical sensor and CPU.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "FingerprintScanner"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "FingerprintScanner_1",
+          "part": "FingerprintScanner"
+        },
+        {
+          "name": "Res470O_1",
+          "part": "Res470O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "FingerprintScanner_1.RX",
+          "to": "Res470O_1.con0"
+        },
+        {
+          "from": "Res470O_1.con0",
+          "to": "Res1KO_1.con0"
+        },
+        {
+          "from": "Res1KO_1.con1",
+          "to": "FingerprintScanner_1.GND"
+        },
+        {
+          "from": "Res470O_1.con1",
+          "to": "Rx"
+        },
+        {
+          "from": "FingerprintScanner_1.Tx",
+          "to": "Tx"
+        },
+        {
+          "from": "FingerprintScanner_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "FingerprintScanner_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Rx",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialRX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "RX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 3,
+                "spec": "RX2",
+                "voltage": "5v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialRX1",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Tx",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialTX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "TX",
+                "voltage": "5v"
+              },
+              {
+                "cost": 3,
+                "spec": "TX2",
+                "voltage": "5v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialTX1",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "FingerprintScanner"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "FingerprintScanner_1",
+          "part": "FingerprintScanner"
+        }
+      ],
+      "wires": [
+        {
+          "from": "FingerprintScanner_1.RX",
+          "to": "Rx"
+        },
+        {
+          "from": "FingerprintScanner_1.Tx",
+          "to": "Tx"
+        },
+        {
+          "from": "FingerprintScanner_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "FingerprintScanner_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Rx",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialRX",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 2,
+                "spec": "RX",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 3,
+                "spec": "RX2",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialRX1",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Tx",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "ESPSoftwareSerialTX",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 2,
+                "spec": "TX",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 3,
+                "spec": "TX2",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 10,
+                "spec": "ESPSoftwareSerialTX1",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

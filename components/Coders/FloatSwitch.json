@@ -1,0 +1,9 @@
+{
+  "name": "FloatSwitch",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

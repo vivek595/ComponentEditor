@@ -1,0 +1,9 @@
+{
+  "name": "CoinAcceptor",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "name": "LEDBar",
+  "category": [
+    "output"
+  ],
+  "blockId": "9938",
+  "app": {
+    "appName": "10 Segment LED Bar Graph",
+    "image": "http://res.cloudinary.com/circuito/image/upload/zxxze5mwfeahlpueqcug",
+    "numericName": "",
+    "shortName": "LED Bar",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>10 individual segment bar graph LED.<p><strong>Note:</strong> The pinout on these bar graphs may vary from what is listed on the datasheet. If not working, rotating the device 180 degrees will probably fix the problem.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LEDBar"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDBar_1",
+          "part": "LEDBar"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_2",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_3",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_4",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_5",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_6",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_7",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_8",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_9",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_10",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDBar_1.JC",
+          "to": "Res100O_1.con0"
+        },
+        {
+          "from": "LEDBar_1.IC",
+          "to": "Res100O_2.con0"
+        },
+        {
+          "from": "LEDBar_1.HC",
+          "to": "Res100O_3.con0"
+        },
+        {
+          "from": "LEDBar_1.GC",
+          "to": "Res100O_4.con0"
+        },
+        {
+          "from": "LEDBar_1.FC",
+          "to": "Res100O_5.con0"
+        },
+        {
+          "from": "LEDBar_1.EC",
+          "to": "Res100O_6.con0"
+        },
+        {
+          "from": "LEDBar_1.DC",
+          "to": "Res100O_7.con0"
+        },
+        {
+          "from": "LEDBar_1.CC",
+          "to": "Res100O_8.con0"
+        },
+        {
+          "from": "LEDBar_1.BC",
+          "to": "Res100O_9.con0"
+        },
+        {
+          "from": "LEDBar_1.AC",
+          "to": "Res100O_10.con0"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "Res100O_2.con1"
+        },
+        {
+          "from": "Res100O_2.con1",
+          "to": "Res100O_3.con1"
+        },
+        {
+          "from": "Res100O_3.con1",
+          "to": "Res100O_4.con1"
+        },
+        {
+          "from": "Res100O_4.con1",
+          "to": "Res100O_5.con1"
+        },
+        {
+          "from": "Res100O_5.con1",
+          "to": "Res100O_6.con1"
+        },
+        {
+          "from": "Res100O_6.con1",
+          "to": "Res100O_7.con1"
+        },
+        {
+          "from": "Res100O_7.con1",
+          "to": "Res100O_8.con1"
+        },
+        {
+          "from": "Res100O_8.con1",
+          "to": "Res100O_9.con1"
+        },
+        {
+          "from": "Res100O_9.con1",
+          "to": "Res100O_10.con1"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "GND"
+        },
+        {
+          "from": "LEDBar_1.JA",
+          "to": "JA"
+        },
+        {
+          "from": "LEDBar_1.IA",
+          "to": "IA"
+        },
+        {
+          "from": "LEDBar_1.HA",
+          "to": "HA"
+        },
+        {
+          "from": "LEDBar_1.GA",
+          "to": "GA"
+        },
+        {
+          "from": "LEDBar_1.FA",
+          "to": "FA"
+        },
+        {
+          "from": "LEDBar_1.EA",
+          "to": "EA"
+        },
+        {
+          "from": "LEDBar_1.DA",
+          "to": "DA"
+        },
+        {
+          "from": "LEDBar_1.CA",
+          "to": "CA"
+        },
+        {
+          "from": "LEDBar_1.BA",
+          "to": "BA"
+        },
+        {
+          "from": "LEDBar_1.AA",
+          "to": "AA"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "JA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "IA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "HA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "FA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "EA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "DA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "CA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "BA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "AA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

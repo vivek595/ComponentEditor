@@ -1,0 +1,9 @@
+{
+  "name": "SIM800L_SoftwareSerial",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

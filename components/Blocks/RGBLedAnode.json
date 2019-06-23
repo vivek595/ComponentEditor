@@ -1,0 +1,270 @@
+{
+  "name": "RGBLedAnode",
+  "category": [
+    "output"
+  ],
+  "blockId": "10820",
+  "app": {
+    "appName": "RGB LED Clear Common Anode",
+    "image": "http://res.cloudinary.com/circuito/image/upload/crmr0uxpzr2b1ow49gmt",
+    "numericName": "",
+    "shortName": "RGB LED",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This light emitting diode allows you to control its color by setting the intensity of RED, GREEN and BLUE from 0 (no color) to 255 (max color intensity). Use it for a colorful display or as an indicator that an event has occurred. Luminosity (RGB): (800, 4000, 900)mcd.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Red-Balloon/\">Red Balloon</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "RGBLedAnode"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "RGBLedCommonAnode_1",
+          "part": "RGBLedCommonAnode"
+        },
+        {
+          "name": "Res220O_1",
+          "part": "Res220O"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res100O_2",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "RGBLedCommonAnode_1.R",
+          "to": "Res220O_1.con0"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.G",
+          "to": "Res100O_1.con0"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.B",
+          "to": "Res100O_2.con0"
+        },
+        {
+          "from": "Res100O_2.con1",
+          "to": "b"
+        },
+        {
+          "from": "Res220O_1.con1",
+          "to": "r"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "g"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "b",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "g",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "r",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3.3v",
+      "coders": [
+        "RGBLedAnode"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "RGBLedCommonAnode_1",
+          "part": "RGBLedCommonAnode"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        },
+        {
+          "name": "Res47O_1",
+          "part": "Res47O"
+        },
+        {
+          "name": "Res47O_2",
+          "part": "Res47O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "RGBLedCommonAnode_1.R",
+          "to": "Res100O_1.con0"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.G",
+          "to": "Res47O_1.con0"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.B",
+          "to": "Res47O_2.con0"
+        },
+        {
+          "from": "Res47O_2.con1",
+          "to": "b"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "r"
+        },
+        {
+          "from": "Res47O_1.con1",
+          "to": "g"
+        },
+        {
+          "from": "RGBLedCommonAnode_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "b",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "g",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "r",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "name": "MLX90614",
+  "category": [
+    "input"
+  ],
+  "blockId": "9570",
+  "app": {
+    "appName": "Infrared Thermometer - MLX90614",
+    "image": "http://res.cloudinary.com/circuito/image/upload/eoym2z3pcxayenqqjjle",
+    "numericName": "MLX90614",
+    "shortName": "Infrared Thermometer",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>Infrared thermometer designed for non-contact temperature sensing.<br>It has a huge number of applications including body temperature measurment and movement detection.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "MLX90614"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MLX90614_1",
+          "part": "MLX90614"
+        },
+        {
+          "name": "Res4K7O_1",
+          "part": "Res4K7O"
+        },
+        {
+          "name": "Res4K7O_2",
+          "part": "Res4K7O"
+        },
+        {
+          "name": "CapCeramic100nF_1",
+          "part": "CapCeramic100nF"
+        }
+      ],
+      "wires": [
+        {
+          "from": "MLX90614_1.VCC",
+          "to": "CapCeramic100nF_1.con0"
+        },
+        {
+          "from": "MLX90614_1.GND",
+          "to": "CapCeramic100nF_1.con1"
+        },
+        {
+          "from": "MLX90614_1.SDA",
+          "to": "Res4K7O_1.con0"
+        },
+        {
+          "from": "MLX90614_1.SCL",
+          "to": "Res4K7O_2.con0"
+        },
+        {
+          "from": "MLX90614_1.VCC",
+          "to": "Res4K7O_1.con1"
+        },
+        {
+          "from": "MLX90614_1.VCC",
+          "to": "Res4K7O_2.con1"
+        },
+        {
+          "from": "MLX90614_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "MLX90614_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "MLX90614_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "MLX90614_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

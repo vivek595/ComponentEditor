@@ -1,0 +1,9 @@
+{
+  "name": "PushButtonArcade",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "LEDARCADEBUTTON"
+  }
+}

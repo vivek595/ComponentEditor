@@ -1,0 +1,9 @@
+{
+  "name": "PiezoVibration",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

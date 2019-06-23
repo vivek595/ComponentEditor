@@ -1,0 +1,9 @@
+{
+  "name": "IRCamera",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "name": "RTCPCF",
+  "category": [
+    "input"
+  ],
+  "blockId": "113323",
+  "app": {
+    "appName": "Adafruit PCF8523 Real Time Clock Assembled Breakout Board",
+    "image": "http://res.cloudinary.com/circuito/image/upload/zd9d7e8fg4lhrrle3n4z",
+    "numericName": "PCF8523",
+    "shortName": "RTC Real Time Clock",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>An RTC keeps track of the current year, month, day as well as the current time.</p>\n<p><strong>Returned Value</strong>: Returns the time and date.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://edwardmallon.wordpress.com/2015/12/22/arduino-uno-based-data-logger-with-no-soldering/\">Data Logger</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "RTCPCF"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "RTCPCF_1",
+          "part": "RTCPCF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "RTCPCF_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "RTCPCF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "RTCPCF_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RTCPCF_1.SDA",
+          "to": "SDA"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "RTCPCF"
+      ],
+      "supportedControllers": [
+        "Arduino101",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "RTCPCF_1",
+          "part": "RTCPCF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "RTCPCF_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "RTCPCF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "RTCPCF_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "RTCPCF_1.SDA",
+          "to": "SDA"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

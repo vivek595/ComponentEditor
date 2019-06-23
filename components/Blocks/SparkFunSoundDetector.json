@@ -1,0 +1,165 @@
+{
+  "name": "SparkFunSoundDetector",
+  "category": [
+    "input"
+  ],
+  "blockId": "93712",
+  "app": {
+    "appName": "SparkFun Sound Detector",
+    "image": "http://res.cloudinary.com/circuito/image/upload/enajyskg5jznkjdmpuzr",
+    "numericName": "",
+    "shortName": "Sound Detector",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>A small and easy to use audio sensing board with three different outputs: amplified analog output (Audio), sound presence binary indication (Gate), and an analog representation of its amplitude (envelope).</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "SparkFunSoundDetector"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SparkFunSoundDetector_1",
+          "part": "SparkFunSoundDetector"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GATE",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "AUDIO",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "cost": 1,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "ENVELOPE",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "cost": 1,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SparkFunSoundDetector_1.GATE",
+          "to": "GATE"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.AUDIO",
+          "to": "AUDIO"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.ENVELOPE",
+          "to": "ENVELOPE"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SparkFunSoundDetector_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

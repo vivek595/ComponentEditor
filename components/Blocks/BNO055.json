@@ -1,0 +1,246 @@
+{
+  "name": "BNO055",
+  "category": [
+    "input"
+  ],
+  "blockId": "954493",
+  "app": {
+    "appName": "Adafruit 9-DOF Absolute Orientation IMU Fusion Breakout - BNO055",
+    "image": "http://res.cloudinary.com/circuito/image/upload/mqted04qcn3cr2je5hze",
+    "numericName": "BNO055",
+    "shortName": "9-DOF IMU",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>The BNO055 uses three triple-axis sensors simultaneously, the data is analyzed inside the sensor using its ARM Cortex-M0 based processor, giving you a very simple way to get 3D space orientation in real time.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "BNO055"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "BNO055_1",
+          "part": "BNO055"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "INT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "BNO055_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "BNO055_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "BNO055_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BNO055_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BNO055_1.INT",
+          "to": "INT"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "BNO055"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "BNO055_1",
+          "part": "BNO055"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "INT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "BNO055_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "BNO055_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "BNO055_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "BNO055_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "BNO055_1.INT",
+          "to": "INT"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

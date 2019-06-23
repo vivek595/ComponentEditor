@@ -1,0 +1,359 @@
+{
+  "name": "DCMDriverL293DB",
+  "category": [
+    "output"
+  ],
+  "blockId": "7654331",
+  "app": {
+    "appName": "L293D Motor Driver with Dual Standard DC Motors (Geared)",
+    "image": "",
+    "numericName": "L293D",
+    "shortName": "Geared DC Motors with Driver",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A DC motor driver with two Standard Gearmotor. Enables speed and direction control for both DC motor.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "DCMDriverL293DB"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "DCMDriverL293D_1",
+          "part": "DCMDriverL293D"
+        },
+        {
+          "name": "DCMotorA_1",
+          "part": "DCMotorA"
+        },
+        {
+          "name": "DCMotorA_2",
+          "part": "DCMotorA"
+        }
+      ],
+      "wires": [
+        {
+          "from": "DCMDriverL293D_1.Out1",
+          "to": "DCMotorA_1.Coil1"
+        },
+        {
+          "from": "DCMDriverL293D_1.Out2",
+          "to": "DCMotorA_1.Coil2"
+        },
+        {
+          "from": "DCMDriverL293D_1.Out3",
+          "to": "DCMotorA_2.Coil1"
+        },
+        {
+          "from": "DCMDriverL293D_1.Out4",
+          "to": "DCMotorA_2.Coil2"
+        },
+        {
+          "from": "DCMDriverL293D_1.Enable1",
+          "to": "Enable1"
+        },
+        {
+          "from": "DCMDriverL293D_1.In1",
+          "to": "In1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND2",
+          "to": "GND2"
+        },
+        {
+          "from": "DCMDriverL293D_1.In2",
+          "to": "In2"
+        },
+        {
+          "from": "DCMDriverL293D_1.+Vmotor",
+          "to": "+Vmotor"
+        },
+        {
+          "from": "DCMDriverL293D_1.Enable2",
+          "to": "Enable2"
+        },
+        {
+          "from": "DCMDriverL293D_1.In3",
+          "to": "In3"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND3",
+          "to": "GND3"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND4",
+          "to": "GND4"
+        },
+        {
+          "from": "DCMDriverL293D_1.In4",
+          "to": "In4"
+        },
+        {
+          "from": "DCMDriverL293D_1.+V",
+          "to": "+V"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Enable1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "In1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "In2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "+Vmotor",
+          "interface": {
+            "requires": [
+              {
+                "cost": 8,
+                "spec": "",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 7,
+                "spec": "",
+                "voltage": "3.7v"
+              },
+              {
+                "cost": 9,
+                "spec": "Battery",
+                "voltage": "3.7v"
+              },
+              {
+                "cost": 6,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 5,
+                "spec": "",
+                "voltage": "6v"
+              },
+              {
+                "cost": 3,
+                "spec": "",
+                "voltage": "7.4v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "9v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "requiresLoad": 400,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Enable2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "In3",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND3",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND4",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "In4",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "+V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

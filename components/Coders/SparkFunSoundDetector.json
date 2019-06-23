@@ -1,0 +1,9 @@
+{
+  "name": "SparkFunSoundDetector",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "SND_Detector"
+  }
+}

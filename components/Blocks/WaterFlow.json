@@ -1,0 +1,224 @@
+{
+  "name": "WaterFlow",
+  "category": [
+    "input"
+  ],
+  "blockId": "641455",
+  "app": {
+    "appName": "Water Flow Sensor G1/2''",
+    "image": "http://res.cloudinary.com/circuito/image/upload/vvaw0nnwmgbn6pfj5zqh",
+    "numericName": "",
+    "shortName": "Water Flow Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>The water flow sensor based on a water rotor and a hall-effect sensor.<br> When the water flows through the rotor, the rotor rolls and the speed of it changes with a different rate of flow. The hall-effect sensor outputs the corresponding pulse signal.<br><strong>Returned Value</strong>: RPM calculated from the built-in hall effect sensor</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "WaterFlow"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "WaterFlow_1",
+          "part": "WaterFlow"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "WaterFlow_1.VCC",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "WaterFlow_1.SIG",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con0",
+          "to": "Sig"
+        },
+        {
+          "from": "WaterFlow_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "WaterFlow_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "WaterFlow"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "WaterFlow_1",
+          "part": "WaterFlow"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Res4K7O_1",
+          "part": "Res4K7O"
+        },
+        {
+          "name": "Res1KO_1",
+          "part": "Res1KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "WaterFlow_1.VCC",
+          "to": "Res1KO_1.con1"
+        },
+        {
+          "from": "WaterFlow_1.SIG",
+          "to": "Res1KO_1.con0"
+        },
+        {
+          "from": "WaterFlow_1.SIG",
+          "to": "Res4K7O_1.con1"
+        },
+        {
+          "from": "Res4K7O_1.con0",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "Res10KO_1.con1",
+          "to": "WaterFlow_1.GND"
+        },
+        {
+          "from": "Res10KO_1.con0",
+          "to": "Sig"
+        },
+        {
+          "from": "WaterFlow_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "WaterFlow_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Sig",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "LCD16X2I2C",
+  "category": [
+    "output"
+  ],
+  "blockId": "417986",
+  "app": {
+    "appName": "LCD 16x2 I2C",
+    "image": "http://res.cloudinary.com/circuito/image/upload/coxoyaydelyqmxfo0k0g",
+    "numericName": "",
+    "shortName": "LCD 16x2",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>A small LCD screen, allowing the display of short message or simple drawings via I2C interface.</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=kukV4xrqRl4\">Clock using Arduino I2C bus for both RTC and 16x2 LCD display</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LCD16X2I2C"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LCD16X2I2C_1",
+          "part": "LCD16X2I2C"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "LCD16X2I2C_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "LCD16X2I2C_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LCD16X2I2C_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LCD16X2I2C_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

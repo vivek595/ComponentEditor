@@ -1,0 +1,9 @@
+{
+  "name": "EthernetModule",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Thermistor",
+  "symbol": "https://res.cloudinary.com/circuito/image/upload/xnuqtlhuqylfnc2byyq1",
+  "displayName": "NTC Thermistor 10k",
+  "category": [
+    "input"
+  ],
+  "desc": "",
+  "bom": [
+    {
+      "name": "octopart",
+      "image": "https://res.cloudinary.com/circuito/image/upload/rgxsi1omllfhbuwuskih",
+      "link": "https://octopart.com/ntcle100e3103jb0-vishay-39646794",
+      "price": "0.69",
+      "SKU": "BC2301-ND"
+    }
+  ],
+  "info": {
+    "setup": "",
+    "test": ""
+  },
+  "placing": {
+    "onBreadboard": true
+  }
+}

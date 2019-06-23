@@ -1,0 +1,163 @@
+{
+  "name": "LEDRed",
+  "category": [
+    "output"
+  ],
+  "blockId": "9590",
+  "app": {
+    "appName": "Basic Red LED 5mm",
+    "image": "http://res.cloudinary.com/circuito/image/upload/fciu7ko9cvpktztsbjsg",
+    "numericName": "",
+    "shortName": "Red LED",
+    "indicators": {
+      "verified": true,
+      "solder": false
+    },
+    "desc": "<p>This is a very basic, small, Red LED. Control the intensity of the color at a range of 0-255. Its Luminous Intensity is 150-200mcd.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "LEDRed"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDRed_1",
+          "part": "LEDRed"
+        },
+        {
+          "name": "Res220O_1",
+          "part": "Res220O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDRed_1.Gnd",
+          "to": "Res220O_1.con1"
+        },
+        {
+          "from": "Res220O_1.con0",
+          "to": "GND"
+        },
+        {
+          "from": "LEDRed_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3.3v",
+      "coders": [
+        "LEDRed"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LEDRed_1",
+          "part": "LEDRed"
+        },
+        {
+          "name": "Res100O_1",
+          "part": "Res100O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "LEDRed_1.Gnd",
+          "to": "Res100O_1.con0"
+        },
+        {
+          "from": "Res100O_1.con1",
+          "to": "GND"
+        },
+        {
+          "from": "LEDRed_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 2
+    }
+  ]
+}

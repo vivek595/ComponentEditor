@@ -1,0 +1,231 @@
+{
+  "name": "SevenSegment",
+  "category": [
+    "input"
+  ],
+  "blockId": "11441",
+  "app": {
+    "appName": "SparkFun 7 - Segment Serial Display - Red",
+    "image": "http://res.cloudinary.com/circuito/image/upload/e5o3is7ilwmlgrnpdfq5",
+    "numericName": "",
+    "shortName": "7-Segment 4 Digits",
+    "indicators": {
+      "verified": true,
+      "solder": true
+    },
+    "desc": "<p>This Seven segment display is able to do show 4 digits, where each one can be controlled separately. It can display numbers, letters and some special characters.<br><strong>Requires</strong>: Soldering of 10 male header pins to fit onto a breadboard.<br><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/Arduino-Project-in-5-Minutes/\">Arduino Project in 5 Minutes</a>.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "SWSer",
+      "coders": [
+        "SevenSegment"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "NodeMCU",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SevenSegment_1",
+          "part": "SevenSegment"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 131,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "RX",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "SevenSegment_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SevenSegment_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "SevenSegment_1.RX",
+          "to": "RX"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "I2C",
+      "supportedControllers": [
+        "ESP32DevKitC",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "SevenSegment_1",
+          "part": "SevenSegment"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 131,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "SevenSegment_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SevenSegment_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "SevenSegment_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "SevenSegment_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

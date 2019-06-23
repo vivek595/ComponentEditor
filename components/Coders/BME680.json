@@ -1,0 +1,9 @@
+{
+  "name": "BME680",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "BME680"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "LIDARVL53",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

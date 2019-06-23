@@ -1,0 +1,9 @@
+{
+  "name": "MICS5524",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "MICS5524"
+  }
+}

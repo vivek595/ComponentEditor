@@ -1,0 +1,9 @@
+{
+  "name": "RGBGesture",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

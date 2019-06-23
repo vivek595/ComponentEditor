@@ -1,0 +1,93 @@
+{
+  "name": "LipoBattery3v7",
+  "category": [
+    "power"
+  ],
+  "blockId": "13813",
+  "app": {
+    "appName": "Lithium Polymer Battery 3.7v",
+    "image": "http://res.cloudinary.com/circuito/image/upload/jzwisln2qzhry99iwzor",
+    "numericName": "",
+    "shortName": "LiPo Battery 3.7V",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>A great way to power any R/C, robotic, or portable project. This is an excellent choice for anything that requires a small battery with a lot of punch.<br>The battery has one cell and outputs 3.7V.\n",
+    "visible": true
+  },
+  "altComp": {
+    "cost": 100,
+    "block": "LipoBattery7v4"
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LipoBattery3v7_1",
+          "part": "LipoBattery3v7"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Battery",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Battery",
+                "voltage": "3.7v"
+              }
+            ],
+            "providesLoad": 5000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "PowerType",
+          "interface": {
+            "provides": [
+              {
+                "spec": "Battery",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "LipoBattery3v7_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LipoBattery3v7_1.VCC",
+          "to": "VCC"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

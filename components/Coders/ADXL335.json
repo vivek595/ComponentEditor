@@ -1,0 +1,9 @@
+{
+  "name": "ADXL335",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

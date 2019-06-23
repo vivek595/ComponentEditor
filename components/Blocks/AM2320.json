@@ -1,0 +1,259 @@
+{
+  "name": "AM2320",
+  "category": [
+    "input"
+  ],
+  "blockId": "656839",
+  "app": {
+    "appName": "AM2320 Digital Temperature and Humidity Sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/nqhyrltgv1knwcztk3it",
+    "numericName": "AM2320",
+    "shortName": "Temperature and Humidity Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>Simple I2C Digital Humidity and Temperature sensor, 3% humidity accuracy and 0.5C temperature accuracy.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "AM2320"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "AM2320_1",
+          "part": "AM2320"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Res10KO_2",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "AM2320_1.SCL",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "AM2320_1.SDA",
+          "to": "Res10KO_2.con0"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "Res10KO_2.con1"
+        },
+        {
+          "from": "AM2320_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "AM2320_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "AM2320_1.SDA",
+          "to": "SDA"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "AM2320"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "AM2320_1",
+          "part": "AM2320"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Res10KO_2",
+          "part": "Res10KO"
+        }
+      ],
+      "wires": [
+        {
+          "from": "AM2320_1.SCL",
+          "to": "Res10KO_1.con0"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "AM2320_1.SDA",
+          "to": "Res10KO_2.con0"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "Res10KO_2.con1"
+        },
+        {
+          "from": "AM2320_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "AM2320_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "AM2320_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "AM2320_1.SDA",
+          "to": "SDA"
+        }
+      ],
+      "ports": [
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

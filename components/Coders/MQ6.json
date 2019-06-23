@@ -1,0 +1,9 @@
+{
+  "name": "MQ6",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
+}

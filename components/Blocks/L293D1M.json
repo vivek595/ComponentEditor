@@ -1,0 +1,242 @@
+{
+  "name": "L293D1M",
+  "category": [
+    "output"
+  ],
+  "blockId": "7654340",
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "DCMDriverL293D_1",
+          "part": "DCMDriverL293D"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Enable1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "PWM",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "In1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "In2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "+Vmotor",
+          "interface": {
+            "requires": [
+              {
+                "cost": 8,
+                "spec": "",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 7,
+                "spec": "",
+                "voltage": "3.7v"
+              },
+              {
+                "cost": 9,
+                "spec": "Battery",
+                "voltage": "3.7v"
+              },
+              {
+                "cost": 6,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 5,
+                "spec": "",
+                "voltage": "6v"
+              },
+              {
+                "cost": 3,
+                "spec": "",
+                "voltage": "7.4v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "9v"
+              },
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "requiresLoad": 400,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "+V",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Out1",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DCMA1",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "Out2",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DCMA2",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "DCMDriverL293D_1.Enable1",
+          "to": "Enable1"
+        },
+        {
+          "from": "DCMDriverL293D_1.In1",
+          "to": "In1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND1",
+          "to": "GND1"
+        },
+        {
+          "from": "DCMDriverL293D_1.GND2",
+          "to": "GND2"
+        },
+        {
+          "from": "DCMDriverL293D_1.In2",
+          "to": "In2"
+        },
+        {
+          "from": "DCMDriverL293D_1.+Vmotor",
+          "to": "+Vmotor"
+        },
+        {
+          "from": "DCMDriverL293D_1.+V",
+          "to": "+V"
+        },
+        {
+          "from": "DCMDriverL293D_1.Out1",
+          "to": "Out1"
+        },
+        {
+          "from": "DCMDriverL293D_1.Out2",
+          "to": "Out2"
+        }
+      ],
+      "cost": 0
+    }
+  ]
+}

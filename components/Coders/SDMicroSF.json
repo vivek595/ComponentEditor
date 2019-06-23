@@ -1,0 +1,9 @@
+{
+  "name": "SDMicroSF",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "SD",
+    "varname": "uSD"
+  }
+}

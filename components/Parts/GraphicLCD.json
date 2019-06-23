@@ -1,0 +1,25 @@
+{
+  "name": "GraphicLCD",
+  "symbol": "https://res.cloudinary.com/circuito/image/upload/yul0wmiay0ielso45r78",
+  "displayName": "Serial Graphic LCD 160x128",
+  "category": [
+    "output"
+  ],
+  "desc": "",
+  "bom": [
+    {
+      "name": "digikey",
+      "image": "https://res.cloudinary.com/circuito/image/upload/pwbeovatluc0uwehggza",
+      "link": "https://www.digikey.com/products/en?keywords=LCD-08884-ND",
+      "price": "69.95",
+      "SKU": "LCD-08884-ND"
+    }
+  ],
+  "info": {
+    "setup": "",
+    "test": ""
+  },
+  "placing": {
+    "onBreadboard": false
+  }
+}

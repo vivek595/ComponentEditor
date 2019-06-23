@@ -1,0 +1,181 @@
+{
+  "name": "PotentiometerSlide",
+  "category": [
+    "input"
+  ],
+  "blockId": "698520",
+  "app": {
+    "appName": "Slide Pot - X-Large (10k Linear Taper)",
+    "image": "http://res.cloudinary.com/circuito/image/upload/mbs3ajbpzlhqxj69sbfh",
+    "numericName": "",
+    "shortName": "Slide Pot",
+    "indicators": {
+      "verified": false,
+      "solder": false
+    },
+    "desc": "<p>A slide potentiometer rated at 10kOhm and 0.5W.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "PotentiometerSlide"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PotentiometerSlide_1",
+          "part": "PotentiometerSlide"
+        }
+      ],
+      "ports": [
+        {
+          "name": "leg2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "wiper",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "leg1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "PotentiometerSlide_1.leg2",
+          "to": "leg2"
+        },
+        {
+          "from": "PotentiometerSlide_1.wiper",
+          "to": "wiper"
+        },
+        {
+          "from": "PotentiometerSlide_1.leg1",
+          "to": "leg1"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "PotentiometerSlide"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "PotentiometerSlide_1",
+          "part": "PotentiometerSlide"
+        }
+      ],
+      "ports": [
+        {
+          "name": "leg2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "wiper",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "leg1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "PotentiometerSlide_1.leg2",
+          "to": "leg2"
+        },
+        {
+          "from": "PotentiometerSlide_1.wiper",
+          "to": "wiper"
+        },
+        {
+          "from": "PotentiometerSlide_1.leg1",
+          "to": "leg1"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

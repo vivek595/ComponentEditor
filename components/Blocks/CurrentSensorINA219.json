@@ -1,0 +1,210 @@
+{
+  "name": "CurrentSensorINA219",
+  "category": [
+    "input"
+  ],
+  "blockId": "979557",
+  "app": {
+    "appName": "INA219 High Side DC Current Sensor Breakout - 26V 3.2A Max",
+    "image": "http://res.cloudinary.com/circuito/image/upload/mwq8mszn4eihgqx43n37",
+    "numericName": "INA219",
+    "shortName": "DC Current Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>The INA219 High Side DC Current Sensor Breakout can help you measure both the high side voltage and DC current draw over I2C with 1% precision (26V 3.2A Max)</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "CurrentSensorINA219"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "CurrentSensorINA219_1",
+          "part": "CurrentSensorINA219"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "CurrentSensorINA219_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "CurrentSensorINA219_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "CurrentSensorINA219_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "CurrentSensorINA219_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "CurrentSensorINA219"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "CurrentSensorINA219_1",
+          "part": "CurrentSensorINA219"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "CurrentSensorINA219_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "CurrentSensorINA219_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "CurrentSensorINA219_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "CurrentSensorINA219_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}

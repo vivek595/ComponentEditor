@@ -1,0 +1,211 @@
+{
+  "name": "MPL3115A2",
+  "category": [
+    "input"
+  ],
+  "blockId": "431714",
+  "app": {
+    "appName": "Adafruit MPL3115A2 - Barometric Pressure & Altitude Sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/bojr73iq1rq4yg1wx58z",
+    "numericName": "MPL3115A2",
+    "shortName": "Barometric Pressure and Altitude Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
+    },
+    "desc": "<p>A Barometric pressure, Altitude and Temperature Sensor. It is high precision, low cost, low power usage, and a calibration and calculation are not required.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "MPL3115A2"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MPL3115A2_1",
+          "part": "MPL3115A2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "MPL3115A2_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "MPL3115A2_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "MPL3115A2_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "MPL3115A2_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "MPL3115A2"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "MPL3115A2_1",
+          "part": "MPL3115A2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "MPL3115A2_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "MPL3115A2_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "MPL3115A2_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "MPL3115A2_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    }
+  ]
+}
