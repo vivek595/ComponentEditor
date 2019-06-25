@@ -1,12 +1,9 @@
 {
-    "name": "HeartRateGravity",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Sig"
-        ],
-        "varname": "HeartRate"
-    }
+  "name": "HeartRateGravity",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "HeartRate"
+  }
 }

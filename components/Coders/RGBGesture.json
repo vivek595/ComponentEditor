@@ -1,12 +1,9 @@
 {
-    "name": "RGBGesture",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "INT"
-        ],
-        "varname": ""
-    }
+  "name": "RGBGesture",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

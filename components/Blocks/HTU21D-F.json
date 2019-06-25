@@ -1,120 +1,208 @@
 {
-    "name": "HTU21D-F",
-    "category": [
-        "input"
-    ],
-    "blockId": "690029",
-    "app": {
-        "appName": "Adafruit HTU21D-F Temperature & Humidity Sensor Breakout Board",
-        "image": "http://res.cloudinary.com/circuito/image/upload/wmdl1tgav0eghdpwsebd",
-        "numericName": "HTU21D-F",
-        "shortName": "Temperature & Humidity Sensor",
-        "tags": [
-            "inputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": false,
-            "solder": true
-        },
-        "desc": "<p>This is a digital humidity & temp sensor. An accurate and intelligent alternative to much simpler sensors. It is connected vua I2C bus & has a typical accuracy of \u00b12%@5%-95% RH while able to measure -30-90\u00b0C with \u00b11\u00b0C accuracy</p>",
-        "visible": true
+  "name": "HTU21D-F",
+  "category": [
+    "input"
+  ],
+  "blockId": "690029",
+  "app": {
+    "appName": "Adafruit HTU21D-F Temperature & Humidity Sensor Breakout Board",
+    "image": "http://res.cloudinary.com/circuito/image/upload/wmdl1tgav0eghdpwsebd",
+    "numericName": "HTU21D-F",
+    "shortName": "Temperature & Humidity Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": true
     },
-    "circuits": [
+    "desc": "<p>This is a digital humidity & temp sensor. An accurate and intelligent alternative to much simpler sensors. It is connected vua I2C bus & has a typical accuracy of \u00b12%@5%-95% RH while able to measure -30-90\u00b0C with \u00b11\u00b0C accuracy</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "HTU21D-F"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "coders": [
-                "HTU21D-F"
+          "name": "HTU21D-F_1",
+          "part": "HTU21D-F"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "HTU21D-F"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "SDA",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SDA","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "SCL",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SCL","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "VIN",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
-            ],
-            "priority": 0
+            "portType": "requires"
+          }
         },
         {
-            "name": "3v3",
-            "coders": [
-                "HTU21D-F"
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "Teensy32"
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
             ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "HTU21D-F"
-                }
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
             ],
-            "ports": [
-                {
-                    "name": "SDA",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SDA","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "SCL",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SCL","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "VIN",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
-            ],
-            "priority": 1
+            "portType": "requires"
+          }
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "HTU21D-F_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "HTU21D-F_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "HTU21D-F_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "HTU21D-F_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "HTU21D-F"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "HTU21D-F_1",
+          "part": "HTU21D-F"
+        }
+      ],
+      "ports": [
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "HTU21D-F_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "HTU21D-F_1.SCL",
+          "to": "SCL"
+        },
+        {
+          "from": "HTU21D-F_1.VIN",
+          "to": "VIN"
+        },
+        {
+          "from": "HTU21D-F_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

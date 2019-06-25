@@ -1,629 +1,1517 @@
 {
-    "name": "ATMega328P",
-    "category": [
-        "controller"
-    ],
-    "blockId": "1000328",
-    "app": {
-        "appName": "ATMega328P",
-        "image": "http://res.cloudinary.com/circuito/image/upload/ghyh4jxq69d5sfyrzqgj",
-        "numericName": "",
-        "shortName": "ATMega328P",
-        "tags": [
-            "controllers"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>The ATMega328P is a great way to migrate your circuit from Arduino board to a standalone microcontroller on a breadboard. please note that you will need to burn the bootloader for the chip, and install the MiniCore package on your Arduino IDE board manager.<br><br><a href=https://www.circuito.io/blog/atmega328p-bootloader/ class=\"text-app-info\" target=\"_blank\">See our tutorial for burning the Bootloader</a></p>",
-        "visible": false
+  "name": "ATMega328P",
+  "category": [
+    "controller"
+  ],
+  "blockId": "1000328",
+  "app": {
+    "appName": "ATMega328P",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ghyh4jxq69d5sfyrzqgj",
+    "numericName": "",
+    "shortName": "ATMega328P",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "altComp": [
-        1000,
-        "ArduinoUno"
-    ],
-    "circuits": [
+    "desc": "<p>The ATMega328P is a great way to migrate your circuit from Arduino board to a standalone microcontroller on a breadboard. please note that you will need to burn the bootloader for the chip, and install the MiniCore package on your Arduino IDE board manager.<br><br><a href=https://www.circuito.io/blog/atmega328p-bootloader/ class=\"text-app-info\" target=\"_blank\">See our tutorial for burning the Bootloader</a></p>",
+    "visible": true
+  },
+  "altComp": {
+    "cost": 1000,
+    "block": "ArduinoUno"
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "supportedControllers": [
+        "ATMega328P"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "supportedControllers": [
-                "ATMega328P"
-            ],
-            "parts": [
-                {
-                    "name": "Cap3",
-                    "part": "CapCeramic100nF"
-                },
-                {
-                    "name": "Res1",
-                    "part": "Res10KO"
-                },
-                {
-                    "name": "this",
-                    "part": "ATMega328P"
-                },
-                {
-                    "name": "Cap2",
-                    "part": "CapCeramic22pF"
-                },
-                {
-                    "name": "C1",
-                    "part": "Crystal16MHz"
-                },
-                {
-                    "name": "Cap1",
-                    "part": "CapCeramic22pF"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.XTAL1",
-                    "to": "C1.0"
-                },
-                {
-                    "from": "this.XTAL2",
-                    "to": "C1.1"
-                },
-                {
-                    "from": "Cap1.con1",
-                    "to": "C1.1"
-                },
-                {
-                    "from": "Cap2.con0",
-                    "to": "C1.0"
-                },
-                {
-                    "from": "Cap1.con0",
-                    "to": "this.GND"
-                },
-                {
-                    "from": "Cap2.con1",
-                    "to": "this.GND"
-                },
-                {
-                    "from": "this.AVCC",
-                    "to": "this.VCC"
-                },
-                {
-                    "from": "Res1.con0",
-                    "to": "Cap3.con1"
-                },
-                {
-                    "from": "this.RESET",
-                    "to": "Cap3.con0"
-                },
-                {
-                    "from": "this.VCC",
-                    "to": "Res1.con1"
-                },
-                {
-                    "from": "Cap3.con1",
-                    "to": "DTR"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "RXD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"TX","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "TXD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"RX","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "DTR",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DTR","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "2",
-                    "interface": {
-                        "codename": 2,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"},{"spec":"ESPSoftwareSerialRX1","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "3",
-                    "interface": {
-                        "codename": 3,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"Timer2","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"},{"spec":"ESPSoftwareSerialTX1","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "4",
-                    "interface": {
-                        "codename": 4,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "5",
-                    "interface": {
-                        "codename": 5,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "6",
-                    "interface": {
-                        "codename": 6,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "7",
-                    "interface": {
-                        "codename": 7,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "8",
-                    "interface": {
-                        "codename": 8,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "10",
-                    "interface": {
-                        "codename": 10,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"ESPSoftwareSerialRX","voltage":"5v"},{"spec":"SS","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "11",
-                    "interface": {
-                        "codename": 11,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"MOSI","voltage":"5v"},{"spec":"ESPSoftwareSerialTX","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "12",
-                    "interface": {
-                        "codename": 12,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"MISO","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "13",
-                    "interface": {
-                        "codename": 13,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"SCK","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"5v"}],
-                        "providesLoad": 400
-                    }
-                },
-                {
-                    "name": "AVCC",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"5v"}],
-                        "requiresLoad": 400
-                    }
-                },
-                {
-                    "name": "SerialType",
-                    "interface": {
-                        "provides":[{"spec":"ESPSoftwareSerialTag","voltage":""}]
-                    }
-                },
-                {
-                    "name": "9",
-                    "interface": {
-                        "codename": 9,
-                        "provides":[{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalOut","voltage":"5v"},{"spec":"PWM","voltage":"5v"},{"spec":"SoftwareSerial","voltage":"5v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "MemOverLoad",
-                    "interface": {
-                        "provides":[{"spec":"SRAMLoad","voltage":""}],
-                        "providesLoad": 2048
-                    }
-                },
-                {
-                    "name": "A0",
-                    "interface": {
-                        "codename": "A0",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "A1",
-                    "interface": {
-                        "codename": "A1",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "A2",
-                    "interface": {
-                        "codename": "A2",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "A3",
-                    "interface": {
-                        "codename": "A3",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "A4",
-                    "interface": {
-                        "codename": "A4",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"},{"spec":"SDA","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "A5",
-                    "interface": {
-                        "codename": "A5",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"5v"},{"spec":"DigitalIn-Int","voltage":"5v"},{"spec":"SCL","voltage":"5v"}]
-                    }
-                }
-            ],
-            "priority": 1,
-            "requiredBlocks": [
-                {
-                    "cost": 0,
-                    "blocks": [
-                        "FTDI_DATA_5v"
-                    ]
-                },
-                {
-                    "cost": 10,
-                    "blocks": [
-                        "Reg5v",
-                        "FTDI_DATA_5v"
-                    ]
-                },
-                {
-                    "cost": 20,
-                    "blocks": [
-                        "Reg5v",
-                        "Reg3.3v",
-                        "FTDI_DATA_5v"
-                    ]
-                },
-                {
-                    "cost": 30,
-                    "blocks": [
-                        "StepUp5v",
-                        "FTDI_DATA_5v"
-                    ]
-                }
-            ]
+          "name": "CapCeramic100nF_1",
+          "part": "CapCeramic100nF"
         },
         {
-            "name": "3v3",
-            "supportedControllers": [
-                "ATMega328P"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "ATMega328P"
-                },
-                {
-                    "name": "Cap3",
-                    "part": "CapCeramic100nF"
-                },
-                {
-                    "name": "Res1",
-                    "part": "Res10KO"
-                },
-                {
-                    "name": "C1",
-                    "part": "Crystal8MHz"
-                },
-                {
-                    "name": "Cap1",
-                    "part": "CapCeramic22pF"
-                },
-                {
-                    "name": "Cap2",
-                    "part": "CapCeramic22pF"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.XTAL1",
-                    "to": "C1.0"
-                },
-                {
-                    "from": "this.XTAL2",
-                    "to": "C1.1"
-                },
-                {
-                    "from": "Cap1.con1",
-                    "to": "C1.1"
-                },
-                {
-                    "from": "Cap2.con0",
-                    "to": "C1.0"
-                },
-                {
-                    "from": "Cap1.con0",
-                    "to": "this.GND"
-                },
-                {
-                    "from": "Cap2.con1",
-                    "to": "this.GND"
-                },
-                {
-                    "from": "this.AVCC",
-                    "to": "this.VCC"
-                },
-                {
-                    "from": "Res1.con0",
-                    "to": "Cap3.con1"
-                },
-                {
-                    "from": "this.RESET",
-                    "to": "Cap3.con0"
-                },
-                {
-                    "from": "this.VCC",
-                    "to": "Res1.con1"
-                },
-                {
-                    "from": "Cap3.con1",
-                    "to": "DTR"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "RXD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"TX","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "TXD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"RX","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "DTR",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DTR","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "2",
-                    "interface": {
-                        "codename": 2,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"},{"spec":"ESPSoftwareSerialRX1","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "3",
-                    "interface": {
-                        "codename": 3,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"Timer2","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"},{"spec":"ESPSoftwareSerialTX1","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "4",
-                    "interface": {
-                        "codename": 4,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "5",
-                    "interface": {
-                        "codename": 5,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "6",
-                    "interface": {
-                        "codename": 6,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "7",
-                    "interface": {
-                        "codename": 7,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "8",
-                    "interface": {
-                        "codename": 8,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "10",
-                    "interface": {
-                        "codename": 10,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"ESPSoftwareSerialRX","voltage":"3.3v"},{"spec":"SS","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "11",
-                    "interface": {
-                        "codename": 11,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"MOSI","voltage":"3.3v"},{"spec":"ESPSoftwareSerialTX","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "12",
-                    "interface": {
-                        "codename": 12,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"MISO","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "13",
-                    "interface": {
-                        "codename": 13,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"SCK","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"3.3v"}],
-                        "providesLoad": 400
-                    }
-                },
-                {
-                    "name": "AVCC",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"3.3v"}],
-                        "requiresLoad": 400
-                    }
-                },
-                {
-                    "name": "SerialType",
-                    "interface": {
-                        "provides":[{"spec":"ESPSoftwareSerialTag","voltage":""}]
-                    }
-                },
-                {
-                    "name": "9",
-                    "interface": {
-                        "codename": 9,
-                        "provides":[{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalOut","voltage":"3.3v"},{"spec":"PWM","voltage":"3.3v"},{"spec":"SoftwareSerial","voltage":"3.3v"}],
-                        "providesLoad": 20
-                    }
-                },
-                {
-                    "name": "MemOverLoad",
-                    "interface": {
-                        "provides":[{"spec":"SRAMLoad","voltage":""}],
-                        "providesLoad": 2048
-                    }
-                },
-                {
-                    "name": "A0",
-                    "interface": {
-                        "codename": "A0",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "A1",
-                    "interface": {
-                        "codename": "A1",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "A2",
-                    "interface": {
-                        "codename": "A2",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "A3",
-                    "interface": {
-                        "codename": "A3",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "A4",
-                    "interface": {
-                        "codename": "A4",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"},{"spec":"SDA","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "A5",
-                    "interface": {
-                        "codename": "A5",
-                        "provides":[{"spec":"ADC","voltage":""},{"spec":"DigitalIn","voltage":"3.3v"},{"spec":"DigitalIn-Int","voltage":"3.3v"},{"spec":"SCL","voltage":"3.3v"}]
-                    }
-                }
-            ],
-            "priority": 2,
-            "requiredBlocks": [
-                {
-                    "cost": 0,
-                    "blocks": [
-                        "FTDI_DATA_3v3"
-                    ]
-                },
-                {
-                    "cost": 10,
-                    "blocks": [
-                        "Reg3.3v",
-                        "FTDI_DATA_3v3"
-                    ]
-                },
-                {
-                    "cost": 20,
-                    "blocks": [
-                        "Reg3.3v",
-                        "Reg5v",
-                        "FTDI_DATA_3v3"
-                    ]
-                },
-                {
-                    "cost": 30,
-                    "blocks": [
-                        "StepUp5v",
-                        "FTDI_DATA_3v3"
-                    ]
-                }
-            ]
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "ATMega328P_1",
+          "part": "ATMega328P"
+        },
+        {
+          "name": "CapCeramic22pF_1",
+          "part": "CapCeramic22pF"
+        },
+        {
+          "name": "CapCeramic22pF_2",
+          "part": "CapCeramic22pF"
+        },
+        {
+          "name": "Crystal16MHz_1",
+          "part": "Crystal16MHz"
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "ATMega328P_1.XTAL1",
+          "to": "Crystal16MHz_1.0"
+        },
+        {
+          "from": "ATMega328P_1.XTAL2",
+          "to": "Crystal16MHz_1.1"
+        },
+        {
+          "from": "CapCeramic22pF_2.con1",
+          "to": "Crystal16MHz_1.1"
+        },
+        {
+          "from": "CapCeramic22pF_1.con0",
+          "to": "Crystal16MHz_1.0"
+        },
+        {
+          "from": "CapCeramic22pF_2.con0",
+          "to": "ATMega328P_1.GND"
+        },
+        {
+          "from": "CapCeramic22pF_1.con1",
+          "to": "ATMega328P_1.GND"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "ATMega328P_1.VCC"
+        },
+        {
+          "from": "Res10KO_1.con0",
+          "to": "CapCeramic100nF_1.con1"
+        },
+        {
+          "from": "ATMega328P_1.RESET",
+          "to": "CapCeramic100nF_1.con0"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "CapCeramic100nF_1.con1",
+          "to": "DTR"
+        },
+        {
+          "from": "ATMega328P_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ATMega328P_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ATMega328P_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ATMega328P_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ATMega328P_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ATMega328P_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ATMega328P_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ATMega328P_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ATMega328P_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ATMega328P_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ATMega328P_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ATMega328P_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ATMega328P_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ATMega328P_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "AVCC"
+        },
+        {
+          "from": "ATMega328P_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ATMega328P_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ATMega328P_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ATMega328P_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ATMega328P_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ATMega328P_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ATMega328P_1.A5",
+          "to": "A5"
+        }
+      ],
+      "ports": [
+        {
+          "name": "RXD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "TX",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "TXD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "RX",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DTR",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DTR",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              },
+              {
+                "spec": "ESPSoftwareSerialRX1",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "3",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "Timer2",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              },
+              {
+                "spec": "ESPSoftwareSerialTX1",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "4",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "5",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "6",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "7",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "8",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "10",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "ESPSoftwareSerialRX",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SS",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "11",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "MOSI",
+                "voltage": "5v"
+              },
+              {
+                "spec": "ESPSoftwareSerialTX",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "12",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "MISO",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "13",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SCK",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 400,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "AVCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 400,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SerialType",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ESPSoftwareSerialTag",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "9",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "provides": [
+              {
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "providesLoad": 2048,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A0",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A1",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A2",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A3",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A4",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SDA",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A5",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "5v"
+              },
+              {
+                "spec": "SCL",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 0,
+          "blocks": [
+            "FTDI_DATA_5v"
+          ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "Reg5v",
+            "FTDI_DATA_5v"
+          ]
+        },
+        {
+          "cost": 20,
+          "blocks": [
+            "Reg5v",
+            "Reg3v3",
+            "FTDI_DATA_5v"
+          ]
+        },
+        {
+          "cost": 30,
+          "blocks": [
+            "StepUp5v",
+            "FTDI_DATA_5v"
+          ]
+        }
+      ],
+      "cost": 1
+    },
+    {
+      "name": "3v3",
+      "supportedControllers": [
+        "ATMega328P"
+      ],
+      "parts": [
+        {
+          "name": "ATMega328P_1",
+          "part": "ATMega328P"
+        },
+        {
+          "name": "CapCeramic100nF_1",
+          "part": "CapCeramic100nF"
+        },
+        {
+          "name": "Res10KO_1",
+          "part": "Res10KO"
+        },
+        {
+          "name": "Crystal8MHz_1",
+          "part": "Crystal8MHz"
+        },
+        {
+          "name": "CapCeramic22pF_1",
+          "part": "CapCeramic22pF"
+        },
+        {
+          "name": "CapCeramic22pF_2",
+          "part": "CapCeramic22pF"
+        }
+      ],
+      "wires": [
+        {
+          "from": "ATMega328P_1.XTAL1",
+          "to": "Crystal8MHz_1.0"
+        },
+        {
+          "from": "ATMega328P_1.XTAL2",
+          "to": "Crystal8MHz_1.1"
+        },
+        {
+          "from": "CapCeramic22pF_1.con1",
+          "to": "Crystal8MHz_1.1"
+        },
+        {
+          "from": "CapCeramic22pF_2.con0",
+          "to": "Crystal8MHz_1.0"
+        },
+        {
+          "from": "CapCeramic22pF_1.con0",
+          "to": "ATMega328P_1.GND"
+        },
+        {
+          "from": "CapCeramic22pF_2.con1",
+          "to": "ATMega328P_1.GND"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "ATMega328P_1.VCC"
+        },
+        {
+          "from": "Res10KO_1.con0",
+          "to": "CapCeramic100nF_1.con1"
+        },
+        {
+          "from": "ATMega328P_1.RESET",
+          "to": "CapCeramic100nF_1.con0"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "Res10KO_1.con1"
+        },
+        {
+          "from": "CapCeramic100nF_1.con1",
+          "to": "DTR"
+        },
+        {
+          "from": "ATMega328P_1.RXD",
+          "to": "RXD"
+        },
+        {
+          "from": "ATMega328P_1.TXD",
+          "to": "TXD"
+        },
+        {
+          "from": "ATMega328P_1.2",
+          "to": "2"
+        },
+        {
+          "from": "ATMega328P_1.3",
+          "to": "3"
+        },
+        {
+          "from": "ATMega328P_1.4",
+          "to": "4"
+        },
+        {
+          "from": "ATMega328P_1.5",
+          "to": "5"
+        },
+        {
+          "from": "ATMega328P_1.6",
+          "to": "6"
+        },
+        {
+          "from": "ATMega328P_1.7",
+          "to": "7"
+        },
+        {
+          "from": "ATMega328P_1.8",
+          "to": "8"
+        },
+        {
+          "from": "ATMega328P_1.10",
+          "to": "10"
+        },
+        {
+          "from": "ATMega328P_1.11",
+          "to": "11"
+        },
+        {
+          "from": "ATMega328P_1.12",
+          "to": "12"
+        },
+        {
+          "from": "ATMega328P_1.13",
+          "to": "13"
+        },
+        {
+          "from": "ATMega328P_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "ATMega328P_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "ATMega328P_1.AVCC",
+          "to": "AVCC"
+        },
+        {
+          "from": "ATMega328P_1.9",
+          "to": "9"
+        },
+        {
+          "from": "ATMega328P_1.A0",
+          "to": "A0"
+        },
+        {
+          "from": "ATMega328P_1.A1",
+          "to": "A1"
+        },
+        {
+          "from": "ATMega328P_1.A2",
+          "to": "A2"
+        },
+        {
+          "from": "ATMega328P_1.A3",
+          "to": "A3"
+        },
+        {
+          "from": "ATMega328P_1.A4",
+          "to": "A4"
+        },
+        {
+          "from": "ATMega328P_1.A5",
+          "to": "A5"
+        }
+      ],
+      "ports": [
+        {
+          "name": "RXD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "TX",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "TXD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "RX",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DTR",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DTR",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "2",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "ESPSoftwareSerialRX1",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "3",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "Timer2",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "ESPSoftwareSerialTX1",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "4",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "5",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "6",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "7",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "8",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "10",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "ESPSoftwareSerialRX",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SS",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "11",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "MOSI",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "ESPSoftwareSerialTX",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "12",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "MISO",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "13",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SCK",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 400,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "AVCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "requiresLoad": 400,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SerialType",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ESPSoftwareSerialTag",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "9",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "PWM",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SoftwareSerial",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 20,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "provides": [
+              {
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "providesLoad": 2048,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A0",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A1",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A2",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A3",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A4",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "A5",
+          "interface": {
+            "provides": [
+              {
+                "spec": "ADC",
+                "voltage": ""
+              },
+              {
+                "spec": "DigitalIn",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "DigitalIn-Int",
+                "voltage": "3.3v"
+              },
+              {
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 0,
+          "blocks": [
+            "FTDI_DATA_3v3"
+          ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "Reg3v3",
+            "FTDI_DATA_3v3"
+          ]
+        },
+        {
+          "cost": 20,
+          "blocks": [
+            "Reg3v3",
+            "Reg5v",
+            "FTDI_DATA_3v3"
+          ]
+        },
+        {
+          "cost": 30,
+          "blocks": [
+            "StepUp5v",
+            "FTDI_DATA_3v3"
+          ]
+        }
+      ],
+      "cost": 2
+    }
+  ]
 }

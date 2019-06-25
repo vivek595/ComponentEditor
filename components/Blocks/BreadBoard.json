@@ -1,18 +1,19 @@
 {
-    "name": "BreadBoard",
-    "category": [
-        "support"
-    ],
-    "circuits": [
+  "name": "BreadBoard",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
         {
-            "name": "",
-            "supportedControllers": [],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "BreadBoard"
-                }
-            ]
+          "name": "BreadBoard_1",
+          "part": "BreadBoard"
         }
-    ]
+      ],
+      "cost": 0
+    }
+  ]
 }

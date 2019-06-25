@@ -1,113 +1,181 @@
 {
-    "name": "TMP36",
-    "category": [
-        "input"
-    ],
-    "blockId": "844727",
-    "app": {
-        "appName": "TMP36 Analog Temprature Sensor",
-        "image": "http://res.cloudinary.com/circuito/image/upload/ixaxk8f3xgowixujgmsl",
-        "numericName": "TMP36",
-        "shortName": "Temperature Sensor",
-        "tags": [
-            "inputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": false,
-            "solder": false
-        },
-        "desc": "<p>This Analog Temprature Sensor can measure -40 to 150C. It is very percise and doesn't need calibration</p>",
-        "visible": true
+  "name": "TMP36",
+  "category": [
+    "input"
+  ],
+  "blockId": "844727",
+  "app": {
+    "appName": "TMP36 Analog Temprature Sensor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/ixaxk8f3xgowixujgmsl",
+    "numericName": "TMP36",
+    "shortName": "Temperature Sensor",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>This Analog Temprature Sensor can measure -40 to 150C. It is very percise and doesn't need calibration</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "TMP36"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "coders": [
-                "TMP36"
+          "name": "TMP36_1",
+          "part": "TMP36"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vcc",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "TMP36"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Vcc",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "Gnd",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "Vout",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"ADC","voltage":""}],
-                        "unique": true
-                    }
-                }
-            ],
-            "priority": 0
+            "portType": "requires"
+          }
         },
         {
-            "name": "3v3",
-            "coders": [
-                "TMP36"
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
             ],
-            "supportedControllers": [
-                "ArduinoGemma",
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Vout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
             ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "TMP36"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Vcc",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "Gnd",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "Vout",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"ADC","voltage":""}],
-                        "unique": true
-                    }
-                }
-            ],
-            "priority": 1
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "TMP36_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "TMP36_1.Gnd",
+          "to": "Gnd"
+        },
+        {
+          "from": "TMP36_1.Vout",
+          "to": "Vout"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "TMP36"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "TMP36_1",
+          "part": "TMP36"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vcc",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Gnd",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Vout",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        }
+      ],
+      "wires": [
+        {
+          "from": "TMP36_1.Vcc",
+          "to": "Vcc"
+        },
+        {
+          "from": "TMP36_1.Gnd",
+          "to": "Gnd"
+        },
+        {
+          "from": "TMP36_1.Vout",
+          "to": "Vout"
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

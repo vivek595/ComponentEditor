@@ -1,84 +1,176 @@
 {
-    "name": "LogicLevelConverterSPI-3.3-5",
-    "category": [
-        "support"
-    ],
-    "circuits": [
+  "name": "LogicLevelConverterSPI-3.3-5",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
         {
-            "name": "",
-            "supportedControllers": [],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LogicLevelConverter"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "HV",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "GND1",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "LV2",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"MOSI","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "HV2",
-                    "interface": {
-                        "codenameRedirect": "LV2",
-                        "provides":[{"spec":"MOSI","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "LV",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "LV1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"MISO","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "HV1",
-                    "interface": {
-                        "codenameRedirect": "LV1",
-                        "provides":[{"spec":"MISO","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "HV4",
-                    "interface": {
-                        "codenameRedirect": "LV4",
-                        "provides":[{"spec":"DigitalOut","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "LV4",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DigitalOut","voltage":"3.3v"}]
-                    }
-                }
-            ]
+          "name": "LogicLevelConverter_1",
+          "part": "LogicLevelConverter"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "HV",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "LV2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "MOSI",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "HV2",
+          "interface": {
+            "codenameRedirect": "LV2",
+            "provides": [
+              {
+                "spec": "MOSI",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "LV",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "LV1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "MISO",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "HV1",
+          "interface": {
+            "codenameRedirect": "LV1",
+            "provides": [
+              {
+                "spec": "MISO",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "HV4",
+          "interface": {
+            "codenameRedirect": "LV4",
+            "provides": [
+              {
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "LV4",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "LogicLevelConverter_1.HV",
+          "to": "HV"
+        },
+        {
+          "from": "LogicLevelConverter_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LogicLevelConverter_1.LV2",
+          "to": "LV2"
+        },
+        {
+          "from": "LogicLevelConverter_1.HV2",
+          "to": "HV2"
+        },
+        {
+          "from": "LogicLevelConverter_1.LV",
+          "to": "LV"
+        },
+        {
+          "from": "LogicLevelConverter_1.LV1",
+          "to": "LV1"
+        },
+        {
+          "from": "LogicLevelConverter_1.HV1",
+          "to": "HV1"
+        },
+        {
+          "from": "LogicLevelConverter_1.HV4",
+          "to": "HV4"
+        },
+        {
+          "from": "LogicLevelConverter_1.LV4",
+          "to": "LV4"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

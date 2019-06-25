@@ -1,77 +1,99 @@
 {
-    "name": "Blower12v",
-    "category": [
-        "output"
-    ],
-    "blockId": "11270",
-    "app": {
-        "appName": "Blower - Squirrel Cage (12V)",
-        "image": "http://res.cloudinary.com/circuito/image/upload/yhs0dqdcgcmvvyleau6x",
-        "numericName": "",
-        "shortName": "Blower",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>DC Blower rates 1Amp @ 12VDC.</p>\n",
-        "visible": false
+  "name": "Blower12v",
+  "category": [
+    "output"
+  ],
+  "blockId": "11270",
+  "app": {
+    "appName": "Blower - Squirrel Cage (12V)",
+    "image": "http://res.cloudinary.com/circuito/image/upload/yhs0dqdcgcmvvyleau6x",
+    "numericName": "",
+    "shortName": "Blower",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>DC Blower rates 1Amp @ 12VDC.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "Blower12v"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "Blower12v"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "Blower12v"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Coil1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"GndLoadSwitching-PWM","voltage":""}],
-                        "requiresLoad": 400,
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "Coil2",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"12v"}],
-                        "requiresLoad": 400
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 0,
-                    "blocks": [
-                        "GndHighLoadPWMSwitching"
-                    ]
-                }
-            ]
+          "name": "Blower12v_1",
+          "part": "Blower12v"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "Coil1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "GndLoadSwitching-PWM",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 400,
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Coil2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "requiresLoad": 400,
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 0,
+          "blocks": [
+            "GndHighLoadPWMSwitching"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "Blower12v_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "Blower12v_1.Coil2",
+          "to": "Coil2"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

@@ -1,141 +1,197 @@
 {
-    "name": "FSRSquare",
-    "category": [
-        "input"
-    ],
-    "blockId": "9376",
-    "app": {
-        "appName": "Force Sensitive Resistor - Square",
-        "image": "http://res.cloudinary.com/circuito/image/upload/miq1kou92hy7veshagrj",
-        "numericName": "",
-        "shortName": "Force Sensitive Resistor",
-        "tags": [
-            "inputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>A robust force sensitive resistor.<br><strong>Range</strong>:  Senses force anywhere from 100 grams to 10 kilograms.</p>\n<p><strong>Returned Values</strong>: 0 - no force applied, to 1023 - max force applied.</p>\n",
-        "visible": false
+  "name": "FSRSquare",
+  "category": [
+    "input"
+  ],
+  "blockId": "9376",
+  "app": {
+    "appName": "Force Sensitive Resistor - Square",
+    "image": "http://res.cloudinary.com/circuito/image/upload/miq1kou92hy7veshagrj",
+    "numericName": "",
+    "shortName": "Force Sensitive Resistor",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>A robust force sensitive resistor.<br><strong>Range</strong>:  Senses force anywhere from 100 grams to 10 kilograms.</p>\n<p><strong>Returned Values</strong>: 0 - no force applied, to 1023 - max force applied.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "FSRSquare"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "coders": [
-                "FSRSquare"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "FSRSquare"
-                },
-                {
-                    "name": "r1",
-                    "part": "Res3K3O"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.1",
-                    "to": "r1.con1"
-                },
-                {
-                    "from": "r1.con0",
-                    "to": "0"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "0",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"ADC","voltage":""}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "2",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                }
-            ],
-            "priority": 0
+          "name": "FSRSquare_1",
+          "part": "FSRSquare"
         },
         {
-            "name": "3v3",
-            "coders": [
-                "FSRSquare"
-            ],
-            "supportedControllers": [
-                "ArduinoGemma",
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "FSRSquare"
-                },
-                {
-                    "name": "r1",
-                    "part": "Res3K3O"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.1",
-                    "to": "r1.con1"
-                },
-                {
-                    "from": "r1.con0",
-                    "to": "0"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "0",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"ADC","voltage":""}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "2",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                }
-            ],
-            "priority": 1
+          "name": "Res3K3O_1",
+          "part": "Res3K3O"
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "FSRSquare_1.1",
+          "to": "Res3K3O_1.con1"
+        },
+        {
+          "from": "Res3K3O_1.con0",
+          "to": "0"
+        },
+        {
+          "from": "FSRSquare_1.1",
+          "to": "1"
+        },
+        {
+          "from": "FSRSquare_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "FSRSquare"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "FSRSquare_1",
+          "part": "FSRSquare"
+        },
+        {
+          "name": "Res3K3O_1",
+          "part": "Res3K3O"
+        }
+      ],
+      "wires": [
+        {
+          "from": "FSRSquare_1.1",
+          "to": "Res3K3O_1.con1"
+        },
+        {
+          "from": "Res3K3O_1.con0",
+          "to": "0"
+        },
+        {
+          "from": "FSRSquare_1.1",
+          "to": "1"
+        },
+        {
+          "from": "FSRSquare_1.2",
+          "to": "2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "ADC",
+                "voltage": ""
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

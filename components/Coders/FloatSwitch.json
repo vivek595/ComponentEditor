@@ -1,12 +1,9 @@
 {
-    "name": "FloatSwitch",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Sig"
-        ],
-        "varname": ""
-    }
+  "name": "FloatSwitch",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

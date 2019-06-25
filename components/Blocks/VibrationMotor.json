@@ -1,93 +1,117 @@
 {
-    "name": "VibrationMotor",
-    "category": [
-        "output"
-    ],
-    "blockId": "8449",
-    "app": {
-        "appName": "Vibration Motor",
-        "image": "http://res.cloudinary.com/circuito/image/upload/qhjhnhrtgkh3fnxhi40p",
-        "numericName": "",
-        "shortName": "Vibration Motor",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>The vibration motor simply vibrates at a predefined strength, alerting you inaudibly that some event has occurred in the circuit.</p>\n",
-        "visible": false
+  "name": "VibrationMotor",
+  "category": [
+    "output"
+  ],
+  "blockId": "8449",
+  "app": {
+    "appName": "Vibration Motor",
+    "image": "http://res.cloudinary.com/circuito/image/upload/qhjhnhrtgkh3fnxhi40p",
+    "numericName": "",
+    "shortName": "Vibration Motor",
+    "indicators": {
+      "verified": true,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>The vibration motor simply vibrates at a predefined strength, alerting you inaudibly that some event has occurred in the circuit.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "VibrationMotor"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "VibrationMotor"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoGemma",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "VibrationMotor"
-                },
-                {
-                    "name": "d1",
-                    "part": "DIRect1A50v",
-                    "rotation": 180
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.Coil1",
-                    "to": "d1.pos"
-                },
-                {
-                    "from": "this.Coil2",
-                    "to": "d1.neg"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Coil1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"GndLoadSwitching-PWM","voltage":""}],
-                        "requiresLoad": 85,
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "Coil2",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"3.3v"},{"cost":2,"spec":"","voltage":"5v"}],
-                        "requiresLoad": 85
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 0,
-                    "blocks": [
-                        "GndLoadPWMSwitching"
-                    ]
-                }
-            ]
+          "name": "VibrationMotor_1",
+          "part": "VibrationMotor"
+        },
+        {
+          "name": "DIRect1A50v_1",
+          "part": "DIRect1A50v"
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "VibrationMotor_1.Coil1",
+          "to": "DIRect1A50v_1.pos"
+        },
+        {
+          "from": "VibrationMotor_1.Coil2",
+          "to": "DIRect1A50v_1.neg"
+        },
+        {
+          "from": "VibrationMotor_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "VibrationMotor_1.Coil2",
+          "to": "Coil2"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Coil1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "GndLoadSwitching-PWM",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 85,
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Coil2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "3.3v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 85,
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 0,
+          "blocks": [
+            "GndLoadPWMSwitching"
+          ]
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

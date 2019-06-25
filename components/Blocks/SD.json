@@ -1,114 +1,206 @@
 {
-    "name": "SD",
-    "category": [
-        "output"
-    ],
-    "blockId": "1671987",
-    "app": {
-        "appName": "Micro SD module",
-        "image": "http://res.cloudinary.com/circuito/image/upload/lkxkz8waorrpqaeibzgl",
-        "numericName": "",
-        "shortName": "Micro SD Module",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>Enables transferring data to and from a standard micro SD card.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://edwardmallon.wordpress.com/2015/12/22/arduino-uno-based-data-logger-with-no-soldering/\">Data Logger</a></p>\n",
-        "visible": false
+  "name": "SD",
+  "category": [
+    "output"
+  ],
+  "blockId": "1671987",
+  "app": {
+    "appName": "Micro SD module",
+    "image": "http://res.cloudinary.com/circuito/image/upload/lkxkz8waorrpqaeibzgl",
+    "numericName": "",
+    "shortName": "Micro SD Module",
+    "indicators": {
+      "verified": true,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>Enables transferring data to and from a standard micro SD card.</p>\n<p><strong>Sample Applications</strong>: <a target=\"_blank\" href=\"https://edwardmallon.wordpress.com/2015/12/22/arduino-uno-based-data-logger-with-no-soldering/\">Data Logger</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "SD"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "Arduino101",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "SD"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "Arduino101",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "SD"
-                },
-                {
-                    "name": "r1",
-                    "part": "Res330O"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.MISO",
-                    "to": "r1.con1"
-                },
-                {
-                    "from": "r1.con0",
-                    "to": "MISOR"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "CS",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SS","voltage":"5v"},{"cost":1,"spec":"SS","voltage":"3.3v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"5v"},{"cost":2,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "SCK",
-                    "interface": {
-                        "isBus": true,
-                        "requires":[{"cost":0,"spec":"SCK","voltage":"5v"},{"cost":1,"spec":"SCK","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "MOSI",
-                    "interface": {
-                        "isBus": true,
-                        "requires":[{"cost":0,"spec":"MOSI","voltage":"5v"},{"cost":1,"spec":"MOSI","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "MemOverLoad",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SRAMLoad","voltage":""}],
-                        "requiresLoad": 930
-                    }
-                },
-                {
-                    "name": "MISOR",
-                    "interface": {
-                        "isBus": true,
-                        "requires":[{"cost":0,"spec":"MISO","voltage":"5v"},{"cost":1,"spec":"MISO","voltage":"3.3v"}]
-                    }
-                }
-            ]
+          "name": "SD_1",
+          "part": "SD"
+        },
+        {
+          "name": "Res330O_1",
+          "part": "Res330O"
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "SD_1.MISO",
+          "to": "Res330O_1.con1"
+        },
+        {
+          "from": "Res330O_1.con0",
+          "to": "MISOR"
+        },
+        {
+          "from": "SD_1.CS",
+          "to": "CS"
+        },
+        {
+          "from": "SD_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "SD_1.SCK",
+          "to": "SCK"
+        },
+        {
+          "from": "SD_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "SD_1.MOSI",
+          "to": "MOSI"
+        }
+      ],
+      "ports": [
+        {
+          "name": "CS",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SS",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SS",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCK",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCK",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "SCK",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MOSI",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "MOSI",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "MOSI",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MemOverLoad",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SRAMLoad",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 930,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "MISOR",
+          "interface": {
+            "isBus": true,
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "MISO",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "MISO",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

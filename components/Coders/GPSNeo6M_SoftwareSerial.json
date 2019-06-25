@@ -1,13 +1,9 @@
 {
-    "name": "GPSNeo6M_SoftwareSerial",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "SoftwareSerial",
-        "ports": [
-            "Rx",
-            "Tx"
-        ],
-        "varname": "gps"
-    }
+  "name": "GPSNeo6M_SoftwareSerial",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "SoftwareSerial",
+    "varname": "gps"
+  }
 }

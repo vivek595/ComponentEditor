@@ -1,120 +1,208 @@
 {
-    "name": "IRPosCamera",
-    "category": [
-        "input"
-    ],
-    "blockId": "838186",
-    "app": {
-        "appName": "IR Positioning Camera",
-        "image": "http://res.cloudinary.com/circuito/image/upload/mx3hesgqtvqpdsafoegv",
-        "numericName": "",
-        "shortName": "IR Positioning Camera",
-        "tags": [
-            "inputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": false,
-            "solder": false
-        },
-        "desc": "<p>This 128x96 pixel IR Positioning Camera can track up to 4 IR objects at the same time. It's good for many applications, from tracking robots with IR transmitters to tracking heat sources.</p>",
-        "visible": true
+  "name": "IRPosCamera",
+  "category": [
+    "input"
+  ],
+  "blockId": "838186",
+  "app": {
+    "appName": "IR Positioning Camera",
+    "image": "http://res.cloudinary.com/circuito/image/upload/mx3hesgqtvqpdsafoegv",
+    "numericName": "",
+    "shortName": "IR Positioning Camera",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>This 128x96 pixel IR Positioning Camera can track up to 4 IR objects at the same time. It's good for many applications, from tracking robots with IR transmitters to tracking heat sources.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "IRPosCamera"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "coders": [
-                "IRPosCamera"
+          "name": "IRPosCamera_1",
+          "part": "IRPosCamera"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "IRPosCamera"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "SDA",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SDA","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "SCL",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SCL","voltage":"5v"}]
-                    }
-                }
-            ],
-            "priority": 0
+            "portType": "requires"
+          }
         },
         {
-            "name": "3v3",
-            "coders": [
-                "IRPosCamera"
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
             ],
-            "supportedControllers": [
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "Teensy32"
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "5v"
+              }
             ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "IRPosCamera"
-                }
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "5v"
+              }
             ],
-            "ports": [
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "SDA",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SDA","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "SCL",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SCL","voltage":"3.3v"}]
-                    }
-                }
-            ],
-            "priority": 1
+            "portType": "requires"
+          }
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "IRPosCamera_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "IRPosCamera_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRPosCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRPosCamera_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "IRPosCamera"
+      ],
+      "supportedControllers": [
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "IRPosCamera_1",
+          "part": "IRPosCamera"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SDA",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SDA",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "SCL",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SCL",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "IRPosCamera_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "IRPosCamera_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "IRPosCamera_1.SDA",
+          "to": "SDA"
+        },
+        {
+          "from": "IRPosCamera_1.SCL",
+          "to": "SCL"
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

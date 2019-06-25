@@ -1,143 +1,245 @@
 {
-    "name": "LedMatrix",
-    "category": [
-        "output"
-    ],
-    "blockId": "281909",
-    "app": {
-        "appName": "8x8 LED display Matrix - MAX7219",
-        "image": "http://res.cloudinary.com/circuito/image/upload/uksoxl14hwp5jfoepn74",
-        "numericName": "MAX7219",
-        "shortName": "8x8 LED display Matrix",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>Control a 8x8 LED matrix display using the MAX7219. Up to 8 modules can be chained for a longer display.</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/LED-Matrix-with-Arduino/\">LED Matrix with Arduino</a></p>\n",
-        "visible": false
+  "name": "LedMatrix",
+  "category": [
+    "output"
+  ],
+  "blockId": "281909",
+  "app": {
+    "appName": "8x8 LED display Matrix - MAX7219",
+    "image": "http://res.cloudinary.com/circuito/image/upload/uksoxl14hwp5jfoepn74",
+    "numericName": "MAX7219",
+    "shortName": "8x8 LED display Matrix",
+    "indicators": {
+      "verified": true,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>Control a 8x8 LED matrix display using the MAX7219. Up to 8 modules can be chained for a longer display.</p>\n<p><strong>Sample Application</strong>: <a target=\"_blank\" href=\"http://www.instructables.com/id/LED-Matrix-with-Arduino/\">LED Matrix with Arduino</a></p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LedMatrix"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "LedMatrix"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LedMatrix"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "chainTo": "VCC_PT",
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}],
-                        "requiresLoad": 300
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "chainTo": "GND_PT",
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "DIN",
-                    "interface": {
-                        "chainTo": "DIN_CHN",
-                        "requires":[{"cost":50,"spec":"MISO","voltage":"5v"},{"cost":1000,"spec":"DigitalOut","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "CLK",
-                    "interface": {
-                        "chainTo": "CLK_PT",
-                        "requires":[{"cost":50,"spec":"MOSI","voltage":"5v"},{"cost":1000,"spec":"DigitalOut","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "CS",
-                    "interface": {
-                        "chainTo": "CS_PT",
-                        "requires":[{"cost":50,"spec":"SS","voltage":"5v"},{"cost":1000,"spec":"DigitalOut","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "VCC_PT",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "GND_PT",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "DIN_CHN",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "CLK_PT",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "CS_PT",
-                    "interface": {
-                        "chain": true
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 1,
-                    "blocks": [
-                        "LogicLevelConverterSPI-3.3-5"
-                    ]
-                },
-                {
-                    "cost": 10,
-                    "blocks": [
-                        "Reg5v"
-                    ]
-                },
-                {
-                    "cost": 11,
-                    "blocks": [
-                        "Reg5v",
-                        "LogicLevelConverterSPI-3.3-5"
-                    ]
-                }
-            ]
+          "name": "LedMatrix_1",
+          "part": "LedMatrix"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "chainTo": "VCC_PT",
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 300,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "chainTo": "GND_PT",
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DIN",
+          "interface": {
+            "chainTo": "DIN_CHN",
+            "requires": [
+              {
+                "cost": 50,
+                "spec": "MISO",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1000,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "CLK",
+          "interface": {
+            "chainTo": "CLK_PT",
+            "requires": [
+              {
+                "cost": 50,
+                "spec": "MOSI",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1000,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "CS",
+          "interface": {
+            "chainTo": "CS_PT",
+            "requires": [
+              {
+                "cost": 50,
+                "spec": "SS",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1000,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC_PT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "GND_PT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "DIN_CHN",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "CLK_PT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "CS_PT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 1,
+          "blocks": [
+            "LogicLevelConverterSPI-3.3-5"
+          ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "Reg5v"
+          ]
+        },
+        {
+          "cost": 11,
+          "blocks": [
+            "Reg5v",
+            "LogicLevelConverterSPI-3.3-5"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "LedMatrix_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LedMatrix_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LedMatrix_1.DIN",
+          "to": "DIN"
+        },
+        {
+          "from": "LedMatrix_1.CLK",
+          "to": "CLK"
+        },
+        {
+          "from": "LedMatrix_1.CS",
+          "to": "CS"
+        },
+        {
+          "from": "LedMatrix_1.VCC_PT",
+          "to": "VCC_PT"
+        },
+        {
+          "from": "LedMatrix_1.GND_PT",
+          "to": "GND_PT"
+        },
+        {
+          "from": "LedMatrix_1.DIN_CHN",
+          "to": "DIN_CHN"
+        },
+        {
+          "from": "LedMatrix_1.CLK_PT",
+          "to": "CLK_PT"
+        },
+        {
+          "from": "LedMatrix_1.CS_PT",
+          "to": "CS_PT"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

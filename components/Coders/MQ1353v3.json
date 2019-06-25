@@ -1,12 +1,9 @@
 {
-    "name": "MQ1353v3",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Aout"
-        ],
-        "varname": ""
-    }
+  "name": "MQ1353v3",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

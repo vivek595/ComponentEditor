@@ -1,97 +1,152 @@
 {
-    "name": "AdafruitMiniThermalPrinter",
-    "category": [
-        "output"
-    ],
-    "blockId": "947731",
-    "app": {
-        "appName": "Adafruit Mini Thermal Receipt Printer",
-        "image": "http://res.cloudinary.com/circuito/image/upload/lud4da20imjuisge1dwg",
-        "numericName": "",
-        "shortName": "Thermal Printer",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": false,
-            "code": false,
-            "solder": false
-        },
-        "desc": "<p>This thermal printer can print pictures, text and QR codes. Thermal paper not included!</p>",
-        "visible": true
+  "name": "AdafruitMiniThermalPrinter",
+  "category": [
+    "output"
+  ],
+  "blockId": "947731",
+  "app": {
+    "appName": "Adafruit Mini Thermal Receipt Printer",
+    "image": "http://res.cloudinary.com/circuito/image/upload/lud4da20imjuisge1dwg",
+    "numericName": "",
+    "shortName": "Thermal Printer",
+    "indicators": {
+      "verified": false,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>This thermal printer can print pictures, text and QR codes. Thermal paper not included!</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "AdafruitMiniThermalPrinter"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "AdafruitMiniThermalPrinter"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "AdafruitMiniThermalPrinter",
-                    "rotation": 180
-                }
-            ],
-            "ports": [
-                {
-                    "name": "GND_COM",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "DIN",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SoftwareSerial","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}],
-                        "requiresLoad": 2000
-                    }
-                },
-                {
-                    "name": "DOUT",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"SoftwareSerial","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 5,
-                    "blocks": [
-                        "Reg5v"
-                    ]
-                },
-                {
-                    "cost": 10,
-                    "blocks": [
-                        "PowerSupply5v"
-                    ]
-                }
-            ]
+          "name": "AdafruitMiniThermalPrinter_1",
+          "part": "AdafruitMiniThermalPrinter"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "GND_COM",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DIN",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 2000,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DOUT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "SoftwareSerial",
+                "voltage": "5v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 5,
+          "blocks": [
+            "Reg5v"
+          ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "PowerSupply5v"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "AdafruitMiniThermalPrinter_1.GND_COM",
+          "to": "GND_COM"
+        },
+        {
+          "from": "AdafruitMiniThermalPrinter_1.DIN",
+          "to": "DIN"
+        },
+        {
+          "from": "AdafruitMiniThermalPrinter_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "AdafruitMiniThermalPrinter_1.DOUT",
+          "to": "DOUT"
+        },
+        {
+          "from": "AdafruitMiniThermalPrinter_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

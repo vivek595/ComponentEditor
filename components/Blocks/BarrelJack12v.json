@@ -1,54 +1,101 @@
 {
-    "name": "BarrelJack12v",
-    "category": [
-        "support"
-    ],
-    "circuits": [
+  "name": "BarrelJack12v",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
         {
-            "name": "",
-            "supportedControllers": [],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "BarrelJack",
-                    "rotation": 180
-                }
-            ],
-            "ports": [
-                {
-                    "name": "pos",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"12v"}],
-                        "providesLoad": 2000
-                    }
-                },
-                {
-                    "name": "posIn",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"Barrel","voltage":"12v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "neg",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "negIn",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"Barrel","voltage":"GND"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "BARREL_JACK",
-                    "interface": {
-                        "provides":[{"spec":"BARREL_JACK","voltage":""}]
-                    }
-                }
-            ]
+          "name": "BarrelJack_1",
+          "part": "BarrelJack"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "pos",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "providesLoad": 2000,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "posIn",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "Barrel",
+                "voltage": "12v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "neg",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "negIn",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "Barrel",
+                "voltage": "GND"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "BARREL_JACK",
+          "interface": {
+            "provides": [
+              {
+                "spec": "BARREL_JACK",
+                "voltage": ""
+              }
+            ],
+            "portType": "provides"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "BarrelJack_1.pos",
+          "to": "pos"
+        },
+        {
+          "from": "BarrelJack_1.neg",
+          "to": "neg"
+        },
+        {
+          "from": "BarrelJack_1.BARREL_JACK",
+          "to": "BARREL_JACK"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

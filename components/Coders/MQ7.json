@@ -1,12 +1,9 @@
 {
-    "name": "MQ7",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "AOUT"
-        ],
-        "varname": ""
-    }
+  "name": "MQ7",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

@@ -1,76 +1,98 @@
 {
-    "name": "PCFan12v",
-    "category": [
-        "output"
-    ],
-    "blockId": "11285",
-    "app": {
-        "appName": "PC Fan 12V",
-        "image": "",
-        "numericName": "",
-        "shortName": "PC Fan 12V",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>12V PC Fan 8cm square,operating speed of 2000 RPM.</p>\n",
-        "visible": false
+  "name": "PCFan12v",
+  "category": [
+    "output"
+  ],
+  "blockId": "11285",
+  "app": {
+    "appName": "PC Fan 12V",
+    "image": "",
+    "numericName": "",
+    "shortName": "PC Fan 12V",
+    "indicators": {
+      "verified": true,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>12V PC Fan 8cm square,operating speed of 2000 RPM.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "PCFan12v"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "PCFan12v"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "PCFan12v"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Coil1",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"GndLoadSwitching-PWM","voltage":""}],
-                        "requiresLoad": 80,
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "Coil2",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"12v"}],
-                        "requiresLoad": 80
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 0,
-                    "blocks": [
-                        "GndHighLoadPWMSwitching"
-                    ]
-                }
-            ]
+          "name": "PCFan12v_1",
+          "part": "PCFan12v"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "Coil1",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "GndLoadSwitching-PWM",
+                "voltage": ""
+              }
+            ],
+            "requiresLoad": 80,
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "Coil2",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "12v"
+              }
+            ],
+            "requiresLoad": 80,
+            "portType": "requires"
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 0,
+          "blocks": [
+            "GndHighLoadPWMSwitching"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "PCFan12v_1.Coil1",
+          "to": "Coil1"
+        },
+        {
+          "from": "PCFan12v_1.Coil2",
+          "to": "Coil2"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

@@ -1,12 +1,9 @@
 {
-    "name": "LEDPixie3W",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "IN"
-        ],
-        "varname": ""
-    }
+  "name": "LEDPixie3W",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

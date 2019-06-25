@@ -1,110 +1,166 @@
 {
-    "name": "LedStrip",
-    "category": [
-        "output"
-    ],
-    "blockId": "12027",
-    "app": {
-        "appName": "RGB LED Strip - Addressable",
-        "image": "http://res.cloudinary.com/circuito/image/upload/kcpr7yzqlwdvxqe03wms",
-        "numericName": "",
-        "shortName": "Addressable RGB LED Strip",
-        "tags": [
-            "outputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": false
-        },
-        "desc": "<p>This strip allows you to control each RGB LED individually. It is 1-meter long, and also waterproof. It will require it&#39;s own 5V power source, which we specify in the BOM.</p>\n",
-        "visible": false
+  "name": "LedStrip",
+  "category": [
+    "output"
+  ],
+  "blockId": "12027",
+  "app": {
+    "appName": "RGB LED Strip - Addressable",
+    "image": "http://res.cloudinary.com/circuito/image/upload/kcpr7yzqlwdvxqe03wms",
+    "numericName": "",
+    "shortName": "Addressable RGB LED Strip",
+    "indicators": {
+      "verified": true,
+      "solder": false
     },
-    "circuits": [
+    "desc": "<p>This strip allows you to control each RGB LED individually. It is 1-meter long, and also waterproof. It will require it&#39;s own 5V power source, which we specify in the BOM.</p>\n",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "default",
+      "coders": [
+        "LedStrip"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoGemma",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini3v3",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "",
-            "coders": [
-                "LedStrip"
-            ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoGemma",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini3v3",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LedStrip"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "chainTo": "VCC_OUT",
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}],
-                        "requiresLoad": 1000
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "chainTo": "GND_OUT",
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "DI",
-                    "interface": {
-                        "chainTo": "DO",
-                        "requires":[{"cost":0,"spec":"DigitalOut","voltage":"5v"},{"cost":1,"spec":"DigitalOut","voltage":"3.3v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "VCC_OUT",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "GND_OUT",
-                    "interface": {
-                        "chain": true
-                    }
-                },
-                {
-                    "name": "DO",
-                    "interface": {
-                        "chain": true
-                    }
-                }
-            ],
-            "requiredBlocks": [
-                {
-                    "cost": 5,
-                    "blocks": [
-                        "Reg5v"
-                    ]
-                },
-                {
-                    "cost": 10,
-                    "blocks": [
-                        "PowerSupply5v"
-                    ]
-                }
-            ]
+          "name": "LedStrip_1",
+          "part": "LedStrip"
         }
-    ]
+      ],
+      "ports": [
+        {
+          "name": "VCC",
+          "interface": {
+            "chainTo": "VCC_OUT",
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "requiresLoad": 1200,
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "chainTo": "GND_OUT",
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DI",
+          "interface": {
+            "chainTo": "DO",
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              },
+              {
+                "cost": 1,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "VCC_OUT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "GND_OUT",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        },
+        {
+          "name": "DO",
+          "interface": {
+            "chain": true,
+            "portType": "provides",
+            "provides": []
+          }
+        }
+      ],
+      "requiredBlocks": [
+        {
+          "cost": 5,
+          "blocks": [
+            "Reg5v"
+          ]
+        },
+        {
+          "cost": 10,
+          "blocks": [
+            "PowerSupply5v"
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "from": "LedStrip_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LedStrip_1.GND",
+          "to": "GND"
+        },
+        {
+          "from": "LedStrip_1.DI",
+          "to": "DI"
+        },
+        {
+          "from": "LedStrip_1.VCC_OUT",
+          "to": "VCC_OUT"
+        },
+        {
+          "from": "LedStrip_1.GND_OUT",
+          "to": "GND_OUT"
+        },
+        {
+          "from": "LedStrip_1.DO",
+          "to": "DO"
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

@@ -1,12 +1,9 @@
 {
-    "name": "TMP36",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Vout"
-        ],
-        "varname": "TMP36"
-    }
+  "name": "TMP36",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "TMP36"
+  }
 }

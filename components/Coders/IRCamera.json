@@ -1,12 +1,9 @@
 {
-    "name": "IRCamera",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "INT"
-        ],
-        "varname": ""
-    }
+  "name": "IRCamera",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

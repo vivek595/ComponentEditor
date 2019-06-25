@@ -1,12 +1,9 @@
 {
-    "name": "MICS5524",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Ao"
-        ],
-        "varname": "MICS5524"
-    }
+  "name": "MICS5524",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": "MICS5524"
+  }
 }

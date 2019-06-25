@@ -1,10 +1,9 @@
 {
-    "name": "LEDBarI2C",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [],
-        "varname": ""
-    }
+  "name": "LEDBarI2C",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

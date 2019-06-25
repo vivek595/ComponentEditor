@@ -1,12 +1,9 @@
 {
-    "name": "MQ73v3",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Aout"
-        ],
-        "varname": ""
-    }
+  "name": "MQ73v3",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

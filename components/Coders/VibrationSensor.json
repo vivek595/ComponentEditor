@@ -1,12 +1,9 @@
 {
-    "name": "VibrationSensor",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "2"
-        ],
-        "varname": ""
-    }
+  "name": "VibrationSensor",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

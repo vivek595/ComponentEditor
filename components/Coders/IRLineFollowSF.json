@@ -1,11 +1,8 @@
 {
-    "name": "IRLineFollowSF",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "ports": [
-            "OUT"
-        ],
-        "varname": "irLineFollowSF"
-    }
+  "name": "IRLineFollowSF",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "varname": "irLineFollowSF"
+  }
 }

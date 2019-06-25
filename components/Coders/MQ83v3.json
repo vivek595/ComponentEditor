@@ -1,12 +1,9 @@
 {
-    "name": "MQ83v3",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "Aout"
-        ],
-        "varname": ""
-    }
+  "name": "MQ83v3",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

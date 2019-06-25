@@ -1,139 +1,253 @@
 {
-    "name": "LoadCellHX711SF",
-    "category": [
-        "input"
-    ],
-    "blockId": "13879",
-    "app": {
-        "appName": "SparkFun HX711 - Load Cell Amplifier",
-        "image": "http://res.cloudinary.com/circuito/image/upload/gksc0v9ujss5cf5pkkvc",
-        "numericName": "HX711",
-        "shortName": "Load Cell Amplifier",
-        "tags": [
-            "inputs"
-        ],
-        "indicators": {
-            "verified": true,
-            "code": true,
-            "solder": true
-        },
-        "desc": "<p>The load cell breakout of the HX711 enables reading load cell values and measuring weight.</p>",
-        "visible": false
+  "name": "LoadCellHX711SF",
+  "category": [
+    "input"
+  ],
+  "blockId": "13879",
+  "app": {
+    "appName": "SparkFun HX711 - Load Cell Amplifier",
+    "image": "http://res.cloudinary.com/circuito/image/upload/gksc0v9ujss5cf5pkkvc",
+    "numericName": "HX711",
+    "shortName": "Load Cell Amplifier",
+    "indicators": {
+      "verified": true,
+      "solder": true
     },
-    "circuits": [
+    "desc": "<p>The load cell breakout of the HX711 enables reading load cell values and measuring weight.</p>",
+    "visible": true
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "coders": [
+        "LoadCellHX711SF"
+      ],
+      "supportedControllers": [
+        "ATMega328P",
+        "ArduinoLeonardo",
+        "ArduinoMega",
+        "ArduinoMicro",
+        "ArduinoNano",
+        "ArduinoProMini5v",
+        "ArduinoUno",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "coders": [
-                "LoadCellHX711SF"
+          "name": "LoadCellHX711SF_1",
+          "part": "LoadCellHX711SF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ATTiny85",
-                "Teensy32"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LoadCellHX711SF"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "VDD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "DAT",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DigitalIn","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "CLK",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DigitalOut","voltage":"5v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
-            ],
-            "priority": 0
+            "portType": "requires"
+          }
         },
         {
-            "name": "3v3",
-            "coders": [
-                "LoadCellHX711SF"
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ArduinoGemma",
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B",
-                "ATTiny85",
-                "Teensy32"
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DAT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalIn",
+                "voltage": "5v"
+              }
             ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LoadCellHX711SF"
-                }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "CLK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "5v"
+              }
             ],
-            "ports": [
-                {
-                    "name": "VDD",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "VCC",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "DAT",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DigitalOut","voltage":"3.3v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "CLK",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"DigitalOut","voltage":"3.3v"}],
-                        "unique": true
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
             ],
-            "priority": 1
+            "portType": "requires"
+          }
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "LoadCellHX711SF_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LoadCellHX711SF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LoadCellHX711SF_1.DAT",
+          "to": "DAT"
+        },
+        {
+          "from": "LoadCellHX711SF_1.CLK",
+          "to": "CLK"
+        },
+        {
+          "from": "LoadCellHX711SF_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "coders": [
+        "LoadCellHX711SF"
+      ],
+      "supportedControllers": [
+        "ArduinoGemma",
+        "ArduinoProMini3v3",
+        "ESP32DevKitC",
+        "NodeMCU",
+        "RPI3B",
+        "ATTiny85",
+        "Teensy32"
+      ],
+      "parts": [
+        {
+          "name": "LoadCellHX711SF_1",
+          "part": "LoadCellHX711SF"
+        }
+      ],
+      "ports": [
+        {
+          "name": "VDD",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "VCC",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "5v"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "DAT",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "CLK",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "DigitalOut",
+                "voltage": "3.3v"
+              }
+            ],
+            "unique": true,
+            "portType": "requires"
+          },
+          "includeInFirmware": true
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "LoadCellHX711SF_1.VDD",
+          "to": "VDD"
+        },
+        {
+          "from": "LoadCellHX711SF_1.VCC",
+          "to": "VCC"
+        },
+        {
+          "from": "LoadCellHX711SF_1.DAT",
+          "to": "DAT"
+        },
+        {
+          "from": "LoadCellHX711SF_1.CLK",
+          "to": "CLK"
+        },
+        {
+          "from": "LoadCellHX711SF_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

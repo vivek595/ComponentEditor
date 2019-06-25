@@ -1,12 +1,9 @@
 {
-    "name": "PIRMini",
-    "supportedControllers": [],
-    "license": "rapid",
-    "instantiate": {
-        "classname": "",
-        "ports": [
-            "DQ"
-        ],
-        "varname": ""
-    }
+  "name": "PIRMini",
+  "supportedControllers": [],
+  "license": "rapid",
+  "instantiate": {
+    "classname": "",
+    "varname": ""
+  }
 }

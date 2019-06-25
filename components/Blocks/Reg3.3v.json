@@ -1,67 +1,118 @@
 {
-    "name": "Reg3.3v",
-    "category": [
-        "support"
-    ],
-    "circuits": [
+  "name": "Reg3v3",
+  "category": [
+    "support"
+  ],
+  "circuits": [
+    {
+      "name": "default",
+      "supportedControllers": [],
+      "parts": [
         {
-            "name": "",
-            "supportedControllers": [],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "LD11173.3v"
-                },
-                {
-                    "name": "capin",
-                    "pos": "0,120",
-                    "part": "CapCeramic100nF"
-                },
-                {
-                    "name": "capout",
-                    "pos": "20,80",
-                    "part": "CapElectro10uF"
-                }
-            ],
-            "wires": [
-                {
-                    "from": "this.Vin",
-                    "to": "capin.con0"
-                },
-                {
-                    "from": "this.0",
-                    "to": "capin.con1"
-                },
-                {
-                    "from": "this.Vout",
-                    "to": "capout.pos"
-                },
-                {
-                    "from": "this.0",
-                    "to": "capout.neg"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "Vout",
-                    "interface": {
-                        "provides":[{"spec":"","voltage":"3.3v"}],
-                        "providesLoad": 800
-                    }
-                },
-                {
-                    "name": "0",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                },
-                {
-                    "name": "Vin",
-                    "interface": {
-                        "requires":[{"cost":1,"spec":"","voltage":"6v"},{"cost":2,"spec":"","voltage":"5v"},{"cost":4,"spec":"","voltage":"9v"},{"cost":5,"spec":"","voltage":"12v"},{"cost":6,"spec":"","voltage":"7.4v"}]
-                    }
-                }
-            ]
+          "name": "LD11173v3_1",
+          "part": "LD11173v3"
+        },
+        {
+          "name": "CapCeramic100nF_1",
+          "part": "CapCeramic100nF"
+        },
+        {
+          "name": "CapElectro10uF_1",
+          "part": "CapElectro10uF"
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "LD11173v3_1.Vin",
+          "to": "CapCeramic100nF_1.con0"
+        },
+        {
+          "from": "LD11173v3_1.0",
+          "to": "CapCeramic100nF_1.con1"
+        },
+        {
+          "from": "LD11173v3_1.Vout",
+          "to": "CapElectro10uF_1.pos"
+        },
+        {
+          "from": "LD11173v3_1.0",
+          "to": "CapElectro10uF_1.neg"
+        },
+        {
+          "from": "LD11173v3_1.Vout",
+          "to": "Vout"
+        },
+        {
+          "from": "LD11173v3_1.0",
+          "to": "0"
+        },
+        {
+          "from": "LD11173v3_1.Vin",
+          "to": "Vin"
+        }
+      ],
+      "ports": [
+        {
+          "name": "Vout",
+          "interface": {
+            "provides": [
+              {
+                "spec": "",
+                "voltage": "3.3v"
+              }
+            ],
+            "providesLoad": 800,
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "0",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        },
+        {
+          "name": "Vin",
+          "interface": {
+            "requires": [
+              {
+                "cost": 1,
+                "spec": "",
+                "voltage": "6v"
+              },
+              {
+                "cost": 2,
+                "spec": "",
+                "voltage": "5v"
+              },
+              {
+                "cost": 4,
+                "spec": "",
+                "voltage": "9v"
+              },
+              {
+                "cost": 5,
+                "spec": "",
+                "voltage": "12v"
+              },
+              {
+                "cost": 6,
+                "spec": "",
+                "voltage": "7.4v"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "cost": 0
+    }
+  ]
 }

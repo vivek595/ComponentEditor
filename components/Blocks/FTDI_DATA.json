@@ -1,107 +1,209 @@
 {
-    "name": "FTDI_DATA",
-    "category": [
-        "support"
-    ],
-    "blockId": "1514678",
-    "circuits": [
+  "name": "FTDI_DATA",
+  "category": [
+    "support"
+  ],
+  "blockId": "1514678",
+  "altComp": {
+    "cost": 150,
+    "block": "PowerSupply12v2A"
+  },
+  "circuits": [
+    {
+      "name": "5v",
+      "supportedControllers": [
+        "ATMega328P"
+      ],
+      "parts": [
         {
-            "name": "5v",
-            "altComp": [
-                150,
-                "PowerSupply12v2A"
+          "name": "FTDI5v_1",
+          "part": "FTDI5v"
+        }
+      ],
+      "ports": [
+        {
+          "name": "CTS",
+          "interface": {
+            "provides": [
+              {
+                "spec": "CTS",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P"
-            ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "FTDI5v"
-                }
-            ],
-            "ports": [
-                {
-                    "name": "CTS",
-                    "interface": {
-                        "provides":[{"spec":"CTS","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "RX",
-                    "interface": {
-                        "provides":[{"spec":"RX","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "TX",
-                    "interface": {
-                        "provides":[{"spec":"TX","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "DTR",
-                    "interface": {
-                        "provides":[{"spec":"DTR","voltage":"5v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
-            ],
-            "priority": 0
+            "portType": "provides"
+          }
         },
         {
-            "name": "3v3",
-            "altComp": [
-                150,
-                "PowerSupply12v2A"
+          "name": "RX",
+          "interface": {
+            "provides": [
+              {
+                "spec": "RX",
+                "voltage": "5v"
+              }
             ],
-            "supportedControllers": [
-                "ATMega328P"
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "TX",
+          "interface": {
+            "provides": [
+              {
+                "spec": "TX",
+                "voltage": "5v"
+              }
             ],
-            "parts": [
-                {
-                    "name": "this",
-                    "part": "FTDI3.3v"
-                }
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "DTR",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DTR",
+                "voltage": "5v"
+              }
             ],
-            "ports": [
-                {
-                    "name": "CTS",
-                    "interface": {
-                        "provides":[{"spec":"CTS","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "RX",
-                    "interface": {
-                        "provides":[{"spec":"RX","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "TX",
-                    "interface": {
-                        "provides":[{"spec":"TX","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "DTR",
-                    "interface": {
-                        "provides":[{"spec":"DTR","voltage":"3.3v"}]
-                    }
-                },
-                {
-                    "name": "GND",
-                    "interface": {
-                        "requires":[{"cost":0,"spec":"","voltage":"GND"}]
-                    }
-                }
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
             ],
-            "priority": 1
+            "portType": "requires"
+          }
         }
-    ]
+      ],
+      "wires": [
+        {
+          "from": "FTDI5v_1.CTS",
+          "to": "CTS"
+        },
+        {
+          "from": "FTDI5v_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "FTDI5v_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "FTDI5v_1.DTR",
+          "to": "DTR"
+        },
+        {
+          "from": "FTDI5v_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 0
+    },
+    {
+      "name": "3v3",
+      "supportedControllers": [
+        "ATMega328P"
+      ],
+      "parts": [
+        {
+          "name": "FTDI3.3v_1",
+          "part": "FTDI3.3v"
+        }
+      ],
+      "ports": [
+        {
+          "name": "CTS",
+          "interface": {
+            "provides": [
+              {
+                "spec": "CTS",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "RX",
+          "interface": {
+            "provides": [
+              {
+                "spec": "RX",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "TX",
+          "interface": {
+            "provides": [
+              {
+                "spec": "TX",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "DTR",
+          "interface": {
+            "provides": [
+              {
+                "spec": "DTR",
+                "voltage": "3.3v"
+              }
+            ],
+            "portType": "provides"
+          }
+        },
+        {
+          "name": "GND",
+          "interface": {
+            "requires": [
+              {
+                "cost": 0,
+                "spec": "",
+                "voltage": "GND"
+              }
+            ],
+            "portType": "requires"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "from": "FTDI3.3v_1.CTS",
+          "to": "CTS"
+        },
+        {
+          "from": "FTDI3.3v_1.RX",
+          "to": "RX"
+        },
+        {
+          "from": "FTDI3.3v_1.TX",
+          "to": "TX"
+        },
+        {
+          "from": "FTDI3.3v_1.DTR",
+          "to": "DTR"
+        },
+        {
+          "from": "FTDI3.3v_1.GND",
+          "to": "GND"
+        }
+      ],
+      "cost": 1
+    }
+  ]
 }

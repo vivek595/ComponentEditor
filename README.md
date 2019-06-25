@@ -1,24 +1,31 @@
-# Circuit.io Component Editor
+# circuito.io Component Editor
 
-## Using CodeSandbox
-Under Development
+## Video Tutorial
+[![Intro Video](https://res.cloudinary.com/circuito/image/upload/w_300,b_white/v1550053341/circuito_youtube_help_title.png)](https://www.youtube.com/watch?v=i3CpeFhRLI4)
+
+## Using GitPod - Recommended
+[Edit using GitPod](http://gitpod.io/#https://github.com/Circuito-io/ComponentEditor)
 
 ## Creating a Local Development Environment
 1. Make sure you have [Node.js](https://nodejs.org/en/download/)
-2. Clone this repository
+2. Clone this repository and cd into it
 ```bash
-git clone https://github.com/Roboplan/ComponentsBank-MESS.git
+git clone https://github.com/Circuito-io/ComponentEditor.git
+cd ComponentEditor
 ```
-2. Run npm install
+3. Init and update submodule
 ```bash
-cd ComponentsBank-MESS
+git submodule init
+git submodule update
+```
+3. Run npm install
+```bash
 npm install
 ```
-3. Run the web server
+4. Run the dev web server
 ```bash
-npm start
+npm run dev
 ```
-4. Connect to the web server - http://localhost:8080
-5. Edit your files locally - components are in the ```components``` subfloder
-6. When ready - click the 'upload' button to sync local files with our server
-7. Click the 'preview' button to open your **private** circuito.io preview window 
+5. Connect to the web server - http://localhost:8080
+6. Edit your files locally - components are in the ```components``` subfloder
+7. When ready - click the 'Preview' button to sync local files with our server and open your **private** circuito.io preview window
